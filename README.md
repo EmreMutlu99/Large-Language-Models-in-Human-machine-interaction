@@ -1,2 +1,40 @@
-# Large Language Models in Human-machine interaction
- In complex and high-stakes environments such as aerospace, deep-sea operations, forestry, and emergency response, human-machine interaction plays a critical role in ensuring safety, efficiency, and timely decision-making. These scenarios are often characterized by high risk and complexity, requiring remote coordination. Traditional human machine interaction concepts - such as button-based systems or command line tools - often fall short in these settings. Users face challenges like knowledge overload, difficulty in filtering large volumes of data, and the lack of intuitive, context-aware communication with machines. These limitations increase the risk of miscommunication and operational errors. Large Language Models (LLMs) offer new possibilities for improving interaction between humans and machines in such demanding environments. They can translate complex commands into clear and understandable language, support incomplete input, and maintain context across interactions. More importantly, they are capable of rapidly analyzing situational data, generating real-time operational suggestions, issuing risk alerts, and conducting conversational evaluations of actions and decisions. This seminar thesis aims to collect and analyze concrete case studies or research reports that illustrate how LLMs are being applied in these special environments to enhance human-machine interactions. The work should explore how these models are used, what roles they play, what benefits they bring, and what challenges remain. Real-world relevance and depth of understanding are key.
+# Large Language Models in Human-Machine Interaction
+
+This repository tracks the seminar write-up on the role of LLMs in safety-critical Human-Machine Interaction (HMI). The thesis surveys how text, audio, speech-to-speech, and vision-language-action interfaces are deployed in domains such as aerospace, emergency response, and industrial operations.
+
+## Repository Structure
+
+```
+├── paper/                   # LaTeX source of the seminar paper
+│   ├── frame.tex            # Master document
+│   ├── sections/            # Individual section stubs
+│   └── MyBib.bib            # Bibliography entries
+├── research/                # PDF corpus + tracker of reviewed papers
+│   ├── *.pdf
+│   └── paper_tracker.csv    # Status and notes for each reference
+└── README.md
+```
+
+## Building the Paper
+
+Use `latexmk` (TeX Live 2023+ recommended). From `paper/`:
+
+```bash
+latexmk -pdf frame.tex
+```
+
+If necessary, clean auxiliary files with `latexmk -C frame.tex`.
+
+## Current Plan
+
+1. Populate each section in `paper/sections/` with summaries of the selected case studies.
+2. Add figures/tables (e.g., stressor vs. modality matrix) and cite papers via `MyBib.bib`.
+3. Replace the placeholder abstract/keywords once the content stabilizes.
+
+## Research Focus
+
+- Identify how LLM-driven interfaces address situational ambiguity, time pressure, and large-scale coordination.
+- Compare modalities: text planners, STT→LLM→TTS pipelines, end-to-end speech-to-speech models, and vision-language-action stacks.
+- Highlight human factors (psychological impact, trust, safety guardrails) using the astronaut CUI study and related papers.
+
+Contributions, issue reports, or paper suggestions are welcome via pull requests.
