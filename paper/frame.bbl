@@ -17,7 +17,7 @@ Donald~E. Knuth.
 
 \bibitem[Kop00]{kopka1}
 Helmut Kopka.
-\newblock {\em \LaTeX\ Einführung}.
+\newblock {\em \LaTeX\ EinfÃ¼hrung}.
 \newblock Addison-Wesley, Reading, Massachussetts, USA, 3. edition, 2000.
 \newblock ISBN 3-827-31557-3.
 
@@ -29,7 +29,6 @@ Leslie Lamport.
 
 \bibitem[OPHS00]{oetiker}
 Tobias Oetiker, Hubert Partl, Irene Hyna, and Elisabeth Schlegl.
-\newblock {\em The {N}ot {S}o {S}hort {I}ntroduction to \LaTeX2e, Version
-  3.16}, September 2000.
+\newblock {\em The {N}ot {S}o {S}hort {I}ntroduction to \LaTeX2e, Version 3.16}, September 2000.
 
 \end{thebibliography}

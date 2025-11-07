@@ -1,126 +1,126 @@
 \selectlanguage{ngerman} %choose: ngerman or English
-%%%%% Angaben für die Titelseite
+%%%%% Angaben fÃ¼r die Titelseite
 
 % Titel der Arbeit
-\Vtitle{Seminar MMI - Vorlage für \\Schriftliche Ausarbeitungen}
+\Vtitle{Seminar MMI - Vorlage fÃ¼r \\Schriftliche Ausarbeitungen}
 % Autor der Arbeit
-\Vauthor{Christian Schlette}
+\Vauthor{Ã–mer Emre Mutlu}
 % e-mail des Autors
-\Vaddress{schlette@mmi.rwth-aachen.de}
+\Vaddress{emre.mutlu@rwth-aachen.de}
 % Kurzfassung der Arbeit
 \Vabstract{
-Dieses Dokument dient als Anleitung und als Vorlage für die schriftlichen 
-Ausarbeitungen für Seminare am \emph{Institut für Mensch-Maschine-Interaktion 
+Dieses Dokument dient als Anleitung und als Vorlage fÃ¼r die schriftlichen 
+Ausarbeitungen fÃ¼r Seminare am \emph{Institut fÃ¼r Mensch-Maschine-Interaktion 
 (MMI)}. Einsteiger in \LaTeX\ sollten parallel mit einem Ausdruck dieser
-Vorlage und dem Quellcode arbeiten, um so leicht entspechende Befehle für
-ein gewünschtes Layout zu finden. Helfen dieses Dokument sowie angegebene
-Literatur nicht weiter, stehen natürlich die Betreuer für Fragen bereit. 
+Vorlage und dem Quellcode arbeiten, um so leicht entspechende Befehle fÃ¼r
+ein gewÃ¼nschtes Layout zu finden. Helfen dieses Dokument sowie angegebene
+Literatur nicht weiter, stehen natÃ¼rlich die Betreuer fÃ¼r Fragen bereit. 
 }
-% Schlüsselworte zum Inhalt der Arbeit
+% SchlÃ¼sselworte zum Inhalt der Arbeit
 \Vkeywords{\LaTeX, mmiSeminar-Style, Vorlage}
-% tatsächliche Erstellung der Titelseite
+% tatsÃ¤chliche Erstellung der Titelseite
 \makeArticleTitle
 
 
-% Beispiel für einen Abschnitt
+% Beispiel fÃ¼r einen Abschnitt
 
-\section{Einführung}
+\section{EinfÃ¼hrung}
 \label{sec:CSorg}
 
-% Beispiel für Fußnoten
-% Beispiel für Literaturangaben
+% Beispiel fÃ¼r FuÃŸnoten
+% Beispiel fÃ¼r Literaturangaben
 
 \LaTeX\ basiert auf \TeX\footnote{sprich: Tech}, einem Textsatzsystem, das von 
-Donald E. Knuth \cite{knuth} entwickelt und veröffentlicht wurde, um wissenschaftlichen 
+Donald E. Knuth \cite{knuth} entwickelt und verÃ¶ffentlicht wurde, um wissenschaftlichen 
 Texten ein einheitliches und gutes Layout zu geben. Aufgrund seiner komplexen Syntax 
 ist die direkte Verwendung von \TeX\ jedoch nicht leicht, deshalb hat Leslie Lamport 
 \cite{latexManual} das Makro-Paket \LaTeX\ entwickelt. Dieses definiert Makros, 
-die es dem Benutzer erlauben, komplexere und häufig benötigte Folgen von \TeX-Kommandos 
+die es dem Benutzer erlauben, komplexere und hÃ¤ufig benÃ¶tigte Folgen von \TeX-Kommandos 
 zu verwenden. Die neuste und vereinheitlichte Version ist \LaTeXe\, das wir hier verwenden.
 
-% Beispiel für einen Unter-Abschnitt
+% Beispiel fÃ¼r einen Unter-Abschnitt
 
 \subsection{Warum \LaTeX}
 
-% Beispiel für Hervorhebungen
-% Beispiel für Sonderkommando \zb
+% Beispiel fÃ¼r Hervorhebungen
+% Beispiel fÃ¼r Sonderkommando \zb
 
 \LaTeX\ (wegen besserer Lesbarkeit auch einfach LaTeX) ist eine Makro-Sprache 
-und muss ähnlich einer Programmiersprache erlernt werden. Entsprechend muss 
-TeX-Code erst compiliert oder "`\emph{getext}"' werden, bevor das tatsächliche 
-Layout sichtbar wird. Doch die Vorteile der Verwendung von LaTeX für professionelle 
-wissenschaftliche Texte treten besonders bei längeren (etwa 100 Seiten) Texten 
+und muss Ã¤hnlich einer Programmiersprache erlernt werden. Entsprechend muss 
+TeX-Code erst compiliert oder "`\emph{getext}"' werden, bevor das tatsÃ¤chliche 
+Layout sichtbar wird. Doch die Vorteile der Verwendung von LaTeX fÃ¼r professionelle 
+wissenschaftliche Texte treten besonders bei lÃ¤ngeren (etwa 100 Seiten) Texten 
 mit vielen Bildern und Formeln zutage. LaTeX setzt Grundregeln um, an denen sich auch 
 professionelle Layouter orientieren, um einen Text gut lesbar und optisch ansprechend 
-zu gestalten. Zusätzlich wird durch die festen Befehle (\zB\ für Kapitelanfänge) ein hohes Maß 
-an Konsistenz erreicht. Arbeiten im technischen Bereich werden daher häufig in TeX ausgeführt.
+zu gestalten. ZusÃ¤tzlich wird durch die festen Befehle (\zB\ fÃ¼r KapitelanfÃ¤nge) ein hohes MaÃŸ 
+an Konsistenz erreicht. Arbeiten im technischen Bereich werden daher hÃ¤ufig in TeX ausgefÃ¼hrt.
 Zum Beispiel verlangen viele Institute verlangen, dass Studien- und Diplomarbeiten in LaTeX geschrieben
 sind. Fast alle internationalen Zeitschriften und Konferenzen erwarten TeX-Dokumente, 
-für die sie entsprechende eigene \emph{Styles} entwickelt haben.
+fÃ¼r die sie entsprechende eigene \emph{Styles} entwickelt haben.
 
 \subsection{Vom Quelltext zum PostScript}
 
 \subsubsection{Dateien rund um \LaTeX}
 
-% Beispiel für Schreibmaschinen-Schriftart
+% Beispiel fÃ¼r Schreibmaschinen-Schriftart
 
-Der Quellcode für jedes LaTeX-Dokument steht in einer \emph{.tex}-Datei. 
-Mit dem Befehl \texttt{input} können weitere Dateien eingebunden werden.
+Der Quellcode fÃ¼r jedes LaTeX-Dokument steht in einer \emph{.tex}-Datei. 
+Mit dem Befehl \texttt{input} kÃ¶nnen weitere Dateien eingebunden werden.
 Dies hat den gleichen Effekt, als ob der Quellcode an Stelle des input-Befehls 
-stände\footnote{siehe auch Datei \texttt{frame.tex}}. Befehle in LaTeX beginnen 
-übrigens immer mit einem backslash $\backslash$.
+stÃ¤nde\footnote{siehe auch Datei \texttt{frame.tex}}. Befehle in LaTeX beginnen 
+Ã¼brigens immer mit einem backslash $\backslash$.
 
-In wissenschaftlichen Arbeiten werden sehr häufig Ergebnisse anderer Forscher 
-zitiert. Im technischen Bereich geschieht dies durch eine Abkürzung oder 
+In wissenschaftlichen Arbeiten werden sehr hÃ¤ufig Ergebnisse anderer Forscher 
+zitiert. Im technischen Bereich geschieht dies durch eine AbkÃ¼rzung oder 
 Indexnummer, die im \emph{Literaturverzeichnis} wiederzufinden ist. 
-Dort stehen dann genaue Angaben zu der jeweiligen Veröffentlichung. 
-In LaTeX gibt es ein einheitliches Format in dem die Daten einer Veröffentlichung, 
+Dort stehen dann genaue Angaben zu der jeweiligen VerÃ¶ffentlichung. 
+In LaTeX gibt es ein einheitliches Format in dem die Daten einer VerÃ¶ffentlichung, 
 wie \zB\ Autor, Titel, Jahr, usw.\ gespeichert werden. Mittels verschiedener 
-Bibliography-Styles kann das Layout des Literaturverzeichnisses leicht verändert werden. 
+Bibliography-Styles kann das Layout des Literaturverzeichnisses leicht verÃ¤ndert werden. 
 Die Angaben zu den zitierten Arbeiten stehen in der Bibliography (\emph{.bib}-Datei),
 die dann von BiBTeX ausgewertet wird.
 
-Zur Umsetzung verschiedener Layouts im Text wird ein ähnliches Vorgehen wie
-für das Literaturverzeichnis angewandt. Zunächst gibt es die \emph{Dokumentenklasse} 
-(Befehl \texttt{documentclass} in frame.tex), die die grundsätzliche Formatierung festlegt. 
+Zur Umsetzung verschiedener Layouts im Text wird ein Ã¤hnliches Vorgehen wie
+fÃ¼r das Literaturverzeichnis angewandt. ZunÃ¤chst gibt es die \emph{Dokumentenklasse} 
+(Befehl \texttt{documentclass} in frame.tex), die die grundsÃ¤tzliche Formatierung festlegt. 
 Dann erweitern die Styles (in \emph{.sty}-Dateien) die Dokumentenklassen 
 und bieten weitere Makros an, die die Arbeit mit LaTeX vereinfachen sollen. 
 Ein Beispiel ist iso8859-1.sty: Ohne diesen Style kann man Umlaute nicht direkt in den Text schreiben. 
 Der mmiSeminar-Style dagegen dient der einheitlichen Formatierung und einfachen Erstellung der 
-schriftlichen Ausarbeitungen zur späteren Zusammenführung in einem Seminarband.
+schriftlichen Ausarbeitungen zur spÃ¤teren ZusammenfÃ¼hrung in einem Seminarband.
 
 \subsubsection{Von \LaTeX\ zu PostScript}
 
-% Beispiel für Gedankenstriche
+% Beispiel fÃ¼r Gedankenstriche
 
 Der erste Schritt um aus dem geschriebenen Quellcode eine formatierte
 PostScript-Version zu erstellen ist das so genannte "`\emph{Texen}"' --- das
-Ausführen des \texttt{latex} Befehls. Dies geht entweder über die Konsole mit
+AusfÃ¼hren des \texttt{latex} Befehls. Dies geht entweder Ã¼ber die Konsole mit
 Angabe des Dateinamens der Master-Datei (hier: \texttt{frame}), oder per
-Menüpunkt im verwendeten Editor. In diesem Schritt werden einige Hilfsdateien
+MenÃ¼punkt im verwendeten Editor. In diesem Schritt werden einige Hilfsdateien
 mit gleichem Namen wie die Master-Datei erstellt. Der eigentliche Text steht
-in der \emph{.dvi}-Datei (dvi steht für device independent). 
+in der \emph{.dvi}-Datei (dvi steht fÃ¼r device independent). 
 Unter Linux und unter Windows existieren Programme zur Anzeige dieser Dateien.
 
-Je nachdem, welche Änderungen im Quellcode vorgenommen wurden, muss \texttt{latex} bis
-zu dreimal ausgeführt werden. Um alle Verweise zu finden, erstellt das Programm
-zunächst Tabellen, die im nächsten Schritt verwendet werden. Beim ersten Texen
+Je nachdem, welche Ã„nderungen im Quellcode vorgenommen wurden, muss \texttt{latex} bis
+zu dreimal ausgefÃ¼hrt werden. Um alle Verweise zu finden, erstellt das Programm
+zunÃ¤chst Tabellen, die im nÃ¤chsten Schritt verwendet werden. Beim ersten Texen
 wird auch eine Liste der Literaturverweise (\texttt{cite}) erstellt. Wurden
-die .bib-Datei verändert muss auch der Befehl \texttt{bibtex Master-Datei}
-ausgeführt werden. Hierauf folgen in der Regel zwei Aufrufe von \texttt{latex}, 
+die .bib-Datei verÃ¤ndert muss auch der Befehl \texttt{bibtex Master-Datei}
+ausgefÃ¼hrt werden. Hierauf folgen in der Regel zwei Aufrufe von \texttt{latex}, 
 bis alle Referenzen korrekt sind. Komfortable LaTeX-Entwicklungsumgebungen unter Linux 
-und unter Windows führen die notwendigen Schritte auf Knopfdruck automatisch aus.
+und unter Windows fÃ¼hren die notwendigen Schritte auf Knopfdruck automatisch aus.
 
 Aus der nun korrekten .dvi-Datei wird eine PostScript-Datei (.ps) mit dem
 Befehl \texttt{dvips -t a4 Master-File} erzeugt. Der Parameter \texttt{-t}
-gibt die Papiergröße A4 an. Die Endung des Master-Files ist wieder
+gibt die PapiergrÃ¶ÃŸe A4 an. Die Endung des Master-Files ist wieder
 wegzulassen. Das Ergebnis kann unter Linux mit \texttt{gv} oder unter 
 Windows mit \texttt{ghostview} betrachtet werden.
 
-% Die tabular-Umgebung eignet sich nicht nur für Tabellen, sondern auch zum Anordnen anderer Textteile
+% Die tabular-Umgebung eignet sich nicht nur fÃ¼r Tabellen, sondern auch zum Anordnen anderer Textteile
 
-Für das Seminar ist die Befehlsfolge, die bei korrektem Quellcode immer zu
-einem PostScript führen sollte:
+FÃ¼r das Seminar ist die Befehlsfolge, die bei korrektem Quellcode immer zu
+einem PostScript fÃ¼hren sollte:
 {\tt
   \begin{center}
     \begin{tabular}[c]{ll}
@@ -135,74 +135,74 @@ einem PostScript führen sollte:
 \subsection{Tools}
 \label{sub:CStools}
 
-Die für Linux und Windows zur Verfügung stehenden Hilfsmittel unterscheiden
-sich, obwohl viele der Linux-üblichen Programme ebenso für Windows erhältlich sind. 
+Die fÃ¼r Linux und Windows zur VerfÃ¼gung stehenden Hilfsmittel unterscheiden
+sich, obwohl viele der Linux-Ã¼blichen Programme ebenso fÃ¼r Windows erhÃ¤ltlich sind. 
 LaTeX kommt aus der Unix-Welt und daher ist hier etwas leichter zu verwenden, 
-insbesondere sind die benötigten Programme bereits installiert. 
+insbesondere sind die benÃ¶tigten Programme bereits installiert. 
 Aber auch unter Windows sind alle Anwendungen, die zum Arbeiten mit LaTeX
-gebraucht werden, kostenlos verfügbar. Die jeweiligen Werkzeuge sind in 
-den nächsten Abschnitten kurz beschrieben.
+gebraucht werden, kostenlos verfÃ¼gbar. Die jeweiligen Werkzeuge sind in 
+den nÃ¤chsten Abschnitten kurz beschrieben.
 
 \subsubsection{Unter Linux}
 
-Die Programmepakete LaTeX, Emacs und dvips müssen installiert werden.
-Emacs bietet für praktisch alle unter Linux üblichen Dateiformate Syntax-Highlighting 
+Die Programmepakete LaTeX, Emacs und dvips mÃ¼ssen installiert werden.
+Emacs bietet fÃ¼r praktisch alle unter Linux Ã¼blichen Dateiformate Syntax-Highlighting 
 und besondere Makros, die das Programmieren vereinfachen.
-Dies trifft auch für .tex und .bib-Dateien zu. Die Kombination \texttt{Ctrl-C
-  Ctrl-E} erzeugt \zB\ beliebige LaTeX-Umgebungen. Für BiBTeX erscheint ein
-Menüpunkt, mit dem sich neue Einträge für das Literaturverzeichnis generieren
-lassen. PostScript-Dateien können mit den kostenlos in der Distribution
-enthaltenen Programmen ghostview und gv geöffnet werden.
-Grafiken können unter Linux mit xfig erstellt werden. 
+Dies trifft auch fÃ¼r .tex und .bib-Dateien zu. Die Kombination \texttt{Ctrl-C
+  Ctrl-E} erzeugt \zB\ beliebige LaTeX-Umgebungen. FÃ¼r BiBTeX erscheint ein
+MenÃ¼punkt, mit dem sich neue EintrÃ¤ge fÃ¼r das Literaturverzeichnis generieren
+lassen. PostScript-Dateien kÃ¶nnen mit den kostenlos in der Distribution
+enthaltenen Programmen ghostview und gv geÃ¶ffnet werden.
+Grafiken kÃ¶nnen unter Linux mit xfig erstellt werden. 
 
-% Beispiel für Web-Adresse
+% Beispiel fÃ¼r Web-Adresse
 
 \subsubsection{Unter Windows}
 
-Alle Routinen, die für die Verwendung von LaTeX nötig sind, werden unter
+Alle Routinen, die fÃ¼r die Verwendung von LaTeX nÃ¶tig sind, werden unter
 Windows im MikTeX-Paket geliefert (siehe
 \webaddress{http://www.mmi.rwth-aachen.de/Lehre/Seminare/Download}). Zur
 Eingabe des Quellcodes kann prinzipiell jeder Editor verwendet werden, 
-mit dem ASCII-Dateien geschrieben werden können. Empfehlenswert ist aber 
+mit dem ASCII-Dateien geschrieben werden kÃ¶nnen. Empfehlenswert ist aber 
 die Verwendung spezieller Entwicklungsumgebungen wie zum Beispiel TexnicCenter 
-(siehe Downloads), die die beschriebenen Abläufe automatisieren. Viewer,
+(siehe Downloads), die die beschriebenen AblÃ¤ufe automatisieren. Viewer,
 wie Yap (zur Anzeige von dvi-Formaten) oder GhostView (zur Anzeige von 
 PostScript-Dateien) werden getrennt installiert, stehen dann allerdings
-in die Entwicklungsumgebungen integriert zur Verfügung.
+in die Entwicklungsumgebungen integriert zur VerfÃ¼gung.
 
 \subsubsection{Grafiken in LaTeX-Dokumenten}
 
-Grundsätzlich sollen Grafiken für diese Ausarbetung als JPG/PNG/GIF eingefügt werden. Es vorteilhaft, die Bilder direkt auf die benötigte Größe zu bringen.
+GrundsÃ¤tzlich sollen Grafiken fÃ¼r diese Ausarbetung als JPG/PNG/GIF eingefÃ¼gt werden. Es vorteilhaft, die Bilder direkt auf die benÃ¶tigte GrÃ¶ÃŸe zu bringen.
 Maximale Breite ist die Textbreite von 13,7\,cm. Die maximale sinnvolle
-Auflösung für Biler ist 150\,dpi. Höhere Auflösungen gehen beim Kopiervorgang
-verloren. Die Bildgröße kann außerdem als Faktor zur textbreite angegeben werden.
+AuflÃ¶sung fÃ¼r Biler ist 150\,dpi. HÃ¶here AuflÃ¶sungen gehen beim Kopiervorgang
+verloren. Die BildgrÃ¶ÃŸe kann auÃŸerdem als Faktor zur textbreite angegeben werden.
 
 % Aha, ein Trick! Ich will einen Befehl in Schreibmaschinenschrift schreiben, 
-% aber es sind zuviele Sonderzeichen ( \ {} ) darin für \texttt.
-% Also nehme ich den  \verb (wie verbatim) Befehl. Zusätzlich nutze ich,
+% aber es sind zuviele Sonderzeichen ( \ {} ) darin fÃ¼r \texttt.
+% Also nehme ich den  \verb (wie verbatim) Befehl. ZusÃ¤tzlich nutze ich,
 % dass statt der geschweiften Klammern bei \verb im Prinzip ein beliebiges
 % Zeichen, das kein Buchstabe ist verwendet werden kann. Dieses darf logischer
-% Weise nicht innerhalb der "Klammer" vorkommen. Üblich sind + ! *  
+% Weise nicht innerhalb der "Klammer" vorkommen. Ãœblich sind + ! *  
 
-Das Einscannen von Bildern sollte soweit wie möglich vermieden werden. Zum
-einen ist die Qualität meist nicht gut und die Dateien sehr groß. Zum anderen
-ist das Verwenden von Teilen aus Büchern selten gestattet. Optimal ist eine 
+Das Einscannen von Bildern sollte soweit wie mÃ¶glich vermieden werden. Zum
+einen ist die QualitÃ¤t meist nicht gut und die Dateien sehr groÃŸ. Zum anderen
+ist das Verwenden von Teilen aus BÃ¼chern selten gestattet. Optimal ist eine 
 Nachahmung der Abbildung mit Verweis auf das Original: \verb+nach \cite{OriginalAutor}+. 
 Sollte dies nicht gehen, kann aus Artikeln das Bild oft mit Grafikprogrammen 
-extrahiert werden. Bei Scans sollte darauf geachtet werden, dass das Rauschen möglichst klein ist, 
-\ie\ ein weisser Hintergrund sollte keine schwarzen Pünktchen und durchscheinende Seiten enthalten.
+extrahiert werden. Bei Scans sollte darauf geachtet werden, dass das Rauschen mÃ¶glichst klein ist, 
+\ie\ ein weisser Hintergrund sollte keine schwarzen PÃ¼nktchen und durchscheinende Seiten enthalten.
 
 \subsection{Organisation der Dateien}
 
-% Beispiel für eine Aufzählung
+% Beispiel fÃ¼r eine AufzÃ¤hlung
 
-Um diesen Text texen zu können sind eine Reihe von Dateien nötig. Ihre
+Um diesen Text texen zu kÃ¶nnen sind eine Reihe von Dateien nÃ¶tig. Ihre
 Aufgaben sind im Folgenden kurz beschrieben:
 
 \begin{itemize}
 \item \texttt{frame.tex}\\
-  Dient als Ersatz für die Master-Datei des gesamten Seminarbandes. Der
-  Befehl \verb+\input{MyText}+ fügt dieses Dokument (MyText.tex) ein. \glqq
+  Dient als Ersatz fÃ¼r die Master-Datei des gesamten Seminarbandes. Der
+  Befehl \verb+\input{MyText}+ fÃ¼gt dieses Dokument (MyText.tex) ein. \glqq
   MyText\grqq\ ist durch den Namen der eigenen Datei zu ersetzen. Weiter unter
   wird mit dem Befehl \verb+\bibliography{MyBib}+ festgelegt, dass die
   Literaturhinweise in der Datei \glqq MyBib.bib\grqq\ stehen. Diese sollte
@@ -210,98 +210,98 @@ Aufgaben sind im Folgenden kurz beschrieben:
   
 \item \texttt{MyText.tex}\\
   Der Quelltext dieser Anleitung. Neben dieser Funktion dient die Datei auch
-  als Vorlage für die Seminararbeiten. Mit Hilfe der PostScript Version und
-  des Quellcodes können die Befehle um ein bestimmtes Layout zu erhalten
+  als Vorlage fÃ¼r die Seminararbeiten. Mit Hilfe der PostScript Version und
+  des Quellcodes kÃ¶nnen die Befehle um ein bestimmtes Layout zu erhalten
   leicht gefunden werden. Die eigene Arbeit soll den Namen
   \texttt{nachname.tex} haben (alles klein).
   
 \item \texttt{MyBib.bib}\\
-  Enthält die Literaturangaben zu diesem Text. Die Datei enthält weiterhin
-  Vorlagen für andere Typen von Literaturangaben für die Nicht-Emacs-User. Das
+  EnthÃ¤lt die Literaturangaben zu diesem Text. Die Datei enthÃ¤lt weiterhin
+  Vorlagen fÃ¼r andere Typen von Literaturangaben fÃ¼r die Nicht-Emacs-User. Das
   eigene Literaturverzeichnis soll den Namen \texttt{nachname.bib} haben
   (alles klein).
   
 \item \texttt{xxx.tex xxx.sty xxx.bst}\\
   In diesen Dateien werden Styles und Makros definiert, die Erweiterungen oder
-  Veränderungen von LaTeX darstellen. Sie dürfen auf keinen Fall verändert
+  VerÃ¤nderungen von LaTeX darstellen. Sie dÃ¼rfen auf keinen Fall verÃ¤ndert
   werden. 
   
 \end{itemize}
 
 Weiterhin ist sehr wichtig, dass alle Bilder als .jpg, .png oder .gif gespeichert sind und
 sich im Unterverzeichnis \texttt{bilder} relativ zu eurem Hauptfile befinden. 
-Wenn also euer \texttt{nachname.tex} in \texttt{home/username/seminar steht}, gehören
+Wenn also euer \texttt{nachname.tex} in \texttt{home/username/seminar steht}, gehÃ¶ren
 die Bilder in \texttt{home/username/seminar/bilder}. 
 
-\section{Sehr kurze Einführung in \LaTeX}
+\section{Sehr kurze EinfÃ¼hrung in \LaTeX}
 
 \label{sec:CSlatex}
 
-Für komplexere Aufgaben sind weitere Nachschlagewerke unverzichtbar. 
-Eine recht umfassende Beschreibung ist kostenlos erhältlich:
+FÃ¼r komplexere Aufgaben sind weitere Nachschlagewerke unverzichtbar. 
+Eine recht umfassende Beschreibung ist kostenlos erhÃ¤ltlich:
 \glqq\emph{The Not So Short Introduction to \LaTeX2e}\grqq \cite{oetiker},
-eine Einführung in Latex. Für schwierige Formeln ist das \AmS-\LaTeX-Package
+eine EinfÃ¼hrung in Latex. FÃ¼r schwierige Formeln ist das \AmS-\LaTeX-Package
 sehr zu empfehlen. Das \glqq\emph{\AmS-\LaTeX\ User's Guide} \cite{ams}
-beschreibt diese häufig verwendete Erweiterung zu LaTex. Die beiden Dokumente
-sind über die Seminar-Seite
+beschreibt diese hÃ¤ufig verwendete Erweiterung zu LaTex. Die beiden Dokumente
+sind Ã¼ber die Seminar-Seite
 (\webaddress{http://www.mmi.rwth-aachen.de/Lehre/Seminare/Download})
-verlinkt.  Weiterhin gibt es einige durchaus empfehlenswerte Bücher: 
+verlinkt.  Weiterhin gibt es einige durchaus empfehlenswerte BÃ¼cher: 
 \glqq\emph{\LaTeX: A Document Preparation System}\grqq, das Reference Manual \cite{latexManual} 
-und \glqq\emph{The \LaTeX\ Companion}\grqq \cite{latexCompanion}, Erklärungen zu verschiedenen
+und \glqq\emph{The \LaTeX\ Companion}\grqq \cite{latexCompanion}, ErklÃ¤rungen zu verschiedenen
 Zusatzpackages u.\,a.\ \AmS-\LaTeX. Ausserdem gibt es noch die drei Latex
-Bücher von Kopka, von denen nur das erste \glqq\emph{\LaTeX\ Einführung}\grqq
-\cite{kopka1} für den einfachen Anwender von LaTex nötig ist.
+BÃ¼cher von Kopka, von denen nur das erste \glqq\emph{\LaTeX\ EinfÃ¼hrung}\grqq
+\cite{kopka1} fÃ¼r den einfachen Anwender von LaTex nÃ¶tig ist.
 
-\subsection{Überschriften und Referenzen}
+\subsection{Ãœberschriften und Referenzen}
 
 \label{sub:CSheadlines}
 
-Wie in diesem Beispieldokument zu sehen ist, gibt es für Artikel drei
-Hierarchieebenen der Überschriften. Sie werden mit den Befehlen
+Wie in diesem Beispieldokument zu sehen ist, gibt es fÃ¼r Artikel drei
+Hierarchieebenen der Ãœberschriften. Sie werden mit den Befehlen
 \verb+\section{...}+, \verb+\subsection{...}+ und \verb+\subsubsection{...}+
-gesetzt. Dabei ist \texttt{...} durch die jeweilig Überschrift zu
+gesetzt. Dabei ist \texttt{...} durch die jeweilig Ãœberschrift zu
 ersetzen. Innerhalb jedes Blocks kann durch den Befehl \texttt{label} eine
-Marke für spätere Referenzierung gesetzt werden. In allen sochen Marken sollten
-wiederum (wie bei Bilddateien) am Anfang stehen. Für diesen Abschnitt ist im
+Marke fÃ¼r spÃ¤tere Referenzierung gesetzt werden. In allen sochen Marken sollten
+wiederum (wie bei Bilddateien) am Anfang stehen. FÃ¼r diesen Abschnitt ist im
 Quellcode der Befehl \verb+\label{sec:CSlatex}+ zu finden. Mit dem Befehl
 \verb+\ref{sec:CSlatex}+ wird die Abschnittsnummer dieses Abschnitts
-ausgegeben: 2. Für jede Überschriftenebene, sowie Formeln, Aufzählungspunkte,
-Definitionen usw.\ gibt es eigene Zähler, die entsprechen mit label gesetzt
-und mit ref wieder abgerufen werden können (s. Quelltext). Es zählt jeweils
+ausgegeben: 2. FÃ¼r jede Ãœberschriftenebene, sowie Formeln, AufzÃ¤hlungspunkte,
+Definitionen usw.\ gibt es eigene ZÃ¤hler, die entsprechen mit label gesetzt
+und mit ref wieder abgerufen werden kÃ¶nnen (s. Quelltext). Es zÃ¤hlt jeweils
 die unterste Stufe. Daher ist es sinnvoll, den label Befehl direkt nach einem
 einen neuen Block einleitenden Befehl zu verwenden.
 
-Absätze werden in LaTeX durch eine oder mehrere Leerzeilen erreicht. Alle
-überflüssigen Leerzeichen und -zeilen werden ignoriert. Befehle wie \verb+\\+
-(newline), \verb+\clearpage+ oder \verb+\newpage+ sind nur in Sonderfällen zu
+AbsÃ¤tze werden in LaTeX durch eine oder mehrere Leerzeilen erreicht. Alle
+Ã¼berflÃ¼ssigen Leerzeichen und -zeilen werden ignoriert. Befehle wie \verb+\\+
+(newline), \verb+\clearpage+ oder \verb+\newpage+ sind nur in SonderfÃ¤llen zu
 verwenden und in dieser Arbeit gar nicht.
 
 \subsection{Textformatierung}
 \label{sub:CSformat}
 
-LaTeX bietet einige Möglichkeiten, die Schriftart zu verändern. Diese sollten
+LaTeX bietet einige MÃ¶glichkeiten, die Schriftart zu verÃ¤ndern. Diese sollten
 sparsam eingesetzt werden, um die Lesbarkeit des Textes nicht zu
-beeinträchtigen. \emph{Wichtige} oder \emph{neue} Begriffe werden betont
+beeintrÃ¤chtigen. \emph{Wichtige} oder \emph{neue} Begriffe werden betont
 (engl. emphasize) mit dem Befehl \verb+\emph{...}+. Die
-Schreibmaschinenenschrift \verb+\texttt{...}+ wird für Befehle o\,ä.\ 
+Schreibmaschinenenschrift \verb+\texttt{...}+ wird fÃ¼r Befehle o\,Ã¤.\ 
 verwendet. Bei Befehlen, die LaTeX-Steuerzeichen enthalten empfiehlt sich der
 Befehl \verb \verb+...+ \ (vgl. Kommentar im Quellcode in Abschnitt
 \ref{sub:CStools}).
 
-\subsection{Aufzählungen}
+\subsection{AufzÃ¤hlungen}
 \label{sub:CSlists}
 
-LaTeX stellt im wesentlichen zwei Arten von Aufzählungen zur Verfügung:
+LaTeX stellt im wesentlichen zwei Arten von AufzÃ¤hlungen zur VerfÃ¼gung:
 nummerierte und unnummerierte. Es handelt sich dabei um so genannte Umgebungen
 (engl. environments), die immer von \verb+\begin{env}+ und \verb+\end{env}+
 umschlossen werden. Dabei ist \texttt{env} durch den Namen der jeweiligen
 Umgebung zu ersetzen. Wer Emacs verwendet kann mit \texttt{Ctrl-c Ctrl-e}
-leicht Environments erstellen. Eine spezifische Aufzählungsumgebung für
-Algorithmen wird in Abschnitt \ref{sub:CSmmiLists} erläutert. Es folgen
-zwei Beispiele zu den beiden Aufzählungsarten.
+leicht Environments erstellen. Eine spezifische AufzÃ¤hlungsumgebung fÃ¼r
+Algorithmen wird in Abschnitt \ref{sub:CSmmiLists} erlÃ¤utert. Es folgen
+zwei Beispiele zu den beiden AufzÃ¤hlungsarten.
 
 \subsubsection{Itemize-Umgebung}
-Dient der nicht nummerierten Aufzählung. Beispiel:
+Dient der nicht nummerierten AufzÃ¤hlung. Beispiel:
 \begin{itemize}
 \item Item1
 \item Item2
@@ -309,7 +309,7 @@ Dient der nicht nummerierten Aufzählung. Beispiel:
 \end{itemize}
 
 \subsubsection{Enumerate-Umgebung}
-Dient der nummerierten Aufzählung. Beispiel:
+Dient der nummerierten AufzÃ¤hlung. Beispiel:
 \begin{enumerate}
 \item Item1
 \item Item2
@@ -320,21 +320,21 @@ Dient der nummerierten Aufzählung. Beispiel:
   \item Item33
   \end{enumerate}
 \end{enumerate}
-Der \texttt{label}-Befehl funktioniert auch innerhalb von Aufzählungen 
+Der \texttt{label}-Befehl funktioniert auch innerhalb von AufzÃ¤hlungen 
 (siehe Quellcode): Punkt \ref{enum:CSsubenum} ist in mehrere Unterpunkte aufgeteilt.
 
 \subsection{Formel-Darstellung}
 \label{sub:CSmath}
 
-LaTex bietet zahlreiche komfortable Möglichkeiten, um Formeln darzustellen. 
-Da aber die Darstellung sehr komplexer Formeln ermöglicht wird, existieren entsprechend viele 
-Befehle zu ihrer Beschreibung. Zunächst muss man zwischen mathematischen
-Ausdrücken im Text, wie $\alpha\in\mathbb{R}$, und abgesetzten Formeln oder
-Ausdrücken entscheiden. Es folgen einige Beispiel aus anderen Texten, die
+LaTex bietet zahlreiche komfortable MÃ¶glichkeiten, um Formeln darzustellen. 
+Da aber die Darstellung sehr komplexer Formeln ermÃ¶glicht wird, existieren entsprechend viele 
+Befehle zu ihrer Beschreibung. ZunÃ¤chst muss man zwischen mathematischen
+AusdrÃ¼cken im Text, wie $\alpha\in\mathbb{R}$, und abgesetzten Formeln oder
+AusdrÃ¼cken entscheiden. Es folgen einige Beispiel aus anderen Texten, die
 unter Zuhilfenahme des Quellcodes den Umgang mit Formeln verdeutlichen
 sollten.
 
-Hier zunächst zwei einfache Formeln.
+Hier zunÃ¤chst zwei einfache Formeln.
 
 \begin{equation}
   h_i(z)=\frac{1}{\sqrt{2\pi}\sigma_i}\cdot e^{-\left(\frac{z^2}{2\sigma_i^2}\right)}
@@ -343,8 +343,8 @@ Hier zunächst zwei einfache Formeln.
 o_j=f_{\mathrm{sig}} \left( \sum_{i=1}^N c_{ij} h(||x-w_i||) \right)
 \end{equation}
 
-Mit \verb+\intertext{...}+ lässt sich Text innerhalb ausgerichteter
-Formelblöcke einfügen.
+Mit \verb+\intertext{...}+ lÃ¤sst sich Text innerhalb ausgerichteter
+FormelblÃ¶cke einfÃ¼gen.
 
 \begin{align}
     w_i(t+1) &= w_i(t)-\alpha(t)\left[x(t)-w_i(t)\right]\nonumber \\ 
@@ -374,25 +374,25 @@ Formelblöcke einfügen.
        \end{array} \right]
 \end{split}
 \end{equation}
-Auch Formeln können natürlich Label besitzen, \zB\: Die Modifikation der Gewichte
-beim LVQ3 Training \eqref{eq:CSlvq3} versteht ohne Erklärung keiner.
+Auch Formeln kÃ¶nnen natÃ¼rlich Label besitzen, \zB\: Die Modifikation der Gewichte
+beim LVQ3 Training \eqref{eq:CSlvq3} versteht ohne ErklÃ¤rung keiner.
 
 
 \section{Der mmiSeminar-Style}
 \label{sec:CSstyle}
 
-Der zunächst von Peter Dörfler für die Seminare am Lehrstuhl für Technische Informatik 
-erstellte Style wird mit dem Wintersemester 06/07 auch für die Seminare des Instituts 
-für Mensch-Maschine-Interaktion eingesetzt. Der Style bietet einige Makros, die das 
-Erstellen von LaTeX Dokumenten vereinfachen. Durch Ändern einiger Verhaltensweisen 
-von LaTeX wird es möglich, den Seminarband als ein TeX-Dokument zu behandeln. 
-Weiterhin sind darin einheitliche Formatierungen und das Layout für den Text definiert.
+Der zunÃ¤chst von Peter DÃ¶rfler fÃ¼r die Seminare am Lehrstuhl fÃ¼r Technische Informatik 
+erstellte Style wird mit dem Wintersemester 06/07 auch fÃ¼r die Seminare des Instituts 
+fÃ¼r Mensch-Maschine-Interaktion eingesetzt. Der Style bietet einige Makros, die das 
+Erstellen von LaTeX Dokumenten vereinfachen. Durch Ã„ndern einiger Verhaltensweisen 
+von LaTeX wird es mÃ¶glich, den Seminarband als ein TeX-Dokument zu behandeln. 
+Weiterhin sind darin einheitliche Formatierungen und das Layout fÃ¼r den Text definiert.
 
 \subsection{Die Titelseite}
 
 \label{sub:CStitle}
 
-Die Titelseite lässt sich recht schnell erstellen (siehe Quellcode). Es müssen
+Die Titelseite lÃ¤sst sich recht schnell erstellen (siehe Quellcode). Es mÃ¼ssen
 nur die folgenden Werte (eigentlich Makros) gesetzt werden:
 
 \begin{narrowitems}
@@ -400,34 +400,34 @@ nur die folgenden Werte (eigentlich Makros) gesetzt werden:
 \item Der Titel
 \item Die e-mail des Autors
 \item Zusammenfassung
-\item Schlüsselworte für den Inhalt
+\item SchlÃ¼sselworte fÃ¼r den Inhalt
 \end{narrowitems}
 Der Befehl \verb+\makeArticleTitle+ erstellt dann die Titelseite. 
 
 \subsection{Listen-Umgebungen im MMI-Style}
 \label{sub:CSmmiLists}
 
-\subsubsection{Aufzählungen}
-Zwei Arten von Aufzählungen sind hinzugekommen:
+\subsubsection{AufzÃ¤hlungen}
+Zwei Arten von AufzÃ¤hlungen sind hinzugekommen:
 \begin{narrowenum}
   \item \texttt{narrowenum}
   \item \texttt{narrowitems}
 \end{narrowenum}
 Die erste der beiden hat direkt hier Anwendung gefunden. Der andere
-Aufzählungstyp ist in Abschnitt \ref{sub:CStitle} zu sehen. Diese Umgebungen
-sind für Fälle gedacht, in denen die einzelnen Punkte sehr kurz sind. Die
-normalen Abstände wirken einfach zu groß, wenn pro Punkt nur zwei, drei
+AufzÃ¤hlungstyp ist in Abschnitt \ref{sub:CStitle} zu sehen. Diese Umgebungen
+sind fÃ¼r FÃ¤lle gedacht, in denen die einzelnen Punkte sehr kurz sind. Die
+normalen AbstÃ¤nde wirken einfach zu groÃŸ, wenn pro Punkt nur zwei, drei
 Worte stehen.
 
 \subsubsection{Algorithmus-Umgebung}
 
 Die \texttt{algorithm}-Umgebung dient dazu Algorithmen
 darzustellen. Sie funktioniert im Prinzip wie andere Listenumgebungen,
-hat aber ein etwas anderes Layout. Zusätzlich sind alle weiteren Stufen nach
-der ersten in die \texttt{subalgorithm}-Umgebung zu setzen. Üblicherweise wird
+hat aber ein etwas anderes Layout. ZusÃ¤tzlich sind alle weiteren Stufen nach
+der ersten in die \texttt{subalgorithm}-Umgebung zu setzen. Ãœblicherweise wird
 ein Algorithmus in eine \emph{floating}-Umgebung gesetzt. Das heisst, dass er
 nicht unbedingt an der Stelle erscheint, an der der Algorithmus im Text steht, 
-sondern eventuell in den nächsten freien Platz geschoben wird.
+sondern eventuell in den nÃ¤chsten freien Platz geschoben wird.
 
 \begin{figure}[htb]
   \begin{algorithm}
@@ -442,34 +442,34 @@ sondern eventuell in den nächsten freien Platz geschoben wird.
   \caption{Ein Beispiel-Algorithmus}
   \label{fig:CSalgo}
 \end{figure}
-Die \texttt{figure}-Umgebung (siehe Quellcode) ist für floating Bilder, mit der
+Die \texttt{figure}-Umgebung (siehe Quellcode) ist fÃ¼r floating Bilder, mit der
 Position als Parameter (\textbf{h}ere, \textbf{t}op, \textbf{b}ottom). Der
-Befehl \texttt{caption} legt die Bildunterschrift fest. Diese Umgebung gehört
+Befehl \texttt{caption} legt die Bildunterschrift fest. Diese Umgebung gehÃ¶rt
 zu Standard-Latex.
 
 \subsection{Bilder und Tabellen}
 \label{sub:CSfigtab}
 
-Sowohl für Tabellen als auch für Abbildungen gibt es im mmiSeminar-Style
+Sowohl fÃ¼r Tabellen als auch fÃ¼r Abbildungen gibt es im mmiSeminar-Style
 floating-Umgebungen, die einfacher in der Anwendung sind als die
 Standardumgebungen. 
 
 \subsubsection{Abbildungen}
 
-Abbildungen sollten im .jpg, .png oder .gif Format vorliegen und in der  \emph{figure}-Umgebung per \emph{includegraphics}-Befehl eingebunden werden. Die Bildgröße kann dabei auch relativ zur Textbreite angegeben werden, wie in Bild \ref{fig:Testbild} gezeigt.
+Abbildungen sollten im .jpg, .png oder .gif Format vorliegen und in der  \emph{figure}-Umgebung per \emph{includegraphics}-Befehl eingebunden werden. Die BildgrÃ¶ÃŸe kann dabei auch relativ zur Textbreite angegeben werden, wie in Bild \ref{fig:Testbild} gezeigt.
 
 \begin{figure}[htb]
  \centering \includegraphics[width=0.5\textwidth]{bilder/TestBild.png}
- \caption{Bildunterschrift für das Testbild. Sollte das Bild von einer anderen Quelle stammen wird hier auch mit cite darauf verwiesen.}
+ \caption{Bildunterschrift fÃ¼r das Testbild. Sollte das Bild von einer anderen Quelle stammen wird hier auch mit cite darauf verwiesen.}
  \label{fig:Testbild}
 \end{figure}
 
-Auch in Abbildungen sollte es natürlich möglich sein, allen Text ohne Probleme
+Auch in Abbildungen sollte es natÃ¼rlich mÃ¶glich sein, allen Text ohne Probleme
 zu lesen. Leider sieht man oft das Gegenteil.
 
 \subsubsection{Tabellen}
 
-Die Tabellen-Umgebung \texttt{vtable} ist so ähnlich aufbebaut wie die
+Die Tabellen-Umgebung \texttt{vtable} ist so Ã¤hnlich aufbebaut wie die
 \texttt{xxxpsfig} Befehle weiter oben. Die Parameter sind in Reihenfolge:
 \begin{narrowenum}
   \item Position
@@ -477,17 +477,17 @@ Die Tabellen-Umgebung \texttt{vtable} ist so ähnlich aufbebaut wie die
   \item Caption
   \item eigentliche Tabelle
 \end{narrowenum}
-Für die Labels gilt das gleich wie schon bei den Abbildungen. Der
+FÃ¼r die Labels gilt das gleich wie schon bei den Abbildungen. Der
 Referenzierungsbefehl ist \texttt{tref}.  Die eigentliche Tabelle ist am
-besten an einem Beispiel, Tabelle \tref{figs}, erklärt. Direkt nach dem Beginn
+besten an einem Beispiel, Tabelle \tref{figs}, erklÃ¤rt. Direkt nach dem Beginn
 der \texttt{tabular}-Umgebung folgt ein Format-String, der die Ausrichtung des
 Textes in den einzelnen Spalten festlegt. Die Optionen \texttt{l}, \texttt{r}
-und \texttt{c} stehen für links, rechts und mittig ausgerichtet. Mit
-\texttt{p\{Länge\}} kann man eine Spalte fester Breite deklarieren. Der
-senkrechte Strich erzeugt einen ebensolchen. Vom Layout gefälliger und auch
-lesbarer ist die Verwendung nur nötiger Linien. Die im Beispiel wäre \zB\ auch
-nicht nötig gewesen. Mit \texttt{multiline\{spalten\}\{ausrichtung\}\{text\}}
-kann man einen Text über mehrere Spalten ziehen und ausrichten wie angegeben.
+und \texttt{c} stehen fÃ¼r links, rechts und mittig ausgerichtet. Mit
+\texttt{p\{LÃ¤nge\}} kann man eine Spalte fester Breite deklarieren. Der
+senkrechte Strich erzeugt einen ebensolchen. Vom Layout gefÃ¤lliger und auch
+lesbarer ist die Verwendung nur nÃ¶tiger Linien. Die im Beispiel wÃ¤re \zB\ auch
+nicht nÃ¶tig gewesen. Mit \texttt{multiline\{spalten\}\{ausrichtung\}\{text\}}
+kann man einen Text Ã¼ber mehrere Spalten ziehen und ausrichten wie angegeben.
 Alles weitere steht in der angegebenen Literatur.
 
 \appendixOfArticle
@@ -497,14 +497,13 @@ Der Anhang wird durch den Befehl \texttt{appendixOfArticle} eingeleitet. Auf
 keinen Fall ist der Befehl \texttt{appendix} zu verwenden. 
 
 Im Anhang stehen solche Dinge, die nicht in den sonstigen Text passen. Lange
-Beweise und zusätzliche Beispiele oder Abbildungen gehören dazu. Im
-Allgemeinen sollte ein Anhang möglichst ganz vermieden werden.
+Beweise und zusÃ¤tzliche Beispiele oder Abbildungen gehÃ¶ren dazu. Im
+Allgemeinen sollte ein Anhang mÃ¶glichst ganz vermieden werden.
 
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "frame"
 %%% End: 
-
 
 
 

@@ -1,3 +1,46 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: D:\Temp\SeminarLatex\Seminar-MMI-LaTeX-Paket\seminar\frame.aux
+This is BibTeX, Version 0.99d (TeX Live 2025/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: frame.aux
 The style file: alpha.bst
 Database file #1: MyBib.bib
+You've used 6 entries,
+            2543 wiz_defined-function locations,
+            590 strings with 5130 characters,
+and the built_in function-call counts, 1838 in all, are:
+= -- 169
+> -- 81
+< -- 3
++ -- 30
+- -- 27
+* -- 116
+:= -- 316
+add.period$ -- 19
+call.type$ -- 6
+change.case$ -- 31
+chr.to.int$ -- 6
+cite$ -- 6
+duplicate$ -- 86
+empty$ -- 144
+format.name$ -- 35
+if$ -- 367
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 8
+newline$ -- 34
+num.names$ -- 15
+pop$ -- 43
+preamble$ -- 1
+purify$ -- 41
+quote$ -- 0
+skip$ -- 63
+stack$ -- 0
+substring$ -- 47
+swap$ -- 7
+text.length$ -- 3
+text.prefix$ -- 4
+top$ -- 0
+type$ -- 32
+warning$ -- 0
+while$ -- 12
+width$ -- 7
+write$ -- 78
