@@ -1,0 +1,24 @@
+\section{LLM-Driven Interaction Technologies}
+\label{sec:llmtech}
+
+A more interesting section for me as I work at Sagel AI regarding realtime telephony agents which can take agentic actions.
+I will give a general overview of the general Multimodal LLM Interaction Technologies.
+
+\subsection{Text-Based Interfaces, Planning, and Tool Use}
+This is plain text interfaces similar to Chat GPT or LLama or Deepseek.
+
+\subsection{Audio Pipelines: Speech-to-Text $\rightarrow$ LLM $\rightarrow$ Text-to-Speech}
+This is how speech to speech interfaces were being done a few years ago by translating input speech into text, feed it into LLM and then turn the resulting output into speech again.
+Its a solid approach, however quite slow. Easier to integrate with RAG though.
+
+\subsection{Speech-to-Speech LLMs}
+This is the state of the art regarding Speech to Speech man machine interactions ever since the launch of Open Ai Realtime models.
+works basically by taking input speech in divided chunks and feeding them into the model as they come. 
+The model starts outputting directly after the first few chunks of audio comes in, giving it a near realtime feel during conversation.
+Very fast, however cognitivly a lot dumber than the top of the line models such as GPT4o or GPT5.
+Quite hard to integrate with RAG but not impossible. There are a few papers I saw regarding this but never done it myself, currently working on this at work.
+
+\subsection{Vision-Language(-Action) Models}
+I have learned of this sort of model family not so long ago, and while looking for papers for this seminar I came across these again.
+Basically this model family can draw context from visual streams such as video feeds and take action.
+I need to read more on this to give better explanation but certainly very interesting in context of this seminar topic.
