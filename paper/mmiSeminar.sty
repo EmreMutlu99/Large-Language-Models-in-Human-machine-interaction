@@ -1,0 +1,571 @@
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mmiSeminar}
+
+
+\RequirePackage{ifthen}
+\RequirePackage{makeidx}
+\RequirePackage[english, ngerman]{babel}
+\RequirePackage{color}
+\RequirePackage{version}
+\RequirePackage{times}
+\RequirePackage{graphicx}
+
+%\RequirePackage{scrpage2} %obsolet -> replaced by scrlayer-scrpage which requires undefining test functions (previously defined in scrbase.sty)
+\let\test@number\undefined
+\let\test@posdimen\undefined
+\let\test@dimunt\undefined
+\let\test@tueunt\undefined
+\let\test@@ifdimunt\undefined
+\let\test@dimen\undefined
+\let\test@trueunt\undefined
+%\RequirePackage{scrlfile}
+\RequirePackage{scrlayer-scrpage}
+
+% Für Labels im Inhaltsverzeichnis
+
+\newcommand{\currentchapter}{}
+
+\ExecuteOptions{final}
+\ProcessOptions
+
+
+
+
+% Zu Beginn eines Absatzes nicht einruecken
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{\smallskipamount}
+% plus 1pt            % Extra vertical space between
+                                   % paragraphs.
+
+% Seitenformat
+%\setlength{\oddsidemargin}{0.25cm}
+%\setlength{\evensidemargin}{-0.25cm}
+%\setlength{\textwidth}{16cm}
+%\setlength{\topmargin}{-1cm}
+%\setlength{\textheight}{24cm}
+
+% Vermeiden von underfull boxes 
+
+\sloppy
+\hbadness10000
+
+% Einheit fuer picture-Umgebungen
+\setlength{\unitlength}{1cm}
+
+% Definition des Zeichens fuer natuerliche bzw. reelle Zahlen
+
+\def\real{\hbox{I\hspace{-2pt}R}}
+\def\integer{\hbox{I\hspace{-2pt}N}}
+\def\Bool{\hbox{I\hspace{-2pt}B}}
+
+% Quoted stuff
+\newcommand{\quot}[1]{\glqq{}#1\grqq{}}
+
+% Nützliche Akkürzungen
+\newcommand{\zB}{z.\,B.}
+\newcommand{\ie}{d.\,h.}
+
+\newcommand{\kommentar}[1]{%
+
+\begin{center}
+\framebox[12.5cm]{\parbox{12cm}{#1}}
+\end{center}}
+
+% Makros für Sachen, die noch zu tun sind
+% todo-Makro + Zubehör (aus AI-Praktikum-Style)
+\newcommand{\leftmarginlabel}{%
+  \makebox[\marginparwidth]{%
+    \hfill\raisebox{-\todoboxraise}{\rule{1em}{\todoboxheight}}}}
+\newcommand{\rightmarginlabel}[1]{%
+  \makebox[\marginparwidth]{%
+    \raisebox{-\todoboxraise}{\rule{1em}{\todoboxheight}}\hfill}}
+
+\newlength{\todoboxraise}
+\newlength{\todoboxheight}
+\newcommand{\todotext}[1]{}
+
+\newcommand{\todo}[1]{%
+     \renewcommand{\todotext}{\fbox{\texttt{#1}}}
+     \settodepth{\todoboxraise}{\todotext}
+     \settoheight{\todoboxheight}{\todotext}
+     \addtolength{\todoboxheight}{\todoboxraise}
+     \todotext
+     \marginpar[\leftmarginlabel]{\rightmarginlabel}\typeout{TODO: #1}}
+
+% Bilder
+\renewcommand{\bottomfraction}{0.9}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\textfraction}{0.1}
+
+\setcounter{bottomnumber}{3}
+
+\newcommand{\@vfig}[4]{%
+  \begin{figure}[#1]
+    \begin{center}
+      \includegraphics[#2]{bilder/#3.eps}
+      \caption{#4}\label{f:\currentchapter:#3}
+    \end{center}
+  \end{figure}}
+
+\newcommand{\lpsfig}[3]{\@vfig{#1}{scale=1.0}{#2}{#3}}
+\newcommand{\lwpsfig}[4]{\@vfig{#1}{width=#2}{#3}{#4}}
+\newcommand{\lhpsfig}[4]{\@vfig{#1}{height=#2}{#3}{#4}}
+\newcommand{\lspsfig}[4]{\@vfig{#1}{scale=#2}{#3}{#4}}
+\newcommand{\lfwpsfig}[3]{\@vfig{#1}{width=\linewidth}{#2}{#3}}
+\newcommand{\fref}[1]{\ref{f:\currentchapter:#1}}
+
+% Tabellen
+\newcommand{\vtable}[4]{%
+  \begin{table}[#1]
+    \begin{center}
+    \caption{#3}\label{t:\currentchapter:#2}
+    \par\medskip
+    #4
+    \end{center}
+  \end{table}}
+\newcommand{\tref}[1]{\ref{t:\currentchapter:#1}}
+
+% neue Definitionslisten
+\newcommand{\typesetlabel}[1]{#1}
+\newlength{\timelinewidth}
+
+\newcommand{\entrylabel}[1]{\mbox{\typesetlabel{#1}}\hfil}
+\newenvironment{entry}
+  {\begin{list}{}%
+    {\renewcommand{\makelabel}{\entrylabel}%
+     \setlength{\labelwidth}{\timelinewidth}%
+     \setlength{\leftmargin}{\labelwidth}%
+     \addtolength{\leftmargin}{\labelsep}%
+     \addtolength{\itemsep}{5pt}
+    }%
+  }%
+  {\end{list}}
+
+\newlength{\mylabellen}
+\newlength{\remainlabellen}
+\newcommand{\Lentrylabel}[1]{%
+  \settowidth{\mylabellen}{\typesetlabel{#1}}%
+  \setlength{\remainlabellen}{\textwidth}%
+  \addtolength{\remainlabellen}{-\mylabellen}%
+  \ifthenelse{\lengthtest{\mylabellen > \labelwidth}}%
+    {\parbox[b]{\labelwidth}%
+      {\makebox[0pt][l]{\typesetlabel{#1}}\\ 
+       \makebox[0pt][l]{\hspace*{\labelwidth}}}}%
+    {\typesetlabel{#1}\hfil}%
+  \hfil\relax}
+
+\newenvironment{timeline}[1]
+  {\settowidth{\timelinewidth}{#1}%
+    \renewcommand{\entrylabel}{\Lentrylabel}\begin{entry}}
+  {\end{entry}}
+
+% itemize-Umgebung mit engem Abstand zwischen Items
+\newenvironment{narrowitems}[1][0pt]{%
+  \begin{itemize}%
+  \vskip #1\nobreak
+  \setlength{\itemsep}{-\parsep}%
+  %\setlength{\topsep}{-\parsep}
+}{%
+\end{itemize}%
+}
+\newenvironment{narrowenum}[1][0pt]{%
+  \begin{enumerate}%
+  \vskip #1\nobreak
+  \setlength{\itemsep}{-\parsep}%
+  %\setlength{\topsep}{-\parsep}
+}{%
+\end{enumerate}%
+}
+
+
+% Neue Sectioning-Befehle, die gleich labels mitdefinieren
+
+\setcounter{tocdepth}{0}
+
+\renewcommand*\thefigure{\@arabic\c@figure}
+\renewcommand*\thetable{\@arabic\c@table}
+\renewcommand*\theequation{\@arabic\c@equation}
+
+%wieder löschen!!!
+%\let\cleardoublepage\clearpage
+
+\def\@makeschapterhead#1{\chapterheadstartvskip%
+  {\parindent \z@ \raggedsection
+    \normalfont
+    \size@chapter\sc\center #1\par
+    \nobreak\chapterheadendvskip
+  }}
+
+
+\def\@mysstartsection#1#2#3#4#5#6{%
+  \if@noskipsec \leavevmode \fi
+  \par
+  \@tempskipa #4\relax
+  \@afterindenttrue
+  \ifdim \@tempskipa <\z@
+    \@tempskipa -\@tempskipa \@afterindentfalse
+  \fi
+  \if@nobreak
+    \everypar{}%
+  \else
+    \addpenalty\@secpenalty\addvspace\@tempskipa
+  \fi
+  \@ssect{#3}{#4}{#5}{#6}}
+
+\newcommand\myssection[1]{%
+  \@mysstartsection{section}{1}{\z@}%
+  {-3.5ex \@plus -1ex \@minus -.2ex}%
+  {2.3ex \@plus.2ex}%
+  {\raggedsection\normalfont\size@section\sectfont}%
+  {#1 \hrulefill}%
+  \markboth{\V@author}{\V@title}}
+
+\renewcommand*\bib@heading{%
+  \myssection{\bibname}}
+
+
+\newcommand*\appendixOfArticle{\par\global\@altsecnumformattrue
+  \setcounter{section}{0}%
+  \renewcommand*\thesection{\@Alph\c@section}  
+  \markboth{\V@author}{\V@title}}
+
+% \renewcommand\chapter{\renewcommand*\thesection{\@arabic\c@section}%
+%   \if@openright\cleardoublepage\else\clearpage\fi
+%   \thispagestyle{plain}%
+%   \global\@topnum\z@
+%   \@afterindentfalse
+%   \secdef\@chapter\@schapter}
+% \renewcommand\addchap{\renewcommand*\thesection{\@arabic\c@section}%
+%   \if@openright\cleardoublepage\else\clearpage\fi
+%   \thispagestyle{plain}%
+%   \global\@topnum\z@
+%   \@afterindentfalse
+%   \secdef\@addchap\@saddchap}
+
+
+\newcommand*{\V@keywords}{}
+\newcommand*{\Vkeywords}[1]{\gdef\V@keywords{#1}}
+
+\newcommand*{\V@abstract}{}
+\newcommand*{\Vabstract}[1]{\gdef\V@abstract{#1}}
+
+\newcommand*{\newParagraph}{\\[\parskip]}
+
+\newcommand*{\V@address}{}
+\newcommand*{\Vaddress}[1]{\gdef\V@address{#1}}
+
+\newcommand*{\V@title}{}
+\newcommand*{\V@shortTitle}{}
+\def\Vtitle{%
+  \@ifnextchar[{\Vtwo@titles}{\Vone@title}}
+\def\Vtwo@titles[#1]#2{%
+  \gdef\V@title{#2}%
+  \gdef\V@shortTitle{#1}}
+\def\Vone@title#1{%
+  \gdef\V@title{#1}%
+  \gdef\V@shortTitle{#1}}
+
+\newcommand*{\V@date}{}
+\newcommand*{\Vdate}[1]{\gdef\V@date{#1}}
+
+\newcommand*{\V@author}{}
+\newcommand*{\Vauthor}[1]{\gdef\V@author{#1}}
+
+\newcommand{\makeArticleTitle}{
+  \addchap[\V@shortTitle\\\textit{\V@author}]{\V@title}
+%  \markboth{\V@author}{\V@title}
+  \renewcommand*{\leftmark}{\V@author}
+  \renewcommand*{\rightmark}{\V@shortTitle}
+  \thispagestyle{empty}
+  \begin{center}
+    \LARGE{\V@author}\\
+    \vspace{0.5em}
+    \large{\V@address}\\
+    \vspace{3em}
+  \end{center}
+  \begin{quote}
+    \rule{\linewidth}{0.75pt}
+    {\bf Abstract}\\[2\parskip]
+    \V@abstract\\[2em]
+    {\sl Keywords: }\V@keywords\\%
+    \rule{\linewidth}{0.75pt}
+  \end{quote}%
+  \setcounter{section}{0}%
+  \setcounter{figure}{0}%
+  \setcounter{table}{0}%
+  \setcounter{equation}{0}%
+  \setcounter{footnote}{0}%
+  \renewcommand*\thesection{\@arabic\c@section}
+  \clearpage
+}
+
+\renewcommand*\thesection{\@arabic\c@section}
+
+\renewcommand\section[2][none]{%
+  \@startsection{section}{1}{\z@}%
+  {-3.5ex \@plus -1ex \@minus -.2ex}%
+  {2.3ex \@plus.2ex}%
+  {\raggedsection\normalfont\size@section\sectfont}%
+  [#1]{#2 \hrulefill}%
+  \markboth{\V@author}{\V@title}}
+
+
+\newcommand{\labchapter}[2][none]{
+  \chapter[\protect\makeaisectoc{ch}{#1}{#2}]{#2}
+  \ifthenelse{\equal{#1}{none}}{}{\label{ch:#1}}%
+  \renewcommand{\currentchapter}{#1}
+}
+\newcommand{\chref}[1]{\ref{ch:#1}}
+
+\newcommand{\labsection}[2][none]{
+  \section[\protect\makeaisectoc{s:\currentchapter}{#1}{#2}]{#2\rule[0.7ex]{\stretch{10}}{0.5pt}}%
+  \ifthenelse{\equal{#1}{none}}{}{\label{s:\currentchapter:#1}}%
+}
+\newcommand{\sref}[2][\currentchapter]{\ref{s:#1:#2}}
+
+\newcommand{\labsubsection}[2][none]{
+  \subsection[\protect\makeaisectoc{ss:\currentchapter}{#1}{#2}]{#2}%
+  \ifthenelse{\equal{#1}{none}}{}{\label{ss:\currentchapter:#1}}%
+}
+\newcommand{\ssref}[2][\currentchapter]{\ref{ss:#1:#2}}
+
+
+% Sachen aus report.sty umdefinieren
+% \renewcommand\tableofcontents{%
+%     \if@twocolumn
+%       \@restonecoltrue\onecolumn
+%     \else
+%       \@restonecolfalse
+%     \fi
+%     \chapter*{\contentsname
+%         \@mkboth{%
+%            \contentsname}{\contentsname}}%
+%     \@starttoc{toc}%
+%     \if@restonecol\twocolumn\fi
+%     }
+
+%\renewcommand{\chapter}[1]{\message{chapter command not allowed in vision style}}
+
+
+% \renewenvironment{thebibliography}[2][0pt]
+%      {\vspace*{-#1}\@makeschapterhead{\bibname}%
+%         \@mkboth{\bibname}{\bibname}%
+%       \addcontentsline{toc}{chapter}{%
+%         \protect\numberline{}{\bibname}}
+%       \vspace*{-1cm}
+%       \thispagestyle{aiSkriptPlain}%
+%       \list{\@biblabel{\@arabic\c@enumiv}}%
+%            {\settowidth\labelwidth{\@biblabel{#2}}%
+%             \leftmargin\labelwidth
+%             \advance\leftmargin\labelsep
+%             \@openbib@code
+%             \usecounter{enumiv}%
+%             \let\p@enumiv\@empty
+%             \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+%       \sloppy
+%       \clubpenalty4000
+%       \@clubpenalty \clubpenalty
+%       \widowpenalty4000%
+%       \sfcode`\.\@m}
+%      {\def\@noitemerr
+%        {\@latex@warning{Empty `thebibliography' environment}}%
+%       \endlist}
+
+\renewenvironment{theindex}
+               {\if@twocolumn
+                  \@restonecolfalse
+                \else
+                  \@restonecoltrue
+                \fi
+                \columnseprule \z@
+                \columnsep 35\p@
+                \twocolumn[\@makeschapterhead{\indexname}]%
+                \@mkboth{\indexname}%
+                        {\indexname}%
+                \addcontentsline{toc}{chapter}{%
+                  \protect\numberline{}{\indexname}}
+                \thispagestyle{aiSkriptPlain}\parindent\z@
+                \parskip\z@ \@plus .3\p@\relax
+                \let\item\@idxitem}
+               {\if@restonecol\onecolumn\else\clearpage\fi}
+
+
+
+
+\newtheorem{definition}{Definition}
+
+\newtheorem{theorem}{Satz}
+
+\newtheorem{axiom}{Axiom}
+
+\newtheorem{lemma}{Lemma}
+
+\newtheorem{proof}{Beweis}
+
+\newenvironment{algorithm}{\begin{center}\begin{minipage}{0.75\textwidth}%
+    \vskip -0.5\baselineskip\nobreak%
+    \rule[-\baselineskip]{\linewidth}{0.5pt}%
+    \vskip -0.5\baselineskip\nobreak%
+    \begin{enumerate}%
+      \tt\footnotesize}%
+    {\end{enumerate}\vskip -0.25\baselineskip\nobreak\rule[\baselineskip]{\linewidth}{0.5pt}\vskip -0.75\baselineskip\nobreak\end{minipage}\end{center}}
+
+\newenvironment{subalgorithm}{\begin{enumerate}%
+    }{\end{enumerate}}
+
+\newcommand{\webaddress}[1]{\textsf{\underline{#1}}}
+
+%%% Seminar titlepage
+
+\newcommand{\mmilogofile}{logos/mmi-logo-bw.eps}
+
+\newcommand{\myhuge}{\fontsize{32}{36}\selectfont}
+\newcommand{\mylarge}{\fontsize{28}{32}\selectfont}
+\newcommand{\mysmall}{\fontsize{9}{13}\selectfont}
+
+% Lehrstuhlkopf definieren
+\newcommand{\rwthname}{%
+  \makebox{\textsc{\mysmall{}Rheinisch-Westf\"alische Technische Hochschule Aachen}}}
+\newcommand{\mminame}{\large\textsc{\mbox{Institut f\"ur Mensch-Maschine-Interaktion}}}
+\newcommand{\rossmannname}{%
+  {\upshape\mysmall Prof.\ Dr.-Ing.\ J\"urgen Ro\ss mann}}
+
+\newlength{\rwthlength}
+\settowidth{\rwthlength}{\rwthname}
+%\addtolength{\rwthlength}{-2mm}
+
+% Pagestyle der Titelseite
+
+\deftripstyle{axtitle}[0pt][0pt]{}
+																{	
+															  	\hskip -0.0cm \raisebox{0.0cm}{\parbox{\rwthlength}{%
+															    	\setlength{\baselineskip}{1em}
+														    	\begin{center}
+																	  \includegraphics[width=1.25cm]{\mmilogofile}\\
+														    		\rwthname\\
+														    		\mminame\\
+														    		\rossmannname
+															    \end{center}}}
+																}
+																{}
+																{}{}{}
+
+% redefine maketitle
+
+
+\def\place#1{\gdef\@place{#1}}
+\def\@place{\@latex@warning@no@line{No \noexpand\place given}}
+
+
+\renewcommand*\maketitle[1][1]{\begin{titlepage}%
+    \setcounter{page}{#1}
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \let\footnote\thanks
+    \thispagestyle{axtitle}
+%%     \renewcommand*\thefootnote{\@fnsymbol\c@footnote}%
+%%     \let\@oldmakefnmark\@makefnmark
+%%     \def\@makefnmark{\rlap\@oldmakefnmark}
+%%     \ifx\@extratitle\@empty \else
+%%         \noindent\@extratitle\next@tpage\cleardoublepage\thispagestyle{empty}
+%%     \fi
+%%     \ifx\@titlehead\@empty \else
+%%         \noindent\begin{minipage}[t]{\textwidth}
+%%         \@titlehead
+%%         \end{minipage}\par
+%%     \fi
+%     \null\vfill
+    \null\vskip 10em
+    \begin{center}
+      \ifx\@subject\@empty \else
+      {\Large \@subject \par}
+      \vskip 3em
+    \fi
+    {\Huge Seminarreihe am\par Institut f\"ur Mensch-Maschine-Interaktion\par}
+    \vskip 7em
+    {\Large \lineskip 0.75em
+    \begin{tabular}[t]{c}
+        {\sc\myhuge \@title}\\
+%        \vspace{3em}\\
+%        {\sc\huge Teil 2}
+    \end{tabular}\par}
+    \vfill
+%    \vskip \z@ \@plus3fill
+    {\Large \@date \par}
+    \vskip 1.5em
+    {\Large \@place \par}
+%    \vskip 3em
+    \end{center}\par
+%    \@thanks
+%    \vfill\null
+    \if@twoside\next@tpage
+        \noindent\begin{minipage}[t]{\textwidth}
+        \@uppertitleback
+        \end{minipage}\par
+        \vfill
+        \noindent\begin{minipage}[b]{\textwidth}
+        \@lowertitleback
+        \end{minipage}
+    \fi
+    \ifx\@dedication\@empty \else
+        \next@tpage\null\vfill
+        {\centering \Large \@dedication \par}
+        \vskip \z@ \@plus3fill
+        \if@twoside \next@tpage\clearpage \fi
+    \fi
+    \end{titlepage}
+    \setcounter{footnote}{0}%
+    \global\let\thanks\relax
+    \global\let\maketitle\relax
+    \global\let\@thanks\@empty
+    \global\let\@author\@empty
+    \global\let\@date\@empty
+    \global\let\@title\@empty
+    \global\let\@extratitle\@empty
+    \global\let\@titlehead\@empty
+    \global\let\@subject\@empty
+    \global\let\@publishers\@empty
+    \global\let\@uppertitleback\@empty
+    \global\let\@lowertitleback\@empty
+    \global\let\@dedication\@empty
+    \global\let\author\relax
+    \global\let\title\relax
+    \global\let\extratitle\relax
+    \global\let\titlehead\relax
+    \global\let\subject\relax
+    \global\let\publishers\relax
+    \global\let\uppertitleback\relax
+    \global\let\lowertitleback\relax
+    \global\let\dedication\relax
+    \global\let\date\relax
+    \global\let\and\relax}
+
+\endinput
+
+\newenvironment{narrowitems}[1][0pt]{%
+  \begin{itemize}%
+  \vskip #1\nobreak
+  \setlength{\itemsep}{-\parsep}%
+  %\setlength{\topsep}{-\parsep}
+}{%
+\end{itemize}%
+\vskip-2\parskip}
+
+\newenvironment{narrowenum}[1][0pt]{%
+  \begin{enumerate}%
+  \vskip #1\nobreak
+  \setlength{\itemsep}{-\parsep}%
+  %\setlength{\topsep}{-\parsep}
+}{%
+\end{enumerate}%
+}
+
+
+
+
+
+
+
+
+
