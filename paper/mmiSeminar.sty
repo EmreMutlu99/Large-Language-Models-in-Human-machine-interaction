@@ -302,12 +302,18 @@
 
 \renewcommand*\thesection{\@arabic\c@section}
 
+\newcommand{\mmi@sectionshort}[2]{%
+  \def\mmi@short{#1}%
+  \ifthenelse{\equal{#1}{none}}{\def\mmi@short{#2}}{}%
+}
+
 \renewcommand\section[2][none]{%
+  \mmi@sectionshort{#1}{#2}%
   \@startsection{section}{1}{\z@}%
   {-3.5ex \@plus -1ex \@minus -.2ex}%
   {2.3ex \@plus.2ex}%
   {\raggedsection\normalfont\size@section\sectfont}%
-  [#1]{#2 \hrulefill}%
+  [\mmi@short]{#2 \hrulefill}%
   \markboth{\V@author}{\V@title}}
 
 
@@ -560,7 +566,6 @@
 }{%
 \end{enumerate}%
 }
-
 
 
 

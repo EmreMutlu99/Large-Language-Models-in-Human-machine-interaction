@@ -7,12 +7,16 @@
 \usepackage[hyphens]{url}
 \usepackage{subfig}
 
+\makeatletter
+\@openrightfalse
+\makeatother
 
 
 \begin{document}
 
-% Front matter and individual sections
+% Front matter, table of contents, and individual sections
 \input{sections/00_frontmatter/frontmatter}
+\input{sections/00_table_of_contents/contents}
 \input{sections/01_einfuhrung/section}
 \input{sections/02_sehr_kurze_einfuhrung_in_latex/section}
 \input{sections/03_der_mmiseminar_style/section}
