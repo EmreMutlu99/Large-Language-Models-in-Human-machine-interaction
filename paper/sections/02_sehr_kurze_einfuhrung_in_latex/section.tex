@@ -1,0 +1,145 @@
+\section{Sehr kurze Einführung in \LaTeX}
+
+\label{sec:CSlatex}
+
+Für komplexere Aufgaben sind weitere Nachschlagewerke unverzichtbar. 
+Eine recht umfassende Beschreibung ist kostenlos erhältlich:
+\glqq\emph{The Not So Short Introduction to \LaTeX2e}\grqq \cite{oetiker},
+eine Einführung in Latex. Für schwierige Formeln ist das \AmS-\LaTeX-Package
+sehr zu empfehlen. Das \glqq\emph{\AmS-\LaTeX\ User's Guide} \cite{ams}
+beschreibt diese häufig verwendete Erweiterung zu LaTex. Die beiden Dokumente
+sind über die Seminar-Seite
+(\webaddress{http://www.mmi.rwth-aachen.de/Lehre/Seminare/Download})
+verlinkt.  Weiterhin gibt es einige durchaus empfehlenswerte Bücher: 
+\glqq\emph{\LaTeX: A Document Preparation System}\grqq, das Reference Manual \cite{latexManual} 
+und \glqq\emph{The \LaTeX\ Companion}\grqq \cite{latexCompanion}, Erklärungen zu verschiedenen
+Zusatzpackages u.\,a.\ \AmS-\LaTeX. Ausserdem gibt es noch die drei Latex
+Bücher von Kopka, von denen nur das erste \glqq\emph{\LaTeX\ Einführung}\grqq
+\cite{kopka1} für den einfachen Anwender von LaTex nötig ist.
+
+\subsection{Überschriften und Referenzen}
+
+\label{sub:CSheadlines}
+
+Wie in diesem Beispieldokument zu sehen ist, gibt es für Artikel drei
+Hierarchieebenen der Überschriften. Sie werden mit den Befehlen
+\verb+\section{...}+, \verb+\subsection{...}+ und \verb+\subsubsection{...}+
+gesetzt. Dabei ist \texttt{...} durch die jeweilig Überschrift zu
+ersetzen. Innerhalb jedes Blocks kann durch den Befehl \texttt{label} eine
+Marke für spätere Referenzierung gesetzt werden. In allen sochen Marken sollten
+wiederum (wie bei Bilddateien) am Anfang stehen. Für diesen Abschnitt ist im
+Quellcode der Befehl \verb+\label{sec:CSlatex}+ zu finden. Mit dem Befehl
+\verb+\ref{sec:CSlatex}+ wird die Abschnittsnummer dieses Abschnitts
+ausgegeben: 2. Für jede Überschriftenebene, sowie Formeln, Aufzählungspunkte,
+Definitionen usw.\ gibt es eigene Zähler, die entsprechen mit label gesetzt
+und mit ref wieder abgerufen werden können (s. Quelltext). Es zählt jeweils
+die unterste Stufe. Daher ist es sinnvoll, den label Befehl direkt nach einem
+einen neuen Block einleitenden Befehl zu verwenden.
+
+Absätze werden in LaTeX durch eine oder mehrere Leerzeilen erreicht. Alle
+überflüssigen Leerzeichen und -zeilen werden ignoriert. Befehle wie \verb+\\+
+(newline), \verb+\clearpage+ oder \verb+\newpage+ sind nur in Sonderfällen zu
+verwenden und in dieser Arbeit gar nicht.
+
+\subsection{Textformatierung}
+\label{sub:CSformat}
+
+LaTeX bietet einige Möglichkeiten, die Schriftart zu verändern. Diese sollten
+sparsam eingesetzt werden, um die Lesbarkeit des Textes nicht zu
+beeinträchtigen. \emph{Wichtige} oder \emph{neue} Begriffe werden betont
+(engl. emphasize) mit dem Befehl \verb+\emph{...}+. Die
+Schreibmaschinenenschrift \verb+\texttt{...}+ wird für Befehle o\,ä.\ 
+verwendet. Bei Befehlen, die LaTeX-Steuerzeichen enthalten empfiehlt sich der
+Befehl \verb \verb+...+ \ (vgl. Kommentar im Quellcode in Abschnitt
+\ref{sub:CStools}).
+
+\subsection{Aufzählungen}
+\label{sub:CSlists}
+
+LaTeX stellt im wesentlichen zwei Arten von Aufzählungen zur Verfügung:
+nummerierte und unnummerierte. Es handelt sich dabei um so genannte Umgebungen
+(engl. environments), die immer von \verb+\begin{env}+ und \verb+\end{env}+
+umschlossen werden. Dabei ist \texttt{env} durch den Namen der jeweiligen
+Umgebung zu ersetzen. Wer Emacs verwendet kann mit \texttt{Ctrl-c Ctrl-e}
+leicht Environments erstellen. Eine spezifische Aufzählungsumgebung für
+Algorithmen wird in Abschnitt \ref{sub:CSmmiLists} erläutert. Es folgen
+zwei Beispiele zu den beiden Aufzählungsarten.
+
+\subsubsection{Itemize-Umgebung}
+Dient der nicht nummerierten Aufzählung. Beispiel:
+\begin{itemize}
+\item Item1
+\item Item2
+\item Item3
+\end{itemize}
+
+\subsubsection{Enumerate-Umgebung}
+Dient der nummerierten Aufzählung. Beispiel:
+\begin{enumerate}
+\item Item1
+\item Item2
+\item Item3 \label{enum:CSsubenum}
+  \begin{enumerate}
+  \item Item31
+  \item Item32
+  \item Item33
+  \end{enumerate}
+\end{enumerate}
+Der \texttt{label}-Befehl funktioniert auch innerhalb von Aufzählungen 
+(siehe Quellcode): Punkt \ref{enum:CSsubenum} ist in mehrere Unterpunkte aufgeteilt.
+
+\subsection{Formel-Darstellung}
+\label{sub:CSmath}
+
+LaTex bietet zahlreiche komfortable Möglichkeiten, um Formeln darzustellen. 
+Da aber die Darstellung sehr komplexer Formeln ermöglicht wird, existieren entsprechend viele 
+Befehle zu ihrer Beschreibung. Zunächst muss man zwischen mathematischen
+Ausdrücken im Text, wie $\alpha\in\mathbb{R}$, und abgesetzten Formeln oder
+Ausdrücken entscheiden. Es folgen einige Beispiel aus anderen Texten, die
+unter Zuhilfenahme des Quellcodes den Umgang mit Formeln verdeutlichen
+sollten.
+
+Hier zunächst zwei einfache Formeln.
+
+\begin{equation}
+  h_i(z)=\frac{1}{\sqrt{2\pi}\sigma_i}\cdot e^{-\left(\frac{z^2}{2\sigma_i^2}\right)}
+\end{equation}
+\begin{equation}
+o_j=f_{\mathrm{sig}} \left( \sum_{i=1}^N c_{ij} h(||x-w_i||) \right)
+\end{equation}
+
+Mit \verb+\intertext{...}+ lässt sich Text innerhalb ausgerichteter
+Formelblöcke einfügen.
+
+\begin{align}
+    w_i(t+1) &= w_i(t)-\alpha(t)\left[x(t)-w_i(t)\right]\nonumber \\ 
+    w_j(t+1) &= w_j(t)+\alpha(t)\left[x(t)-w_j(t)\right]
+  \label{eq:CSlvq2}
+  \intertext{where $w_i$ must be of a different class than $x$ and $w_j$ of
+    the same class. If the two closest prototypes are of the same class
+    (training of type (2) the following modification scheme is applicable (no
+    "window"\ constraint):}
+  w_k(t+1) &= w_k(t) + \epsilon\alpha(t)\left[ x(t) - w_k(t)\right]
+  \label{eq:CSlvq3}
+\end{align}
+
+\begin{equation}
+\begin{split}
+\label{eq:CScov}
+\Sigma &= E\{(\mathbf{\mathbf{x}}-\mathbf{m})(\mathbf{\mathbf{x}}-\mathbf{m})^T\} \\
+&= \left[ \begin{array}{ccc}
+    E\{(x_1-m_1)(x_1-m_1)\} & \cdots & E\{(x_1-m_1)(x_n-m_n)\}\\
+    \vdots & & \vdots \\
+    E\{(x_n-m_n)(x_1-m_1)\} & \cdots & E\{(x_n-m_n)(x_n-m_n)\}\\
+       \end{array} \right] \\
+     &= \left[ \begin{array}{ccc}
+         c_{11} & \cdots & c_{1n} \\
+         \vdots & & \vdots \\
+         c_{n1} & \cdots & c_{nn}
+       \end{array} \right]
+\end{split}
+\end{equation}
+Auch Formeln können natürlich Label besitzen, \zB\: Die Modifikation der Gewichte
+beim LVQ3 Training \eqref{eq:CSlvq3} versteht ohne Erklärung keiner.
+
+

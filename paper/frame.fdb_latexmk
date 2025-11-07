@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex frame"] 1762533731.04397 "frame.aux" "frame.bbl" "frame" 1762533732.04906 0
+["bibtex frame"] 1762534519.81239 "frame.aux" "frame.bbl" "frame" 1762534520.74833 0
   "./MyBib.bib" 1762533377.73484 2683 ec722282920649d19aaf34c076b59cc8 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/alpha.bst" 1292289607 23907 a5f93555796fb564b924339521f10a7c ""
-  "frame.aux" 1762533731.78167 4706 f262f1411ee390558b50be6c28693c30 "pdflatex"
+  "frame.aux" 1762534520.50522 4706 5f20e1522f1392d2f898124f74f509ac "pdflatex"
   (generated)
   "frame.bbl"
   "frame.blg"
   (rewritten before read)
-["pdflatex"] 1762533731.1558 "/home/emre/Documents/GitHub/Large-Language-Models-in-Human-machine-interaction/paper/frame.tex" "frame.pdf" "frame" 1762533732.04926 0
+["pdflatex"] 1762534519.91638 "/home/emre/Documents/GitHub/Large-Language-Models-in-Human-machine-interaction/paper/frame.tex" "frame.pdf" "frame" 1762534520.74851 0
   "/etc/texmf/web2c/texmf.cnf" 1762531701.93965 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/emre/Documents/GitHub/Large-Language-Models-in-Human-machine-interaction/paper/frame.tex" 1762533393.21101 440 3a2c70c03bdb333644345ff81fb9327c ""
+  "/home/emre/Documents/GitHub/Large-Language-Models-in-Human-machine-interaction/paper/frame.tex" 1762534517.83021 669 5194699b9d0b9ed0dd3e94529a9b2257 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm" 1136768653 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -141,13 +141,17 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1741904018 41538 c016915c1d51223b6dbbfe27341748a8 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1762531727 5467255 9a64d1b40e0b893fc5588ecce9d8accf ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1762531857 3346450 059887b0f7cbbea0e2d351def1080697 ""
-  "MyText.tex" 1762533730.01055 23718 fdcca9dec37b5f2c535f6fdd8fd1ffe2 ""
   "bilder/TestBild.png" 1366621968 758323 47ae46603e08c80b16f7ad15c514314e ""
-  "frame.aux" 1762533731.78167 4706 f262f1411ee390558b50be6c28693c30 "pdflatex"
-  "frame.bbl" 1762533731.14966 1141 f634d4cccfe97cc0465426f06c97bb55 "bibtex frame"
-  "frame.tex" 1762533393.21101 440 3a2c70c03bdb333644345ff81fb9327c ""
+  "frame.aux" 1762534520.50522 4706 5f20e1522f1392d2f898124f74f509ac "pdflatex"
+  "frame.bbl" 1762534519.91022 1141 f634d4cccfe97cc0465426f06c97bb55 "bibtex frame"
+  "frame.tex" 1762534517.83021 669 5194699b9d0b9ed0dd3e94529a9b2257 ""
   "mmiSeminar.sty" 1762533373.05879 15489 ad6ba02988b08f9ba621b7ca0e4e409c ""
   "scrbook.cls" 977491644 37952 054b431f8b4568f613bfe18426cf9c74 ""
+  "sections/00_frontmatter/frontmatter.tex" 1762534447.26843 951 8c2fe4aa9b9935aa9d3f2f5c82397813 ""
+  "sections/01_einfuhrung/section.tex" 1762533901.59064 11118 2f32ca092536871b0b53e5a0349a4257 ""
+  "sections/02_sehr_kurze_einfuhrung_in_latex/section.tex" 1762533901.59078 6306 b66689828db9831db28447f5efa6f600 ""
+  "sections/03_der_mmiseminar_style/section.tex" 1762533901.59092 4881 0f33302f549df7320f20231dd9905ab0 ""
+  "sections/04_testing_the_appendix/section.tex" 1762533901.59103 461 6a6d34c25385596c0a41f44ed9229701 ""
   "typearea.sty" 977491670 16588 c0564ccff94fa3cf5195df9c28d5191e ""
   "version.sty" 977491658 2024 454af82554dc28d12dce845705620f0c ""
   (generated)
