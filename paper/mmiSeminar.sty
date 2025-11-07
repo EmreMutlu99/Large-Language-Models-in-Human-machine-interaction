@@ -273,7 +273,7 @@
 \newcommand*{\Vauthor}[1]{\gdef\V@author{#1}}
 
 \newcommand{\makeArticleTitle}{
-  \addchap[\V@shortTitle\\\textit{\V@author}]{\V@title}
+  \addchap*{\V@title}
 %  \markboth{\V@author}{\V@title}
   \renewcommand*{\leftmark}{\V@author}
   \renewcommand*{\rightmark}{\V@shortTitle}
@@ -566,8 +566,6 @@
 }{%
 \end{enumerate}%
 }
-
-
 
 
 
