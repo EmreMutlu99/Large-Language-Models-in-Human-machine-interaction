@@ -1,0 +1,8 @@
+ChatGPT for Robotics – Summary
+
+• Authors propose a four-part contribution: multi-format prompting pipeline, broad ability evaluations, PromptCraft community platform, and an AirSim-ChatGPT simulator starter kit.
+• Recommended workflow: define descriptive high-level robot APIs, craft prompts listing allowed functions/constraints, keep a human evaluator in the loop, and only deploy after iteration. Clear API names, rich task context, and structured outputs (e.g., XML tags) improve reliability.
+• Zero-shot demonstrations span visual-servoing basketball catching, real Tello-class drone interactions via natural dialogue, and AirSim industrial inspection navigation, showing the model can parse intent and geometry.
+• Through dialog-based feedback, ChatGPT incrementally builds manipulation curricula (e.g., block placing, Microsoft logo) and patches obstacle-avoiding drone planners from high-level critiques.
+• Perception-action studies show the model wiring up exploration code with vision/depth APIs and serving as a closed-loop controller when fed textual observations in Habitat, aided by its embedded robotics commonsense.
+• PromptCraft facilitates sharing prompt strategies and testing in AirSim, but the authors stress humans must supervise executions until stronger closed-loop verification exists.
