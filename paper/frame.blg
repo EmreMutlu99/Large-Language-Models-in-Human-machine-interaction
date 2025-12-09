@@ -3,44 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: frame.aux
 The style file: alpha.bst
 Database file #1: MyBib.bib
-You've used 13 entries,
+You've used 14 entries,
             2543 wiz_defined-function locations,
-            631 strings with 8659 characters,
-and the built_in function-call counts, 6830 in all, are:
-= -- 603
-> -- 631
+            635 strings with 8980 characters,
+and the built_in function-call counts, 7310 in all, are:
+= -- 645
+> -- 681
 < -- 1
-+ -- 241
-- -- 241
-* -- 597
-:= -- 1270
-add.period$ -- 50
-call.type$ -- 13
-change.case$ -- 155
-chr.to.int$ -- 13
-cite$ -- 13
-duplicate$ -- 174
-empty$ -- 290
-format.name$ -- 247
-if$ -- 1262
++ -- 260
+- -- 260
+* -- 640
+:= -- 1364
+add.period$ -- 53
+call.type$ -- 14
+change.case$ -- 167
+chr.to.int$ -- 14
+cite$ -- 14
+duplicate$ -- 183
+empty$ -- 304
+format.name$ -- 266
+if$ -- 1346
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 11
-newline$ -- 78
-num.names$ -- 36
-pop$ -- 141
+newline$ -- 83
+num.names$ -- 39
+pop$ -- 153
 preamble$ -- 1
-purify$ -- 169
+purify$ -- 182
 quote$ -- 0
-skip$ -- 138
+skip$ -- 144
 stack$ -- 0
-substring$ -- 99
+substring$ -- 106
 swap$ -- 13
 text.length$ -- 1
 text.prefix$ -- 2
 top$ -- 0
-type$ -- 104
+type$ -- 112
 warning$ -- 0
-while$ -- 36
-width$ -- 16
-write$ -- 183
+while$ -- 39
+width$ -- 17
+write$ -- 194

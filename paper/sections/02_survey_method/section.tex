@@ -65,10 +65,19 @@ However, in their current state, the suitability of such systems for safety-crit
 A critical component of human–machine interaction is speech, which represents one of the most natural and powerful means of human communication. In many HMI application domains, the ability to translate spoken user input into corresponding machine actions is of particular importance. Accordingly, this section discusses two methods that are currently employed to enable speech-driven interaction in such systems.
 
 \subsubsection{Speech-to-Text, LLM and Text-to-Speech}
+As highlighted by Haeb-Umbach et al. and other previous work, until recently this architecture represented the primary approach for providing voice support in interactive human–machine interaction (HMI) applications \cite{haeb-umbach2019speech}. 
+The overall pipeline typically consists of a speech detection and preprocessing layer, which forwards the audio signal to a speech-to-text (STT) model, such as OpenAI’s Whisper. 
+The spoken input is thereby converted into text and subsequently processed by a large language model (LLM), which performs the reasoning and retrieval operations introduced in Section \ref{sec:method}, such as retrieval-augmented generation (RAG). 
+The LLM then produces a textual response, which is finally converted back into speech and presented to the user via a text-to-speech (TTS) system.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\linewidth]{bilder/STT-NLP-TTS.drawio.pdf}
+    \caption{Signal chain for speech-to-text ingestion, LLM reasoning, and text-to-speech playback.}
+    \label{fig:stt_nlp_tts}
+\end{figure}
 
 \subsubsection{Speech-to-Speech LLMs}
 
-Recent work on speech-native LLMs, popularized by OpenAI's realtime models, reduces the round-trip delay by operating directly on streaming audio chunks. The model begins producing speech tokens almost immediately, providing near-realtime turn-taking during conversations. These systems trade some reasoning depth compared with larger text-first models such as GPT-4o or GPT-5, and incorporating retrieval-augmented generation is still an active research topic, but they mark the state of the art for responsive spoken interactions.
 
-\subsection{Vision-Language(-Action) Models}
-Vision-language(-action) models extend LLM capabilities to video feeds, sensor data, and embodied decision making. They process multimodal streams to ground language in the physical environment and to suggest or execute actions. Although still nascent, this strand of work is highly relevant for human-machine interaction scenarios that require situational awareness or co-robotic collaboration.
+\subsubsection{Vision-Language(-Action) Models}

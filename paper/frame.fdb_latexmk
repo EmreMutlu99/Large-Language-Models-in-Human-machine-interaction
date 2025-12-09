@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex frame"] 1765239071.16127 "frame.aux" "frame.bbl" "frame" 1765239087.59618 0
-  "./MyBib.bib" 1765237172.97466 7368 5a7ae9292847c2f265080808b23c6d97 ""
+["bibtex frame"] 1765273986.55676 "frame.aux" "frame.bbl" "frame" 1765273987.50762 0
+  "./MyBib.bib" 1765272767.95018 7897 32a58030d4aedfd2115a6c8ba581144d ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/alpha.bst" 1292289607 23907 a5f93555796fb564b924339521f10a7c ""
-  "frame.aux" 1765239087.33409 4371 8fd8faa75d95ff4c17e7244e90f19fc7 "pdflatex"
+  "frame.aux" 1765273987.26147 4676 7a2e17631e0bdc7821da5d34f922a61f "pdflatex"
   (generated)
   "frame.bbl"
   "frame.blg"
   (rewritten before read)
-["pdflatex"] 1765239086.74098 "/home/emre/Documents/GitHub/Large-Language-Models-in-Human-machine-interaction/paper/frame.tex" "frame.pdf" "frame" 1765239087.59637 0
+["pdflatex"] 1765273986.65976 "/home/emre/Documents/GitHub/Large-Language-Models-in-Human-machine-interaction/paper/frame.tex" "frame.pdf" "frame" 1765273987.50781 0
   "/etc/texmf/web2c/texmf.cnf" 1762531701.93965 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/emre/Documents/GitHub/Large-Language-Models-in-Human-machine-interaction/paper/frame.tex" 1765233524.03235 885 b21f14d6ffed3cdcddc3ceac8a26cdd6 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -111,21 +111,22 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1762531857 3346450 059887b0f7cbbea0e2d351def1080697 ""
   "bilder/Agent.drawio.pdf" 1765237933.95055 13587 2016de1aef44ca89263d992939f5b3b5 ""
   "bilder/RAG.pdf" 1765229397.94578 15929 3044b6dd9b91a38f726d19e059692892 ""
+  "bilder/STT-NLP-TTS.drawio.pdf" 1765273673.66864 16410 cf75353a846a9480cee3b0e01d54a72e ""
   "bilder/Tool.pdf" 1765233372.27031 18920 12d9e85b0dd1ba8ba42f5be7e571a508 ""
-  "frame.aux" 1765239087.33409 4371 8fd8faa75d95ff4c17e7244e90f19fc7 "pdflatex"
-  "frame.bbl" 1765239071.25292 4941 1ceb5df5c0e0f1e0093da98a1fe41e1c "bibtex frame"
+  "frame.aux" 1765273987.26147 4676 7a2e17631e0bdc7821da5d34f922a61f "pdflatex"
+  "frame.bbl" 1765273986.65558 5303 adbbe9739fd03e9f848dd270c907e872 "bibtex frame"
   "frame.tex" 1765233524.03235 885 b21f14d6ffed3cdcddc3ceac8a26cdd6 ""
-  "frame.toc" 1765239087.33609 1402 98e768c6bd41739c35425743fedcae1e "pdflatex"
+  "frame.toc" 1765273987.26347 1388 decbf18a9224364e04c0aef1b480f938 "pdflatex"
   "mmiSeminar.sty" 1762555369.07127 15605 11476350a3869abc8fe78009572d0fe7 ""
   "scrbook.cls" 977491644 37952 054b431f8b4568f613bfe18426cf9c74 ""
   "sections/00_frontmatter/frontmatter.tex" 1762555166.06504 691 80e536865b864d8dfb99b7bf0c5e6aea ""
   "sections/00_table_of_contents/contents.tex" 1762555514.62888 51 fb93f35cc6f259f7a59026a883b0b925 ""
   "sections/01_introduction_motivation/section.tex" 1765228934.48654 1440 ada765e4b21634993501a25c57beeb0f ""
-  "sections/02_survey_method/section.tex" 1765239086.56113 7722 2f61e3a06d40ec8889a84524bff4c395 ""
-  "sections/04_domain_case_studies/section.tex" 1762555756.23854 690 53fe6bccd0efb0dab206a8dc1e7ba36f ""
-  "sections/05_comparative_analysis/section.tex" 1762555761.58859 146 7e5a65447e528d181541308de5a7fc0d ""
-  "sections/06_safety_trust/section.tex" 1765032810.37067 739 254e4fe1c5a92028b3d3e8ae2ed34721 ""
-  "sections/07_conclusion/section.tex" 1762554797.59251 80 b08ccc54ca4de79a96bb71de28a1c236 ""
+  "sections/02_survey_method/section.tex" 1765273945.58886 7872 356a73c80e8539fb0017eba9e88218ef ""
+  "sections/04_domain_case_studies/section.tex" 1765273963.33275 264 da04453fd26722a0ae1513e588bf60ab ""
+  "sections/05_comparative_analysis/section.tex" 1765273973.62729 64 04cab3f91c919f91a4bc9b468daa6b52 ""
+  "sections/06_safety_trust/section.tex" 1765273978.86636 71 d733b98aa0f91c9efcf78c6e59ecbc16 ""
+  "sections/07_conclusion/section.tex" 1765273985.53645 43 06c56dd356068170bb7962e6bc2ce560 ""
   "typearea.sty" 977491670 16588 c0564ccff94fa3cf5195df9c28d5191e ""
   "version.sty" 977491658 2024 454af82554dc28d12dce845705620f0c ""
   (generated)
