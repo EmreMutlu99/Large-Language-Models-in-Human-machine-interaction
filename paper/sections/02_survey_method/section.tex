@@ -27,7 +27,7 @@ Retrieval-Augmented Generation (RAG) introduces relevant external information to
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{bilder/RAG.pdf}
+    \includegraphics[width=0.7\linewidth]{bilder/RAG.pdf}
     \caption{High-level RAG workflow that injects retrieved documents into the prompt instead of altering model weights.}
     \label{fig:rag_workflow}
 \end{figure}
@@ -57,16 +57,18 @@ An AI agent typically integrates a large language model for reasoning and planni
 
 Such agents are currently most commonly used in programming-related tasks; a prominent example of an agentic AI system in this domain is OpenAI’s Codex-based coding agent.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{bilder/Agent.drawio.pdf}
-    \caption{High-level agentic AI stack combining planning, memory, tool use, and execution loops.}
-    \label{fig:agentic_ai_stack}
-\end{figure}
+
 
 With regard to the use of such systems in human–machine interaction, Kim et al. note that the application of agentic systems in this context remains underexplored. However, their user study reveals that current agentic systems are still prone to failure, which caused usability issues for some participants \cite{kim2024llmrobot}. The agents in their experiment exhibited persistent hallucinations, leading some participants to doubt their own knowledge. Additionally, in cases where a physical robot embodiment was used to represent the agent, participants reported an uncanny-valley-like sense of unease during task execution.
 Nevertheless, the field and the underlying technology are still at an early stage of development, and user experience is expected to improve over time. The application of such systems in domains such as deep-space exploration remains a particularly promising research direction, as discussed by Heinicke et al. \cite{freitas2021conversational}.
 However, in their current state, the suitability of such systems for safety-critical applications remains uncertain.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{bilder/Agent.drawio.pdf}
+    \caption{High-level agentic AI stack combining planning, memory, tool use, and execution loops.}
+    \label{fig:agentic_ai_stack}
+\end{figure}
 
 \subsection{Audio Based Interfaces}
 A critical component of human–machine interaction is speech, which represents one of the most natural and powerful means of human communication. In many HMI application domains, the ability to translate spoken user input into corresponding machine actions is of particular importance. Accordingly, this section discusses two methods that are currently employed to enable speech-driven interaction in such systems.
@@ -91,12 +93,43 @@ Nevertheless, empirical user studies indicate that such waiting times can still 
 On the positive side, such a configuration allows spoken input to be converted into textual form, which can facilitate integration with retrieval-augmented generation (RAG) systems and thereby support more efficient retrieval of contextually relevant information.
 
 \subsubsection{Speech-to-Speech LLMs}
+
+
 Direct end-to-end speech-to-speech models represent a relatively recent development within the broader family of large language and multimodal models. Unlike the cascading approach discussed in the previous section, these models do not rely on an explicit intermediate text representation; instead, linguistic processing is performed within a model trained directly on speech signals \cite{sarim2025directs2s}.
 This design can reduce end-to-end latency and mitigate error propagation that may arise from multiple processing stages in traditional multi-stage pipelines, and can support more natural conversational interaction with the system .
+\\
 
-Within end-to-end speech-to-speech systems, two broad subcategories can be distinguished: direct models and real-time (streaming) models. Direct models process speech input as complete utterances, generating output only after the full input signal has been received. Their interaction pattern resembles cascading pipelines in terms of latency, as response generation is deferred until the entire input has been processed.
+Within end-to-end speech-to-speech systems, two broad subcategories can be distinguished: direct models and real-time (streaming) models. Direct models process speech input as complete utterances, generating output only after the full input signal has been received. Their interaction pattern resembles cascading pipelines in terms of latency, as response generation is deferred until the entire input has been processed \cite{zhang2024streamspeech}.
 
-In contrast, more recent real-time speech-to-speech systems—such as OpenAI’s real-time speech model family—adopt a streaming-based approach. Incoming speech is first digitized (e.g., using pulse-code modulation formats such as PCM16) and segmented into short audio frames on the order of tens of milliseconds. These segments are streamed incrementally to the model, which buffers a limited temporal context before beginning to generate spoken output.
+\begin{figure}[H]
+    \centering
+    \subfloat[Streaming wait-$k$ policy alternating between listening to additional source frames and emitting target tokens in real time \cite{tan2020simulspeech}. \label{fig:realtime_speech}]{
+        \includegraphics[width=0.38\linewidth]{bilder/RealtimeSpeech.png}
+    }\hfill
+    \subfloat[Streaming signal chain diagram with numbered legend. \label{fig:s2s_signal_chain}]{
+        \includegraphics[width=0.58\linewidth]{bilder/speech-speech-diagram.drawio.pdf}
+    }
+    
+    \vspace{0.3em}
+    \begin{minipage}{0.92\linewidth}
+        \footnotesize\textbf{Legend:} 1) Microphone interface capturing the operator’s raw speech \\ 2) Low-latency Analog to Digital Converter \\ 3) Pre-processing buffers that normalize, filter, and batch frames \\ 4) Streaming STS model performing NLP task \\ 5) Generated digital audio frames for the target utterance \\6) Vocoder/decoder producing analog waveforms \\7) Speaker/headset driver for immediate playback\\ 8 - 9) The Audio is processed in chunks that are (t) in length, usually in the order of 20-40ms \\10) End user simultaneously providing input and receiving translated speech.
+    \end{minipage}
+    \caption{Real-time speech-to-speech pipeline: (a) wait-$k$ listen/write policy and (b) corresponding signal path.}
+\end{figure}
 
-This streaming formulation enables incremental processing and response generation, which can reduce perceived latency and support a more natural conversational flow compared to utterance-level processing approaches.
-\subsubsection{Vision-Language(-Action) Models}
+In contrast, more recent real-time speech-to-speech systems, such as OpenAI’s real-time speech model family adopt a streaming-based approach. 
+Incoming speech is first digitized (e.g., using pulse-code modulation formats such as PCM16) and segmented into short audio frames on the order of tens of milliseconds. 
+These segments are streamed incrementally to the model, which buffers a limited temporal context before beginning to generate spoken output \cite{openai_realtime_api}.
+A broad overview of such a system is provided in Figure \ref{fig:s2s_signal_chain}.
+\\
+
+In Figure \ref{fig:realtime_speech}, an example of such a system is illustrated using the simultaneous speech model introduced by Tan et al., showing how these models interleave listen and write operations according to a wait-$k$ policy, allowing target-language output to begin before the full source utterance is observed \cite{tan2020simulspeech}. To ground this abstract description in the physical signal chain used in safety-critical HMI deployments, Figure \ref{fig:s2s_signal_chain} annotates a representative streaming speech-to-speech path from the operator's microphone through synthesis and playback.
+\\
+
+This streaming formulation enables incremental processing and response generation, which can reduce perceived latency and support a more natural conversational flow compared to full utterance-level processing approaches.
+However, a downside of such an approach is that end-to-end speech-to-speech models typically require larger computational resources compared with cascaded systems discussed previously, and they can face challenges in generalizing across diverse domains due to model architecture. 
+Additionally, as of late 2025, native retrieval-augmented generation (RAG) compatibility remains an active area of research for end-to-end speech models, with most practical RAG implementations still relying on intermediate text representations for effective document retrieval \cite{min2025speechrag}.
+
+\subsection{Vision-Language Models}
+
+The 
