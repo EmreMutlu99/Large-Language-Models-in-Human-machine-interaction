@@ -91,6 +91,12 @@ Nevertheless, empirical user studies indicate that such waiting times can still 
 On the positive side, such a configuration allows spoken input to be converted into textual form, which can facilitate integration with retrieval-augmented generation (RAG) systems and thereby support more efficient retrieval of contextually relevant information.
 
 \subsubsection{Speech-to-Speech LLMs}
-Speech
+Direct end-to-end speech-to-speech models represent a relatively recent development within the broader family of large language and multimodal models. Unlike the cascading approach discussed in the previous section, these models do not rely on an explicit intermediate text representation; instead, linguistic processing is performed within a model trained directly on speech signals \cite{sarim2025directs2s}.
+This design can reduce end-to-end latency and mitigate error propagation that may arise from multiple processing stages in traditional multi-stage pipelines, and can support more natural conversational interaction with the system .
 
+Within end-to-end speech-to-speech systems, two broad subcategories can be distinguished: direct models and real-time (streaming) models. Direct models process speech input as complete utterances, generating output only after the full input signal has been received. Their interaction pattern resembles cascading pipelines in terms of latency, as response generation is deferred until the entire input has been processed.
+
+In contrast, more recent real-time speech-to-speech systems—such as OpenAI’s real-time speech model family—adopt a streaming-based approach. Incoming speech is first digitized (e.g., using pulse-code modulation formats such as PCM16) and segmented into short audio frames on the order of tens of milliseconds. These segments are streamed incrementally to the model, which buffers a limited temporal context before beginning to generate spoken output.
+
+This streaming formulation enables incremental processing and response generation, which can reduce perceived latency and support a more natural conversational flow compared to utterance-level processing approaches.
 \subsubsection{Vision-Language(-Action) Models}
