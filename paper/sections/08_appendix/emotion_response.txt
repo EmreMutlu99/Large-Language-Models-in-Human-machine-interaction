@@ -1,0 +1,26 @@
+Detected emotions:
+- human1.jpeg: neutral (confidence=0.80) -> Face shows a relaxed, closed mouth with no smile or pronounced frown, eyes and brows are not widely opened or sharply furrowed, and there are no visible signs of surprise, disgust, fear or anger--overall a neutral expression.
+- human2.jpeg: happy (confidence=0.95) -> Broad smile with visible teeth, raised cheeks causing slight eye crinkling, relaxed facial muscles and open, bright expression indicating positive emotion.
+- human3.jpeg: angry (confidence=0.92) -> Wide open mouth with visible teeth (yelling), furrowed/knitted brows, squinted eyes and tense facial muscles while holding a phone -- classic signs of anger/hostility.
+
+Raw JSON response:
+[
+  {
+    "emotion_label": "neutral",
+    "confidence": 0.8,
+    "rationale": "Face shows a relaxed, closed mouth with no smile or pronounced frown, eyes and brows are not widely opened or sharply furrowed, and there are no visible signs of surprise, disgust, fear or anger--overall a neutral expression.",
+    "filename": "human1.jpeg"
+  },
+  {
+    "emotion_label": "happy",
+    "confidence": 0.95,
+    "rationale": "Broad smile with visible teeth, raised cheeks causing slight eye crinkling, relaxed facial muscles and open, bright expression indicating positive emotion.",
+    "filename": "human2.jpeg"
+  },
+  {
+    "emotion_label": "angry",
+    "confidence": 0.92,
+    "rationale": "Wide open mouth with visible teeth (yelling), furrowed/knitted brows, squinted eyes and tense facial muscles while holding a phone -- classic signs of anger/hostility.",
+    "filename": "human3.jpeg"
+  }
+]

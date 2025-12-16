@@ -7,6 +7,15 @@
 \usepackage[hyphens]{url}
 \usepackage{subfig}
 \usepackage{float}
+\usepackage{listings}
+
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  breaklines=true,
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false
+}
 
 \makeatletter
 \@openrightfalse
@@ -24,6 +33,9 @@
 \input{sections/05_comparative_analysis/section}
 \input{sections/06_safety_trust/section}
 \input{sections/07_conclusion/section}
+
+%\appendix
+%\input{sections/08_appendix/section}
 
 \nocite{*}
 \bibliographystyle{alpha}

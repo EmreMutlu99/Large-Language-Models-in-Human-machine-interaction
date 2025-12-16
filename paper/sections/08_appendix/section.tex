@@ -1,0 +1,16 @@
+\chapter{Emotion Detection Prototype}
+\label{appendix:emotion-detection}
+
+This appendix documents the batch emotion-detection experiment requested for the OpenAI vision-capable models. The script scans a folder of test images, loads the API key from the environment (including optional \texttt{.env} files) or an interactive prompt, queries the Responses API once per image, and prints both a concise summary and the raw JSON payload for auditing.
+
+\section{Script Listing}
+
+The complete Python utility is stored alongside this appendix as \texttt{emotion\_batch.py}. We include it verbatim below for reproducibility.
+
+\lstinputlisting[language=Python]{sections/08_appendix/emotion_batch.py}
+
+\section{Sample Model Response}
+
+We also reproduce the raw console output from the run that labeled the three sample humans, saved as \texttt{emotion\_response.txt}.
+
+\lstinputlisting{sections/08_appendix/emotion_response.txt}

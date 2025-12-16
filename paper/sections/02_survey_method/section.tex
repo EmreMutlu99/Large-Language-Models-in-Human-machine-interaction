@@ -54,6 +54,7 @@ In the context of human–machine interaction, this implies that a user can issu
 \subsubsection{Agentic Artificial Intelligence}
 What is commonly referred to as agentic AI is the combination of previously discussed methods to enable semi-autonomous decision-making systems. 
 An AI agent typically integrates a large language model for reasoning and planning with tool-calling capabilities and memory in order to execute tasks without constant human supervision, requesting user input only when necessary to adjust its actions \cite{yao2023react}.
+\\
 
 Such agents are currently most commonly used in programming-related tasks; a prominent example of an agentic AI system in this domain is OpenAI’s Codex-based coding agent.
 
@@ -75,7 +76,7 @@ A critical component of human–machine interaction is speech, which represents 
 
 \subsubsection{Speech-to-Text, LLM and Text-to-Speech}
 As highlighted by Haeb-Umbach et al. and other previous work, until recently this architecture represented the primary approach for providing voice support in interactive human–machine interaction (HMI) applications \cite{haeb-umbach2019speech}. 
-The overall pipeline typically consists of a speech detection and preprocessing layer, which forwards the audio signal to a speech-to-text (STT) model, such as OpenAI’s Whisper. 
+The overall pipeline typically consists of a speech detection and preprocessing layer, which forwards the audio signal to a speech-to-text (STT) model. 
 The spoken input is thereby converted into text and subsequently processed by a large language model (LLM), which performs the reasoning and retrieval operations introduced in Section \ref{sec:method}, such as retrieval-augmented generation (RAG). 
 The LLM then produces a textual response, which is finally converted back into speech and presented to the user via a text-to-speech (TTS) system.
 
@@ -120,7 +121,6 @@ Within end-to-end speech-to-speech systems, two broad subcategories can be disti
 In contrast, more recent real-time speech-to-speech systems, such as OpenAI’s real-time speech model family adopt a streaming-based approach. 
 Incoming speech is first digitized (e.g., using pulse-code modulation formats such as PCM16) and segmented into short audio frames on the order of tens of milliseconds. 
 These segments are streamed incrementally to the model, which buffers a limited temporal context before beginning to generate spoken output \cite{openai_realtime_api}.
-A broad overview of such a system is provided in Figure \ref{fig:s2s_signal_chain}.
 \\
 
 In Figure \ref{fig:realtime_speech}, an example of such a system is illustrated using the simultaneous speech model introduced by Tan et al., showing how these models interleave listen and write operations according to a wait-$k$ policy, allowing target-language output to begin before the full source utterance is observed \cite{tan2020simulspeech}. To ground this abstract description in the physical signal chain used in safety-critical HMI deployments, Figure \ref{fig:s2s_signal_chain} annotates a representative streaming speech-to-speech path from the operator's microphone through synthesis and playback.
@@ -131,5 +131,19 @@ However, a downside of such an approach is that end-to-end speech-to-speech mode
 Additionally, as of late 2025, native retrieval-augmented generation (RAG) compatibility remains an active area of research for end-to-end speech models, with most practical RAG implementations still relying on intermediate text representations for effective document retrieval \cite{min2025speechrag}.
 
 \subsection{Vision-Language Models}
+Vision is another input channel that is of central importance to human psychological perception and interpretation, particularly in tasks where spatial reasoning and situational awareness are critical. 
+Vision–language models extend machine interaction capabilities by enabling the joint processing of visual inputs and natural language, thereby allowing contextual understanding and reasoning grounded in visual information.
+These models exist at the intersection between computer vision and natural language processing \cite{li2025surveyvlm}. 
+For example, such models can be applied to the analysis of human facial expressions to infer affective states from visual data. An illustrative example of this type of application is provided in Appendix~\ref{appendix:emotion-detection}.
 
-The 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{bilder/VLM.drawio.pdf}
+    \caption{Conceptual VLM workflow: the vision encoder produces embeddings that are aligned and fused with LLM tokens to support multimodal reasoning and grounded responses.\cite{li2025surveyvlm}}
+    \label{fig:vlm_architecture}
+\end{figure}
+
+
+Vision-Language Models (VLMs) work by using a vision encoder to convert images into numerical feature representations and a large language model (LLM) to convert text into contextual embeddings. The vision encoder extracts visual features, which are then transformed into a compatible format before being integrated with the language model’s input. In many modern VLMs, a pre-trained LLM serves as the backbone, and a projection or fusion layer is used to inject visual embeddings into the LLM so it can process visual information alongside text. This enables multimodal understanding and generation. A representation of this process is provided in Figure \ref{fig:vlm_architecture} \cite{li2025surveyvlm}.  
+In the context of human–machine interaction (HMI), such models can be deployed alongside audio- and text-based models to enhance the overall user experience in interactive systems.
+
