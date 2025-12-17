@@ -4,9 +4,63 @@ In the previous section, the architectural foundations underlying the use of lar
 This section builds on that foundation by reviewing selected studies from several safety-critical application domains; namely aerospace and remote sciences, emergency and environmental response, and industrial operations, with a focus on how LLM-based technologies are applied in human–machine interaction within these contexts.
 
 \subsection{Aerospace and Remote Science}
-Aerospace, Deep Sea wayages etc.
+Aerospace and remote science missions place humans in some of the most demanding HMI settings. 
+Astronauts and mission operators work under high risk, limited communication, and long periods of isolation, while managing complex systems and strict safety procedures. 
+In these conditions, interaction approaches that reduce cognitive effort, support decision-making, and offer context-aware assistance are especially valuable.
+In this section, selected papers from this domain are analyzed and discussed.
 
-\subsubsection{Psychological and Cognitive Impacts}
+\subsubsection{Conversational User Interfaces to Support Astronauts \cite{freitas2021conversational}}
+
+The paper uses a Wizard of Oz (WoZ) study\footnote{A Wizard of Oz study is an experimental method in which users interact with an apparently autonomous system whose behavior is secretly controlled by a human operator, which enables the study of interaction patterns before full system implementation.\cite{dahlback1993wizard}} to investigate how astronauts would realistically interact with a conversational user interface (CUI) inside an extraterrestrial habitat before such a system technically exists.
+It investigates how CUIs can support astronauts living and working in extraterrestrial habitats (Moon/Mars), where isolation, confinement, delayed communication with Earth, and psychological stress are major challenges.
+
+To address these differing interaction requirements, the authors designed two complementary CUIs: CASSIOPEIA, which provides task-oriented, mission-critical assistance for scientific operations, and PEGASUS, which functions as an emotionally expressive personal companion to support crew well-being.
+
+While designing the conversational user interfaces (CUIs), the authors identified four key design guidelines:
+
+\begin{itemize}
+    \item \textbf{Support both mission-critical and non-mission-critical interactions}, ensuring reliable task execution while also accommodating informal and supportive exchanges.
+    \item \textbf{Design for frequent and prolonged use}, accounting for long-duration missions and sustained human--AI interaction without inducing cognitive fatigue.
+    \item \textbf{Enable multimodal and bidirectional interaction}, allowing users to interact with the system through complementary input and output modalities such as text, speech, and visual feedback.
+    \item \textbf{Design the CUI as a team member}, positioning the interface as an active collaborator that supports coordination, shared situational awareness, and trust within the crew.
+\end{itemize}
+
+\textbf{Method}
+
+To derive requirements for conversational user interfaces in extraterrestrial habitats, the authors conducted a week-long Wizard-of-Oz study inside the MaMBA Moon/Mars habitat laboratory module at ZARM. 
+Four experienced scientists carried out real biological, geological, and materials science experiments while interacting with a simulated CUI operated by a human wizard via a Raspberry Pi–based voice interface. 
+All interactions were logged, video-recorded, transcribed, and qualitatively coded, revealing frequent use of both mission-critical and non-mission-related interactions. 
+Based on these findings, the authors derived four design guidelines emphasizing support for mission and non-mission tasks, intensive long-term use, multimodal and bidirectional interaction, and the treatment of the CUI as a team member. 
+Guided by these principles, the two CUIs introduced earlier were implemented.
+These systems were evaluated in two controlled user studies within the habitat: one comparing voice-only versus voice-plus-GUI interaction for task efficiency, and another comparing emotionally characterized versus neutral CUIs to assess emotional engagement, stress, and workload using standardized questionnaires and interviews.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{bilder/Cassiopei/Pegasus.png}
+    \caption{Overview of the PEGASUS and CASSIOPEI companion CUIs: multimodal astronaut inputs are parsed through intent recognition, emotional context, and action code to provide both operational and affective support.\cite{freitas2021conversational}}
+    \label{fig:pegasus_architecture}
+\end{figure}
+
+\textbf{Result}
+
+The study shows that CUI can meaningfully support astronauts in isolated extraterrestrial habitats by improving both task performance and user experience. 
+Results indicate that multimodal CUIs combining voice and graphical interfaces enable significantly more efficient task completion than voice-only CUIs, while perceived usability remains comparable. 
+Emotionally characterized CUIs increase user excitement and engagement, and stronger emotional connection and perceived sympathy toward the system are associated with lower reported stress levels, although individual responses vary and overall task workload does not differ significantly. 
+Overall, the findings suggest that well-designed CUIs can enhance operational efficiency and psychological well-being in long-duration space missions, provided that emotional interaction and interface modality are carefully adapted to user needs.
+
+\textbf{Analysis}
+
+The paper proposes a framework for the design and development of conversational user interfaces for space missions. Although the study employs a Wizard-of-Oz setup in which a human operator simulates the AI system, the results provide a convincing proof of concept demonstrating that the development of such assistants is both feasible and worthwhile. 
+Building on the proposed framework, a fully autonomous implementation that integrates real-time speech-to-speech models, retrieval-augmented generation, and tool-calling mechanisms represents a promising direction for future research. 
+Such an approach could combine several aspects discussed in the background section of this paper to realize an agentic conversational system capable of supporting astronauts in safety-critical and isolated mission environments.
+
+\subsubsection{Large Language Models as Autonomous Spacecraft Operators}
+The internal report \textit{Large Language Models as Autonomous Spacecraft Operators in Kerbal Space Program} tests whether high-capacity LLMs can translate natural-language mission plans into executable procedures within a simulated spacecraft environment. It identifies alignment techniques for enforcing orbital-dynamics constraints and telemetry verification before real-world deployment.
+
+\subsubsection{LLM-Based Autonomous Agent for Aerospace Wire Harnessing}
+\textit{LLM-Based Autonomous Agent of Human-Robot Collaboration for Aerospace Wire Harnessing Assembly} demonstrates how language-driven planners coordinate cobots with technicians to accelerate complex harness fabrication. By grounding open-ended human instructions into structured assembly steps, the system reduces rework while maintaining aerospace workmanship standards.
+
+%\subsubsection{Psychological and Cognitive Impacts}
 
 \subsection{Emergency and Environmental Response}
 

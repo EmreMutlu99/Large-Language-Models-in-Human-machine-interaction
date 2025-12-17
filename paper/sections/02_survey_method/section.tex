@@ -134,7 +134,7 @@ Additionally, as of late 2025, native retrieval-augmented generation (RAG) compa
 Vision is another input channel that is of central importance to human psychological perception and interpretation, particularly in tasks where spatial reasoning and situational awareness are critical. 
 Vision–language models extend machine interaction capabilities by enabling the joint processing of visual inputs and natural language, thereby allowing contextual understanding and reasoning grounded in visual information.
 These models exist at the intersection between computer vision and natural language processing \cite{li2025surveyvlm}. 
-For example, such models can be applied to the analysis of human facial expressions to infer affective states from visual data. An illustrative example of this type of application is provided in Appendix~\ref{appendix:emotion-detection}.
+For example, such models can be applied to the analysis of human facial expressions to infer affective states from visual data. An illustrative example of this type of application is provided in an accompanying notebook.\footnote{\url{https://github.com/EmreMutlu99/Large-Language-Models-in-Human-machine-interaction/blob/main/tests/visual-language-models.ipynb}}
 
 \begin{figure}[H]
     \centering
@@ -146,4 +146,3 @@ For example, such models can be applied to the analysis of human facial expressi
 
 Vision-Language Models (VLMs) work by using a vision encoder to convert images into numerical feature representations and a large language model (LLM) to convert text into contextual embeddings. The vision encoder extracts visual features, which are then transformed into a compatible format before being integrated with the language model’s input. In many modern VLMs, a pre-trained LLM serves as the backbone, and a projection or fusion layer is used to inject visual embeddings into the LLM so it can process visual information alongside text. This enables multimodal understanding and generation. A representation of this process is provided in Figure \ref{fig:vlm_architecture} \cite{li2025surveyvlm}.  
 In the context of human–machine interaction (HMI), such models can be deployed alongside audio- and text-based models to enhance the overall user experience in interactive systems.
-
