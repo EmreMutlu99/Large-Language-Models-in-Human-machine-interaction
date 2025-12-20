@@ -313,12 +313,13 @@ INPUT ./bilder/Cassiopei/Pegasus.png
 INPUT ./bilder/Cassiopei/Pegasus.png
 INPUT ./bilder/Cassiopei/Pegasus.png
 INPUT ./bilder/Cassiopei/Pegasus.png
-INPUT /home/emre/.miktex/texmfs/install/fonts/tfm/adobe/times/ptmri8t.tfm
-INPUT ./sections/05_comparative_analysis/section.tex
-INPUT ./sections/05_comparative_analysis/section.tex
-INPUT ./sections/05_comparative_analysis/section.tex
-INPUT ./sections/05_comparative_analysis/section.tex
-INPUT sections/05_comparative_analysis/section.tex
+INPUT ./bilder/HUman Robot CCollab.png
+INPUT ./bilder/HUman Robot CCollab.png
+INPUT ./bilder/HUman Robot CCollab.png
+INPUT ./bilder/HUman Robot CCollab.png
+INPUT ./bilder/HUman Robot CCollab.png
+INPUT ./bilder/HUman Robot CCollab.png
+INPUT ./bilder/HUman Robot CCollab.png
 INPUT ./sections/06_safety_trust/section.tex
 INPUT ./sections/06_safety_trust/section.tex
 INPUT ./sections/06_safety_trust/section.tex
@@ -332,6 +333,7 @@ INPUT sections/07_conclusion/section.tex
 INPUT ./frame.bbl
 INPUT ./frame.bbl
 INPUT frame.bbl
+INPUT /home/emre/.miktex/texmfs/install/fonts/tfm/adobe/times/ptmri8t.tfm
 INPUT /home/emre/.miktex/texmfs/install/fonts/vf/adobe/times/ptmri8t.vf
 INPUT /home/emre/.miktex/texmfs/install/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT /home/emre/.miktex/texmfs/install/fonts/tfm/adobe/courier/pcrr8t.tfm
