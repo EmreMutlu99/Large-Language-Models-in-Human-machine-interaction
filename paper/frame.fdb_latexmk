@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex frame"] 1766236672.41766 "frame.aux" "frame.bbl" "frame" 1766236677.39037 0
+["bibtex frame"] 1766237689.37747 "frame.aux" "frame.bbl" "frame" 1766237691.80279 0
   "./MyBib.bib" 1766233250.67687 14863 b1311d03de39208bdc406f36079b935c ""
   "/home/emre/.miktex/texmfs/install/bibtex/bst/bibtex/alpha.bst" 1764231396.43478 23907 a5f93555796fb564b924339521f10a7c ""
-  "frame.aux" 1766236675.28677 8176 2c932f71211817bfd5753c831f77e96c "pdflatex"
+  "frame.aux" 1766237691.17379 8009 120bdce6580693710f0a87f4a84f4946 "pdflatex"
   (generated)
   "frame.bbl"
   "frame.blg"
   (rewritten before read)
-["pdflatex"] 1766236673.01359 "/home/emre/Documents/GitHub/Large-Language-Models-in-Human-machine-interaction/paper/frame.tex" "frame.pdf" "frame" 1766236677.39139 0
+["pdflatex"] 1766237689.97319 "/home/emre/Documents/GitHub/Large-Language-Models-in-Human-machine-interaction/paper/frame.tex" "frame.pdf" "frame" 1766237691.80313 0
   "/home/emre/.miktex/texmfs/data/fonts/map/pdftex/pdftex.map" 1764231410.10882 165414 9363bc2e63231c61f423f58d61c51474 ""
   "/home/emre/.miktex/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1729284287.2872 8730806 905eab6fbd59480d546809aa440017f8 ""
   "/home/emre/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc" 1728750811.23448 4993 1194fb36dfcb11d9ae9802f2b00b60a3 ""
@@ -126,7 +126,7 @@
   "/home/emre/.miktex/texmfs/install/tex/latex/psnfss/ts1ptm.fd" 1728037228.69285 653 3c2b212581b38326a2d43769c35b19e7 ""
   "/home/emre/.miktex/texmfs/install/tex/latex/subfig/subfig.sty" 1121281010 22049 adc8323c809ccc2c21f05c93c1fe6ff3 ""
   "/home/emre/.miktex/texmfs/install/tex/latex/url/url.sty" 1728037164.5838 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "/home/emre/Documents/GitHub/Large-Language-Models-in-Human-machine-interaction/paper/frame.tex" 1766066357.28492 1095 46e0058485fc3b4aa4fb9d19f8a2f080 ""
+  "/home/emre/Documents/GitHub/Large-Language-Models-in-Human-machine-interaction/paper/frame.tex" 1766237685.12477 1107 e0e82bea4d31993315c1dea842974e52 ""
   "bilder/Agent.drawio.pdf" 1765378274.31208 13587 2016de1aef44ca89263d992939f5b3b5 ""
   "bilder/Cassiopei/Pegasus.png" 1765984623.51423 151529 1b0169d53311de34780e9e9aca5910bd ""
   "bilder/HUman Robot CCollab.png" 1766233077.37586 939494 35c996d80e129e77dd3d591ec2a39ea0 ""
@@ -136,10 +136,10 @@
   "bilder/Tool.pdf" 1765378274.31308 18920 12d9e85b0dd1ba8ba42f5be7e571a508 ""
   "bilder/VLM.drawio.pdf" 1765900937.47629 23459 b1fc5a8984fbd652860004011c51e30b ""
   "bilder/speech-speech-diagram.drawio.pdf" 1765641479.95867 42841 ccde7c67a901abf83421ec19cfc1918c ""
-  "frame.aux" 1766236675.28677 8176 2c932f71211817bfd5753c831f77e96c "pdflatex"
-  "frame.bbl" 1766236672.89079 10228 b4398b584c3c7fb5a9f8ff0a9d2f7ce2 "bibtex frame"
-  "frame.tex" 1766066357.28492 1095 46e0058485fc3b4aa4fb9d19f8a2f080 ""
-  "frame.toc" 1766236675.29077 1731 a7dcf55a4235500e94c3e1c6b4bf551e "pdflatex"
+  "frame.aux" 1766237691.17379 8009 120bdce6580693710f0a87f4a84f4946 "pdflatex"
+  "frame.bbl" 1766237689.83978 10228 b4398b584c3c7fb5a9f8ff0a9d2f7ce2 "bibtex frame"
+  "frame.tex" 1766237685.12477 1107 e0e82bea4d31993315c1dea842974e52 ""
+  "frame.toc" 1766237691.17579 1642 5aaf87488b50a90d3fa3df4a1317e558 "pdflatex"
   "mmiSeminar.sty" 1764231192.18414 15605 11476350a3869abc8fe78009572d0fe7 ""
   "scrbook.cls" 1764231192.18514 37952 054b431f8b4568f613bfe18426cf9c74 ""
   "sections/00_frontmatter/frontmatter.tex" 1764231192.18514 691 80e536865b864d8dfb99b7bf0c5e6aea ""
@@ -147,7 +147,6 @@
   "sections/01_introduction_motivation/section.tex" 1765899317.80183 1509 b694cc5cd198dc5620b0539908faf79c ""
   "sections/02_survey_method/section.tex" 1766065819.50586 16377 c9a4ad0b8422fec29872cd2e089f3824 ""
   "sections/04_domain_case_studies/section.tex" 1766236667.12083 17901 813af6b7bf3d85d59453924a10409da7 ""
-  "sections/06_safety_trust/section.tex" 1765378274.31908 71 d733b98aa0f91c9efcf78c6e59ecbc16 ""
   "sections/07_conclusion/section.tex" 1765378274.31908 43 06c56dd356068170bb7962e6bc2ce560 ""
   "typearea.sty" 1764231192.18714 16083 e8d05f82b20a2b10acc3cc949490ef0c ""
   "version.sty" 1764231192.18714 1973 78915de2c7b2b322cbc491262a2e21d3 ""
