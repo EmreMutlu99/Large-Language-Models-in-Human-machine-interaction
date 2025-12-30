@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex frame"] 1766237689.37747 "frame.aux" "frame.bbl" "frame" 1766237691.80279 0
-  "./MyBib.bib" 1766233250.67687 14863 b1311d03de39208bdc406f36079b935c ""
+["bibtex frame"] 1767010488.8328 "frame.aux" "frame.bbl" "frame" 1767130774.89472 0
+  "./MyBib.bib" 1767010345.08495 16244 cae92452bd132a0b3ec8d869b7689569 ""
   "/home/emre/.miktex/texmfs/install/bibtex/bst/bibtex/alpha.bst" 1764231396.43478 23907 a5f93555796fb564b924339521f10a7c ""
-  "frame.aux" 1766237691.17379 8009 120bdce6580693710f0a87f4a84f4946 "pdflatex"
+  "frame.aux" 1767130773.22409 8634 5a85855b53167bf92130cf6cc97adff8 "pdflatex"
   (generated)
   "frame.bbl"
   "frame.blg"
   (rewritten before read)
-["pdflatex"] 1766237689.97319 "/home/emre/Documents/GitHub/Large-Language-Models-in-Human-machine-interaction/paper/frame.tex" "frame.pdf" "frame" 1766237691.80313 0
+["pdflatex"] 1767130771.13964 "/home/emre/Documents/GitHub/Large-Language-Models-in-Human-machine-interaction/paper/frame.tex" "frame.pdf" "frame" 1767130774.89555 0
   "/home/emre/.miktex/texmfs/data/fonts/map/pdftex/pdftex.map" 1764231410.10882 165414 9363bc2e63231c61f423f58d61c51474 ""
   "/home/emre/.miktex/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1729284287.2872 8730806 905eab6fbd59480d546809aa440017f8 ""
   "/home/emre/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc" 1728750811.23448 4993 1194fb36dfcb11d9ae9802f2b00b60a3 ""
@@ -18,7 +18,6 @@
   "/home/emre/.miktex/texmfs/install/fonts/tfm/adobe/helvetic/phvr8t.tfm" 1136768654 7040 b2bd27e2bfe6f6948cbc3239cae7444f ""
   "/home/emre/.miktex/texmfs/install/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768654 4524 6bce29db5bc272ba5f332261583fee9c ""
   "/home/emre/.miktex/texmfs/install/fonts/tfm/adobe/times/ptmb8t.tfm" 1136768654 6880 f19b8995b61c334d78fc734065f6b4d4 ""
-  "/home/emre/.miktex/texmfs/install/fonts/tfm/adobe/times/ptmr8c.tfm" 1136768654 1352 fa28a7e6d323c65ce7d13d5342ff6be2 ""
   "/home/emre/.miktex/texmfs/install/fonts/tfm/adobe/times/ptmr8r.tfm" 1136768654 4408 25b74d011a4c66b7f212c0cc3c90061b ""
   "/home/emre/.miktex/texmfs/install/fonts/tfm/adobe/times/ptmr8t.tfm" 1136768654 6672 e3ab9e37e925f3045c9005e6d1473d56 ""
   "/home/emre/.miktex/texmfs/install/fonts/tfm/adobe/times/ptmrc8t.tfm" 1136768654 16648 7e91c60ebf91b9c60e16ef52b3070f9c ""
@@ -63,7 +62,6 @@
   "/home/emre/.miktex/texmfs/install/fonts/vf/adobe/courier/pcrr8t.vf" 1728750808.57744 2184 8475af1b9cfa983db5f46f5ed4b8f9f7 ""
   "/home/emre/.miktex/texmfs/install/fonts/vf/adobe/helvetic/phvb8t.vf" 1136768654 2340 0efed6a948c3c37d870e4e7ddb85c7c3 ""
   "/home/emre/.miktex/texmfs/install/fonts/vf/adobe/times/ptmb8t.vf" 1136768654 2340 df9c920cc5688ebbf16a93f45ce7bdd3 ""
-  "/home/emre/.miktex/texmfs/install/fonts/vf/adobe/times/ptmr8c.vf" 1136768654 3556 8a9a6dcbcd146ef985683f677f4758a6 ""
   "/home/emre/.miktex/texmfs/install/fonts/vf/adobe/times/ptmr8t.vf" 1136768654 2348 91706c542228501c410c266421fbe30c ""
   "/home/emre/.miktex/texmfs/install/fonts/vf/adobe/times/ptmrc8t.vf" 1136768654 3608 78e4c999d9e69f03f448158d01821741 ""
   "/home/emre/.miktex/texmfs/install/fonts/vf/adobe/times/ptmri8t.vf" 1136768654 2328 6cd7df782b09b29cfc4d93e55b6b9a59 ""
@@ -123,7 +121,6 @@
   "/home/emre/.miktex/texmfs/install/tex/latex/psnfss/t1phv.fd" 1728037228.69185 1536 0db4718053ae05eb06859828cc1f372c ""
   "/home/emre/.miktex/texmfs/install/tex/latex/psnfss/t1ptm.fd" 1728037228.69185 817 8cd6152a28b34e24c35ade83b9bcf4f1 ""
   "/home/emre/.miktex/texmfs/install/tex/latex/psnfss/times.sty" 1728037228.69185 888 31bd282fb2f5f4931c3f92b9bf2f8ef7 ""
-  "/home/emre/.miktex/texmfs/install/tex/latex/psnfss/ts1ptm.fd" 1728037228.69285 653 3c2b212581b38326a2d43769c35b19e7 ""
   "/home/emre/.miktex/texmfs/install/tex/latex/subfig/subfig.sty" 1121281010 22049 adc8323c809ccc2c21f05c93c1fe6ff3 ""
   "/home/emre/.miktex/texmfs/install/tex/latex/url/url.sty" 1728037164.5838 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/home/emre/Documents/GitHub/Large-Language-Models-in-Human-machine-interaction/paper/frame.tex" 1766237685.12477 1107 e0e82bea4d31993315c1dea842974e52 ""
@@ -136,17 +133,17 @@
   "bilder/Tool.pdf" 1765378274.31308 18920 12d9e85b0dd1ba8ba42f5be7e571a508 ""
   "bilder/VLM.drawio.pdf" 1765900937.47629 23459 b1fc5a8984fbd652860004011c51e30b ""
   "bilder/speech-speech-diagram.drawio.pdf" 1765641479.95867 42841 ccde7c67a901abf83421ec19cfc1918c ""
-  "frame.aux" 1766237691.17379 8009 120bdce6580693710f0a87f4a84f4946 "pdflatex"
-  "frame.bbl" 1766237689.83978 10228 b4398b584c3c7fb5a9f8ff0a9d2f7ce2 "bibtex frame"
+  "frame.aux" 1767130773.22409 8634 5a85855b53167bf92130cf6cc97adff8 "pdflatex"
+  "frame.bbl" 1767010489.01512 11217 c899e22156203f626f943dd2f4f41d95 "bibtex frame"
   "frame.tex" 1766237685.12477 1107 e0e82bea4d31993315c1dea842974e52 ""
-  "frame.toc" 1766237691.17579 1642 5aaf87488b50a90d3fa3df4a1317e558 "pdflatex"
+  "frame.toc" 1767130773.22809 1970 fe9dedd2f3b5f6645432fbb29b52a73f "pdflatex"
   "mmiSeminar.sty" 1764231192.18414 15605 11476350a3869abc8fe78009572d0fe7 ""
   "scrbook.cls" 1764231192.18514 37952 054b431f8b4568f613bfe18426cf9c74 ""
   "sections/00_frontmatter/frontmatter.tex" 1764231192.18514 691 80e536865b864d8dfb99b7bf0c5e6aea ""
   "sections/00_table_of_contents/contents.tex" 1765969825.49554 274 8a4206722c39014b67aa312e4a4c2b88 ""
   "sections/01_introduction_motivation/section.tex" 1765899317.80183 1509 b694cc5cd198dc5620b0539908faf79c ""
   "sections/02_survey_method/section.tex" 1766065819.50586 16377 c9a4ad0b8422fec29872cd2e089f3824 ""
-  "sections/04_domain_case_studies/section.tex" 1766236667.12083 17901 813af6b7bf3d85d59453924a10409da7 ""
+  "sections/04_domain_case_studies/section.tex" 1767130769.84411 26904 6f9e0762ce3537339debb36d4a24d60b ""
   "sections/07_conclusion/section.tex" 1765378274.31908 43 06c56dd356068170bb7962e6bc2ce560 ""
   "typearea.sty" 1764231192.18714 16083 e8d05f82b20a2b10acc3cc949490ef0c ""
   "version.sty" 1764231192.18714 1973 78915de2c7b2b322cbc491262a2e21d3 ""

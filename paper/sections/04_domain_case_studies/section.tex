@@ -16,14 +16,7 @@ It investigates how CUIs can support astronauts living and working in extraterre
 
 To address these differing interaction requirements, the authors designed two complementary CUIs: CASSIOPEIA, which provides task-oriented, mission-critical assistance for scientific operations, and PEGASUS, which functions as an emotionally expressive personal companion to support crew well-being.
 
-While designing the conversational user interfaces (CUIs), the authors identified four key design guidelines:
-
-\begin{itemize}
-    \item \textbf{Support both mission-critical and non-mission-critical interactions}, ensuring reliable task execution while also accommodating informal and supportive exchanges.
-    \item \textbf{Design for frequent and prolonged use}, accounting for long-duration missions and sustained human--AI interaction without inducing cognitive fatigue.
-    \item \textbf{Enable multimodal and bidirectional interaction}, allowing users to interact with the system through complementary input and output modalities such as text, speech, and visual feedback.
-    \item \textbf{Design the CUI as a team member}, positioning the interface as an active collaborator that supports coordination, shared situational awareness, and trust within the crew.
-\end{itemize}
+While designing the conversational user interfaces (CUIs), the authors identified four key design guidelines. First, CUIs should support both mission-critical and non-mission-critical interactions, ensuring reliable task execution while also accommodating informal and supportive exchanges. Second, the interfaces should be designed for frequent and prolonged use, taking into account long-duration missions and sustained human–AI interaction without causing cognitive fatigue. Third, CUIs should enable multimodal and bidirectional interaction, allowing users to communicate with the system through complementary input and output modalities such as text, speech, and visual feedback. Finally, the CUI should be designed as a team member, positioned as an active collaborator that supports coordination, shared situational awareness, and trust within the crew.
 
 \textbf{Method}
 
@@ -104,21 +97,8 @@ Building on existing tool-calling and agentic reasoning paradigms discussed in S
 The proposed system is an agent-based human–robot collaboration (HRC) framework in which a large language model (LLM) is embedded into a robotic system as an autonomous decision-making agent. 
 Rather than treating the LLM as a passive instruction parser, the framework elevates it to an agentic role, capable of reasoning, planning, executing actions through tools, observing outcomes, and adapting behavior over time. 
 Human operators interact with the system primarily through natural language instructions, provided in text or speech form, while the robot executes physical actions and provides implicit feedback through its movements and task outcomes; continuous collaboration is achieved by allowing the human to issue incremental or corrective instructions during execution, which are interpreted by the agent using contextual memory and integrated into subsequent planning steps.
-An overview of the individual modules is provided below.
 
-\begin{itemize}
-    \item \textbf{Configuration Module:} 
-    Defines the agent’s role, goals, behavioral constraints, available tools, and prompt structure, ensuring that the LLM operates as a task-oriented autonomous agent rather than a conversational chatbot.
-
-    \item \textbf{Task Planning Module:} 
-    Uses an unmodified LLM within a Reason--Act chain-of-thought loop to interpret human instructions, decompose complex tasks, and determine which actions and tools should be invoked at each step.
-
-    \item \textbf{Task Execution Module:} 
-    Executes the planned actions by invoking encapsulated tools for perception, coordinate transformation, and robot control, and returns execution outcomes to the agent as observations.
-
-    \item \textbf{Memory Module:} 
-    Maintains short-term contextual memory and long-term vector-embedded summaries of past interactions to support continuous, context-aware reasoning across multiple tasks.
-\end{itemize}
+The architecture consists of several interconnected modules that together enable task-oriented autonomous behavior. The configuration module defines the agent’s role, goals, behavioral constraints, available tools, and prompt structure, ensuring that the LLM operates as a task-oriented autonomous agent rather than a conversational chatbot. Task planning is handled by a dedicated module that uses an unmodified LLM within a Reason–Act chain-of-thought loop to interpret human instructions, decompose complex tasks, and determine which actions and tools should be invoked at each step. The task execution module then carries out the planned actions by invoking encapsulated tools for perception, coordinate transformation, and robot control, and feeds the execution outcomes back to the agent as observations. Finally, a memory module maintains both short-term contextual memory and long-term vector-embedded summaries of past interactions, enabling continuous and context-aware reasoning across multiple tasks
 
 \begin{figure}[H]
     \centering
@@ -153,8 +133,67 @@ Moreover, the system does not employ retrieval-augmented generation and instead 
 Integrating a RAG mechanism to retrieve subject-specific assembly or process information would be a natural improvement to enhance robustness and scalability.
 
 \subsection{Emergency and Environmental Response}
+Large Language Models (LLMs) offer new opportunities to support emergency and environmental response by enhancing situational awareness and decision-making under time pressure. 
+In this section, a general review of their use in this field is presented.
+
+\subsubsection{Large Language Model Applications in Disaster Management: An Interdisciplinary Review \cite{Xu2025LLMdisaster}}
+Xu et al. provide a systematic interdisciplinary review of how large language models (LLMs) are being applied across the disaster management domain, taking into account both technical foundations and practical implementations. 
+The paper analyzes 70 research studies published between 2020 and 2024 to chart the evolving role of LLMs in disaster risk reduction, emergency response, and resilience-building efforts.
+\\
+
+The review characterizes large language models as human centered intermediaries that are capable of processing vast amounts of heterogeneous, unstructured, and time critical information. This includes data sources such as social media content, emergency situation reports, sensor streams, and remote sensing observations. Within disaster management settings, these capabilities enable LLMs to support human decision makers operating under uncertainty, high time pressure, and rapidly evolving conditions.
+The authors identify three recurring limitations in current disaster management systems. First, existing solutions tend to focus predominantly on the response phase, while offering comparatively limited support for preparedness, mitigation, and recovery activities. Second, there is insufficient integration among diverse stakeholders and heterogeneous data sources, which restricts the formation of a shared and coherent operational picture. Third, although situational awareness is often achieved, it is frequently not translated effectively into concrete and actionable intelligence that can directly inform decisions.
+To address these challenges, the paper introduces the \emph{3M Framework} as a conceptual foundation for next generation LLM driven disaster information management systems.
+\\
+
+\textbf{Method}
+
+The authors carried out a systematic literature review guided by the PRISMA\footnote{The PRISMA methodology (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) provides evidence-based guidelines for transparently reporting systematic reviews by defining a structured process for study identification, screening, and inclusion.
+\cite{page2021prisma} } methodology, drawing on major academic and preprint databases including Web of Science, IEEE Xplore, ScienceDirect, Scopus, and arXiv. Following a two stage screening process, a total of 70 studies were selected for inclusion. These studies employ large language models or contextual language models such as GPT, BERT, and T5 within disaster related applications.
+The selected works were examined along two primary dimensions. The first dimension concerns the operational phase of disaster management addressed by each study, including detection, tracking, analysis, and action. The second dimension focuses on the technical approach, covering aspects such as the underlying model architecture, the chosen adaptation strategy, whether fine tuning or prompt engineering, and the degree of integration with external tools or additional data sources.
+This structured synthesis allows for a comparative perspective on how LLM capabilities are applied and evolve across different disaster types and across the various phases of disaster management.
+\\
+
+\textbf{Result}
+
+Large language models show strong performance in detecting disaster-related content, including misinformation filtering, humanitarian needs classification, and severity estimation from informal and multilingual data. Multimodal models further improve early warning by jointly processing text, images, and sensor data. For tracking, LLMs enhance event monitoring through entity extraction, temporal reasoning, and spatial interpretation; zero-shot methods reduce reliance on annotated datasets, though fine-grained disambiguation across locations and entities remains challenging. In analysis, LLMs support impact assessment via sentiment modeling, topic evolution, semantic networks, and knowledge graphs, enabling evaluation of response effectiveness and stakeholder communication. In the action phase, LLMs operate as interactive planning assistants, coordinating responders and affected populations through retrieval-augmented generation, tool orchestration, and scenario analysis.
+
+Decoder-focused models, such as the GPT-4 family, increasingly dominate due to strong reasoning and generative capabilities, while encoder-based models remain important for low-latency and resource-constrained settings.
+
+To guide future research and deployment, the authors propose the 3M Framework: multi-modal data fusion, integrating textual, visual, sensor, and structured data into unified situational assessments; multi-source information validation, cross-checking heterogeneous and conflicting sources to improve reliability under uncertainty; and multi-agent knowledge integration, coordinating human experts, AI agents, and physical–virtual systems to produce actionable intelligence.
+\\
+
+\textbf{Analysis}
+
+The authors present LLMs as agentic assistive tools that support operators in tasks such as planning, identification, and classification, which aligns with the agentic aid concept discussed in Section 2. The reviewed approaches primarily rely on text based methods, including prompt engineering and fine tuning, and do not incorporate audio or visual cues. In addition, the study does not address the use of retrieval augmented generation, which based on the arguments presented in Section 2 could provide stronger contextual grounding in domain specific knowledge and enable a more modular and extensible system architecture. Nevertheless, drawing on the literature review and the proposed 3M Framework, it can be inferred that integrating multimodal audio and visual language models together with retrieval augmented generation could further enhance operator support, even though full operator replacement is not considered.
+
+\subsubsection{From Promising Capability to Pervasive Bias: Assessing Large Language Models
+for Emergency Department Triage \cite{lee2025llm_triage_bias}}
+
+Lee et al. investigate the applicability of large language models (LLMs) for emergency department (ED) triage as high-level cognitive collaborators for professionals.
+The study is motivated by the limitations of both human triage, which is subject to cognitive bias and variability under pressure, and traditional machine learning approaches, which rely heavily on structured inputs and often fail under distribution shifts.
+
+The authors position LLMs as decision support tools rather than autonomous decision-makers, capable of processing unstructured clinical text and generating triage predictions and rationales.
+\\
+
+
+\textbf{Method}
+
+The study employs a two-part experimental design. First, the authors benchmark LLMs for emergency department triage, evaluating robustness to missing data and distribution shifts across three datasets: MIMIC-IV-ED hospital records, KTAS-labeled hospital data, and curated ESI handbook cases. These datasets combine structured clinical variables with free-text chief complaints.
+LLM-based approaches, including zero-shot, chain-of-thought, few-shot prompting, retrieval-based in-context learning (KATE), and supervised fine-tuning, are compared against traditional machine learning baselines and a BioBERT-based model using accuracy, F1-score, quadratic-weighted kappa, and mean squared error.
+Second, a counterfactual analysis systematically perturbs patient sex and race to assess demographic biases in LLM triage predictions using statistical significance testing.
+\\
+
+\textbf{Result}
+
+The results show that LLM-based approaches outperform traditional machine learning baselines across most datasets, particularly when retrieval-based in-context learning is used. The KATE method achieves the strongest performance, emphasizing the importance of retrieving relevant examples, while fine-tuned smaller models remain competitive with sufficient domain data.
+However, notable limitations are identified. LLMs show calibration issues by hesitating to assign the highest acuity level, and the counterfactual analysis reveals significant demographic biases across intersections of sex and race. Although chain-of-thought prompting reduces some bias, it does not eliminate it.
+\\
+
+\textbf{Analysis}
+
+In their evaluation, the authors compare LLM-based approaches against traditional machine learning methods and established rule-based triage schemes, highlighting the advantages of LLMs in handling unstructured clinical text. An interesting extension of this work would be an analysis that combines agentic system designs with classical machine learning approaches, as recent studies in other domains suggest that such hybrid architectures can achieve improved accuracy and robustness.
 
 \subsection{Industrial Operations}
 
-Industrial operations are an early proving ground for LLM-enabled human--robot collaboration workflows that can translate operator intent into contextual tool use, perception, and execution. Figure~\ref{fig:hrc_workflow} summarizes one such architecture integrating prompt templates, multimodal memory, tool libraries, and action monitoring loops tailored for collaborative assembly tasks.
-
+Industrial operations represent an early proving ground for LLM-enabled human–robot collaboration workflows, where operator intent can be translated into contextual tool use, perception, and execution. This section presents a paper that explores the potential application of LLM-based technologies in the context of human–machine interaction (HMI).

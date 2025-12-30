@@ -1,8 +1,1 @@
-Conversational User Interfaces for Astronauts – Summary
-
-• CUIs can augment long-duration crews in MaMBA habitat by supporting scientific routines and offering emotional relief; a week-long Wizard-of-Oz study showed heavy use for both mission and leisure interactions.
-• Four guidelines emerged: support both mission-specific and casual requests, expect frequent/long dialogues, include multimodal/two-way interaction, and design the CUI as a trusted teammate since astronauts anthropomorphize it.
-• CASSIOPEIA, a mission assistant running on Raspberry Pi with optional GUI, uses state-machine procedures plus SNIPS intent models, letting mission control share habitat databases and enabling experiment guidance.
-• In a 12-person study, CASSIOPEIA with GUI delivered faster task completion and fewer wake-word invocations while SUS/PSSUQ usability stayed comparable; interviews emphasized concise prompts, helpful imagery, and strategic placement.
-• PEGASUS, a personal sidekick on a watch figurine with expressive faces, personalizes dialogue and remembers preferences; a 10-person study found the characterized version boosted excitement and, when users felt sympathetic, correlated with lower stress though privacy comfort varied.
-• Authors argue these prototypes advance CUI design for extreme environments and call for longer deployments, personalized companions, and broader studies to ensure Moon/Mars crews (including parastronauts) receive emotional and operational support.
+../HMI/Conversational_User_Interfaces_for_Astronauts_summary.txt
