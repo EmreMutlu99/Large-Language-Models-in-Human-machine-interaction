@@ -1,71 +1,71 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
   <diagram name="Page-1" id="fRLL1Q0L3fZI--ovooBm">
-    <mxGraphModel dx="778" dy="1470" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="845" dy="1038" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="AntDPMCguiRu_pN88swg-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=3;" edge="1" parent="1" source="AntDPMCguiRu_pN88swg-1" target="AntDPMCguiRu_pN88swg-4">
+        <mxCell id="AntDPMCguiRu_pN88swg-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=3;" parent="1" source="AntDPMCguiRu_pN88swg-1" target="AntDPMCguiRu_pN88swg-4" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="280" y="345" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="AntDPMCguiRu_pN88swg-1" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Text&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;" vertex="1" parent="1">
+        <mxCell id="AntDPMCguiRu_pN88swg-1" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;Text&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;" parent="1" vertex="1">
           <mxGeometry x="120" y="325" width="80" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="AntDPMCguiRu_pN88swg-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=3;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="AntDPMCguiRu_pN88swg-2" target="AntDPMCguiRu_pN88swg-9">
+        <mxCell id="AntDPMCguiRu_pN88swg-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=3;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="AntDPMCguiRu_pN88swg-2" target="AntDPMCguiRu_pN88swg-9" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="290" y="460" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="AntDPMCguiRu_pN88swg-2" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Image&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;" vertex="1" parent="1">
-          <mxGeometry x="120" y="440" width="80" height="40" as="geometry" />
+        <mxCell id="AntDPMCguiRu_pN88swg-2" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;Image&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="120" y="430" width="80" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="AntDPMCguiRu_pN88swg-4" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;Text Embedding&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;strokeWidth=3;" vertex="1" parent="1">
-          <mxGeometry x="355" y="330" width="140" height="30" as="geometry" />
+        <mxCell id="AntDPMCguiRu_pN88swg-4" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;Text Embedding&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="335" y="325" width="180" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="AntDPMCguiRu_pN88swg-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=3;" edge="1" parent="1" source="AntDPMCguiRu_pN88swg-9" target="AntDPMCguiRu_pN88swg-10">
+        <mxCell id="AntDPMCguiRu_pN88swg-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=3;" parent="1" source="AntDPMCguiRu_pN88swg-9" target="AntDPMCguiRu_pN88swg-10" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="AntDPMCguiRu_pN88swg-9" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Vision Encoder&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;" vertex="1" parent="1">
-          <mxGeometry x="260" y="440" width="120" height="40" as="geometry" />
+        <mxCell id="AntDPMCguiRu_pN88swg-9" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;Vision Encoder&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="260" y="425" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="AntDPMCguiRu_pN88swg-10" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;Image Embedding&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;strokeWidth=3;" vertex="1" parent="1">
-          <mxGeometry x="440" y="445" width="150" height="30" as="geometry" />
+        <mxCell id="AntDPMCguiRu_pN88swg-10" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;Image Embedding&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="415" y="440" width="200" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="AntDPMCguiRu_pN88swg-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=3;" edge="1" parent="1" source="AntDPMCguiRu_pN88swg-12" target="AntDPMCguiRu_pN88swg-14">
+        <mxCell id="AntDPMCguiRu_pN88swg-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=3;" parent="1" source="AntDPMCguiRu_pN88swg-12" target="AntDPMCguiRu_pN88swg-14" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="AntDPMCguiRu_pN88swg-12" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Projector&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;" vertex="1" parent="1">
+        <mxCell id="AntDPMCguiRu_pN88swg-12" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;Projector&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;" parent="1" vertex="1">
           <mxGeometry x="640" y="440" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="AntDPMCguiRu_pN88swg-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.993;exitY=0.517;exitDx=0;exitDy=0;strokeWidth=3;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="AntDPMCguiRu_pN88swg-10" target="AntDPMCguiRu_pN88swg-12">
+        <mxCell id="AntDPMCguiRu_pN88swg-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.993;exitY=0.517;exitDx=0;exitDy=0;strokeWidth=3;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="AntDPMCguiRu_pN88swg-10" target="AntDPMCguiRu_pN88swg-12" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="520" y="490" as="sourcePoint" />
             <mxPoint x="600" y="490" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="AntDPMCguiRu_pN88swg-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=3;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="AntDPMCguiRu_pN88swg-14" target="AntDPMCguiRu_pN88swg-19">
+        <mxCell id="AntDPMCguiRu_pN88swg-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=3;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="AntDPMCguiRu_pN88swg-14" target="AntDPMCguiRu_pN88swg-19" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="840" y="345" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="AntDPMCguiRu_pN88swg-14" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;LLM&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;" vertex="1" parent="1">
+        <mxCell id="AntDPMCguiRu_pN88swg-14" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;LLM&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;" parent="1" vertex="1">
           <mxGeometry x="640" y="325" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="AntDPMCguiRu_pN88swg-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;" edge="1" parent="1" source="AntDPMCguiRu_pN88swg-4" target="AntDPMCguiRu_pN88swg-14">
+        <mxCell id="AntDPMCguiRu_pN88swg-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;" parent="1" source="AntDPMCguiRu_pN88swg-4" target="AntDPMCguiRu_pN88swg-14" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="700" y="495" as="sourcePoint" />
             <mxPoint x="700" y="420" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="AntDPMCguiRu_pN88swg-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;" edge="1" parent="1" source="AntDPMCguiRu_pN88swg-19" target="AntDPMCguiRu_pN88swg-20">
+        <mxCell id="AntDPMCguiRu_pN88swg-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;" parent="1" source="AntDPMCguiRu_pN88swg-19" target="AntDPMCguiRu_pN88swg-20" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="AntDPMCguiRu_pN88swg-19" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Pre-Training Objectives&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;" vertex="1" parent="1">
-          <mxGeometry x="840" y="325" width="120" height="40" as="geometry" />
+        <mxCell id="AntDPMCguiRu_pN88swg-19" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;Pre-Training Objectives&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="840" y="315" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="AntDPMCguiRu_pN88swg-20" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Visiual Language Model&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;" vertex="1" parent="1">
-          <mxGeometry x="1040" y="315" width="120" height="60" as="geometry" />
+        <mxCell id="AntDPMCguiRu_pN88swg-20" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;Visiual Language Model&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="1040" y="307.5" width="120" height="75" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

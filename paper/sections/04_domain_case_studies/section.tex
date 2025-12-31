@@ -1,11 +1,14 @@
 \section{Domain Case Studies}
 \label{sec:cases}
-In the previous section, the architectural foundations underlying the use of large language models (LLMs) in the context of human–machine interaction were introduced, encompassing text-based, audio-based, and vision–language modalities. 
+In the previous section, the architectural foundations underlying the use of large language models (LLMs) in the context of human–machine interaction were introduced, encompassing text-based, audio-based, and vision–language modalities.
 This section builds on that foundation by reviewing selected studies from several safety-critical application domains; namely aerospace and remote sciences, emergency and environmental response, and industrial operations, with a focus on how LLM-based technologies are applied in human–machine interaction within these contexts.
 
+Each study is presented using a consistent structure, beginning with a brief overview of the application context, followed by a summary of the proposed method and key results. 
+This is then complemented by a short analysis that situates the work.
+
 \subsection{Aerospace and Remote Science}
-Aerospace and remote science missions place humans in some of the most demanding HMI settings. 
-Astronauts and mission operators work under high risk, limited communication, and long periods of isolation, while managing complex systems and strict safety procedures. 
+Aerospace and remote science missions place humans in some of the most demanding HMI settings.
+Astronauts and mission operators work under high risk, limited communication, and long periods of isolation, while managing complex systems and strict safety procedures.
 In these conditions, interaction approaches that reduce cognitive effort, support decision-making, and offer context-aware assistance are especially valuable.
 In this section, selected papers from this domain are analyzed and discussed.
 
@@ -16,14 +19,18 @@ It investigates how CUIs can support astronauts living and working in extraterre
 
 To address these differing interaction requirements, the authors designed two complementary CUIs: CASSIOPEIA, which provides task-oriented, mission-critical assistance for scientific operations, and PEGASUS, which functions as an emotionally expressive personal companion to support crew well-being.
 
-While designing the conversational user interfaces (CUIs), the authors identified four key design guidelines. First, CUIs should support both mission-critical and non-mission-critical interactions, ensuring reliable task execution while also accommodating informal and supportive exchanges. Second, the interfaces should be designed for frequent and prolonged use, taking into account long-duration missions and sustained human–AI interaction without causing cognitive fatigue. Third, CUIs should enable multimodal and bidirectional interaction, allowing users to communicate with the system through complementary input and output modalities such as text, speech, and visual feedback. Finally, the CUI should be designed as a team member, positioned as an active collaborator that supports coordination, shared situational awareness, and trust within the crew.
+While designing the conversational user interfaces (CUIs), the authors identified four key design guidelines.
+First, CUIs should support both mission-critical and non-mission-critical interactions, ensuring reliable task execution while also accommodating informal and supportive exchanges.
+Second, the interfaces should be designed for frequent and prolonged use, taking into account long-duration missions and sustained human–AI interaction without causing cognitive fatigue.
+Third, CUIs should enable multimodal and bidirectional interaction, allowing users to communicate with the system through complementary input and output modalities such as text, speech, and visual feedback.
+Finally, the CUI should be designed as a team member, positioned as an active collaborator that supports coordination, shared situational awareness, and trust within the crew.
 
 \textbf{Method}
 
-To derive requirements for conversational user interfaces in extraterrestrial habitats, the authors conducted a week-long Wizard-of-Oz study inside the MaMBA Moon/Mars habitat laboratory module at ZARM. 
-Four experienced scientists carried out real biological, geological, and materials science experiments while interacting with a simulated CUI operated by a human wizard via a Raspberry Pi–based voice interface. 
-All interactions were logged, video-recorded, transcribed, and qualitatively coded, revealing frequent use of both mission-critical and non-mission-related interactions. 
-Based on these findings, the authors derived four design guidelines emphasizing support for mission and non-mission tasks, intensive long-term use, multimodal and bidirectional interaction, and the treatment of the CUI as a team member. 
+To derive requirements for conversational user interfaces in extraterrestrial habitats, the authors conducted a week-long Wizard-of-Oz study inside the MaMBA Moon/Mars habitat laboratory module at ZARM.
+Four experienced scientists carried out real biological, geological, and materials science experiments while interacting with a simulated CUI operated by a human wizard via a Raspberry Pi–based voice interface.
+All interactions were logged, video-recorded, transcribed, and qualitatively coded, revealing frequent use of both mission-critical and non-mission-related interactions.
+Based on these findings, the authors derived four design guidelines emphasizing support for mission and non-mission tasks, intensive long-term use, multimodal and bidirectional interaction, and the treatment of the CUI as a team member.
 Guided by these principles, the two CUIs introduced earlier were implemented.
 These systems were evaluated in two controlled user studies within the habitat: one comparing voice-only versus voice-plus-GUI interaction for task efficiency, and another comparing emotionally characterized versus neutral CUIs to assess emotional engagement, stress, and workload using standardized questionnaires and interviews.
 
@@ -36,69 +43,76 @@ These systems were evaluated in two controlled user studies within the habitat: 
 
 \textbf{Result}
 
-The study shows that CUI can meaningfully support astronauts in isolated extraterrestrial habitats by improving both task performance and user experience. 
-Results indicate that multimodal CUIs combining voice and graphical interfaces enable significantly more efficient task completion than voice-only CUIs, while perceived usability remains comparable. 
-Emotionally characterized CUIs increase user excitement and engagement, and stronger emotional connection and perceived sympathy toward the system are associated with lower reported stress levels, although individual responses vary and overall task workload does not differ significantly. 
+The study shows that CUI can meaningfully support astronauts in isolated extraterrestrial habitats by improving both task performance and user experience.
+Results indicate that multimodal CUIs combining voice and graphical interfaces enable significantly more efficient task completion than voice-only CUIs, while perceived usability remains comparable.
+Emotionally characterized CUIs increase user excitement and engagement, and stronger emotional connection and perceived sympathy toward the system are associated with lower reported stress levels, although individual responses vary and overall task workload does not differ significantly.
 Overall, the findings suggest that well-designed CUIs can enhance operational efficiency and psychological well-being in long-duration space missions, provided that emotional interaction and interface modality are carefully adapted to user needs.
 
 \textbf{Analysis}
 
-Freitas et.al. propose a framework for the design and development of conversational user interfaces for space missions in this paper. 
-Although the study employs a Wizard-of-Oz setup in which a human operator simulates the AI system, the results provide a convincing proof of concept demonstrating that the development of such assistants is both feasible and worthwhile. 
-Building on the proposed framework, a fully autonomous implementation that integrates real-time speech-to-speech models, retrieval-augmented generation, and tool-calling mechanisms represents a promising direction for future research. 
+Freitas et.al.
+propose a framework for the design and development of conversational user interfaces for space missions in this paper.
+Although the study employs a Wizard-of-Oz setup in which a human operator simulates the AI system, the results provide a convincing proof of concept demonstrating that the development of such assistants is both feasible and worthwhile.
+Building on the proposed framework, a fully autonomous implementation that integrates real-time speech-to-speech models, retrieval-augmented generation, and tool-calling mechanisms represents a promising direction for future research.
 Such an approach could combine several aspects discussed in the background section of this paper to realize an agentic conversational system capable of supporting astronauts in safety-critical and isolated mission environments.
 
 
 \subsubsection{AI Assistants for Spaceflight Procedures: Combining Generative
-Pre-Trained Transformer and Retrieval-Augmented Generation on
-Knowledge Graphs With Augmented Reality Cues \cite{bensch2024aiassistants}}
+Pre-Trained Transformer and Retrieval-Augmented Generation on Knowledge Graphs With Augmented Reality Cues \cite{bensch2024aiassistants}}
 
-In this paper Bensch et.al. intoduce an intelligent personal assistant (IPA) they named CORE (Checklist Organizer for Research and Exploration).
+In this paper Bensch et.al.
+intoduce an intelligent personal assistant (IPA) they named CORE (Checklist Organizer for Research and Exploration).
 CORE is designed to support astronauts during procedural tasks on the ISS, Lunar Gateway, and future deep-space missions.
 It combines Large Language Models (GPTs) with Retrieval-Augmented Generation (RAG), Knowledge Graphs (KGs), and Augmented Reality (AR) to achieve its tasks.
 \\
 
 \textbf{Method}
 
-The authors validate CORE through qualitative, prototype-based functional testing rather than formal benchmarking. 
-Ten publicly available ISS procedures were indexed into a vector database and linked with metadata and images via a knowledge graph, forming the basis of a retrieval-augmented generation (RAG) pipeline built on GPT-4. 
-Spoken user queries were transcribed using Whisper, enriched with retrieved procedure content, and used to generate constrained responses. 
-Validation was performed using example queries to verify that CORE returned the correct procedure steps verbatim and triggered associated visual cues, while rejecting non-procedure-related questions. 
-In addition to this functional validation, offline availability is addressed as a system design consideration: the authors argue that recent advances in open-source large language models, together with optimization techniques such as low-rank adaptation and quantization, make fully offline deployment of the proposed architecture feasible for future missions. 
-However, this offline capability is not empirically evaluated in the present work. 
+The authors validate CORE through qualitative, prototype-based functional testing rather than formal benchmarking.
+Ten publicly available ISS procedures were indexed into a vector database and linked with metadata and images via a knowledge graph, forming the basis of a retrieval-augmented generation (RAG) pipeline built on GPT-4.
+Spoken user queries were transcribed using Whisper, enriched with retrieved procedure content, and used to generate constrained responses.
+Validation was performed using example queries to verify that CORE returned the correct procedure steps verbatim and triggered associated visual cues, while rejecting non-procedure-related questions.
+In addition to this functional validation, offline availability is addressed as a system design consideration: the authors argue that recent advances in open-source large language models, together with optimization techniques such as low-rank adaptation and quantization, make fully offline deployment of the proposed architecture feasible for future missions.
+However, this offline capability is not empirically evaluated in the present work.
 No quantitative performance metrics or user studies are reported; a controlled evaluation at the European Astronaut Centre is explicitly deferred to future work.\\
 
 \textbf{Result}
 
-The authors demonstrate that the CORE prototype can correctly retrieve and present procedural information using a Retrieval-Augmented Generation architecture. 
-In their experiments, CORE successfully returned exact, verbatim procedure steps in response to user queries, including the correct step numbering and associated visual references when available. 
-The system was able to answer both step-specific questions (e.g., requesting a particular step in a CPR procedure) and metadata-related queries (such as the last update date of a procedure), reformulating retrieved graph data into coherent natural-language responses. 
-Importantly, CORE consistently rejected questions unrelated to the indexed procedures, enforcing strict domain boundaries and reducing the risk of hallucinated or unsafe responses. 
-These results indicate that the proposed combination of GPT, RAG, and knowledge graphs can support reliable, constrained procedural assistance. 
+The authors demonstrate that the CORE prototype can correctly retrieve and present procedural information using a Retrieval-Augmented Generation architecture.
+In their experiments, CORE successfully returned exact, verbatim procedure steps in response to user queries, including the correct step numbering and associated visual references when available.
+The system was able to answer both step-specific questions (e.g., requesting a particular step in a CPR procedure) and metadata-related queries (such as the last update date of a procedure), reformulating retrieved graph data into coherent natural-language responses.
+Importantly, CORE consistently rejected questions unrelated to the indexed procedures, enforcing strict domain boundaries and reducing the risk of hallucinated or unsafe responses.
+These results indicate that the proposed combination of GPT, RAG, and knowledge graphs can support reliable, constrained procedural assistance.
 However, the reported results are illustrative and qualitative, and no quantitative performance metrics, comparative baselines, or user-study outcomes are provided.
 \\
 
 \textbf{Analysis}
 
-Bensch et al. demonstrate that the development of an AI-based procedural assistant for space missions is technically feasible. 
-They adopt a modular speech-to-text, language model, and text-to-speech (STT–LLM–TTS) pipeline, which enables seamless integration with a vector database through Retrieval-Augmented Generation (RAG). 
-According to the authors, this architectural choice allows the system to retrieve reliable, procedure-specific information while reducing the risk of hallucinated responses. 
-However, the paper lacks an in-depth evaluation of the system’s capabilities; the limited number of illustrative prompt–response examples is insufficient to establish the robustness or generalizability of the approach. 
-Furthermore, no user study is conducted to assess usability, user acceptance, or cognitive workload during interaction. 
-As the system relies on a pipeline-based interaction model rather than an end-to-end speech-to-speech approach, response latency may be higher, potentially reducing conversational naturalness and introducing an “uncanny valley” effect. 
-Despite these limitations, the authors’ emphasis on offline-capable deployment represents a particularly important contribution, as reliance on cloud-based models is impractical in space environments due to communication delays and outages. 
+Bensch et al.
+demonstrate that the development of an AI-based procedural assistant for space missions is technically feasible.
+They adopt a modular speech-to-text, language model, and text-to-speech (STT–LLM–TTS) pipeline, which enables seamless integration with a vector database through Retrieval-Augmented Generation (RAG).
+According to the authors, this architectural choice allows the system to retrieve reliable, procedure-specific information while reducing the risk of hallucinated responses.
+However, the paper lacks an in-depth evaluation of the system’s capabilities; the limited number of illustrative prompt–response examples is insufficient to establish the robustness or generalizability of the approach.
+Furthermore, no user study is conducted to assess usability, user acceptance, or cognitive workload during interaction.
+As the system relies on a pipeline-based interaction model rather than an end-to-end speech-to-speech approach, response latency may be higher, potentially reducing conversational naturalness and introducing an “uncanny valley” effect.
+Despite these limitations, the authors’ emphasis on offline-capable deployment represents a particularly important contribution, as reliance on cloud-based models is impractical in space environments due to communication delays and outages.
 This aspect highlights promising directions for future research, including the development of onboard data processing infrastructure capable of locally hosting large language models for autonomous space operations.
 
 \subsubsection{LLM-Based Autonomous Agent for Aerospace Wire Harnessing \cite{wang2026llmharnessing}}
-In this paper, Wang et al. introduce an agent-based framework for human–robot collaboration (HRC) and validate it through a high-precision aerospace wire harnessing assembly use case. 
+In this paper, Wang et al.
+introduce an agent-based framework for human–robot collaboration (HRC) and validate it through a high-precision aerospace wire harnessing assembly use case.
 Building on existing tool-calling and agentic reasoning paradigms discussed in Section 2, the framework extends these approaches by incorporating long-term memory mechanisms, implemented via vector database embeddings, to support contextual understanding, and iterative task execution.
 
 
-The proposed system is an agent-based human–robot collaboration (HRC) framework in which a large language model (LLM) is embedded into a robotic system as an autonomous decision-making agent. 
-Rather than treating the LLM as a passive instruction parser, the framework elevates it to an agentic role, capable of reasoning, planning, executing actions through tools, observing outcomes, and adapting behavior over time. 
+The proposed system is an agent-based human–robot collaboration (HRC) framework in which a large language model (LLM) is embedded into a robotic system as an autonomous decision-making agent.
+Rather than treating the LLM as a passive instruction parser, the framework elevates it to an agentic role, capable of reasoning, planning, executing actions through tools, observing outcomes, and adapting behavior over time.
 Human operators interact with the system primarily through natural language instructions, provided in text or speech form, while the robot executes physical actions and provides implicit feedback through its movements and task outcomes; continuous collaboration is achieved by allowing the human to issue incremental or corrective instructions during execution, which are interpreted by the agent using contextual memory and integrated into subsequent planning steps.
 
-The architecture consists of several interconnected modules that together enable task-oriented autonomous behavior. The configuration module defines the agent’s role, goals, behavioral constraints, available tools, and prompt structure, ensuring that the LLM operates as a task-oriented autonomous agent rather than a conversational chatbot. Task planning is handled by a dedicated module that uses an unmodified LLM within a Reason–Act chain-of-thought loop to interpret human instructions, decompose complex tasks, and determine which actions and tools should be invoked at each step. The task execution module then carries out the planned actions by invoking encapsulated tools for perception, coordinate transformation, and robot control, and feeds the execution outcomes back to the agent as observations. Finally, a memory module maintains both short-term contextual memory and long-term vector-embedded summaries of past interactions, enabling continuous and context-aware reasoning across multiple tasks
+The architecture consists of several interconnected modules that together enable task-oriented autonomous behavior.
+The configuration module defines the agent’s role, goals, behavioral constraints, available tools, and prompt structure, ensuring that the LLM operates as a task-oriented autonomous agent rather than a conversational chatbot.
+Task planning is handled by a dedicated module that uses an unmodified LLM within a Reason–Act chain-of-thought loop to interpret human instructions, decompose complex tasks, and determine which actions and tools should be invoked at each step.
+The task execution module then carries out the planned actions by invoking encapsulated tools for perception, coordinate transformation, and robot control, and feeds the execution outcomes back to the agent as observations.
+Finally, a memory module maintains both short-term contextual memory and long-term vector-embedded summaries of past interactions, enabling continuous and context-aware reasoning across multiple tasks
 
 \begin{figure}[H]
     \centering
@@ -109,40 +123,47 @@ The architecture consists of several interconnected modules that together enable
 
 \textbf{Method}
 
-The proposed HRC agent is validated experimentally using a real-world human–robot collaborative assembly setup based on a UR5 collaborative robot equipped with a depth camera and vision system. 
-Validation is conducted progressively across three capability levels: perception, task planning, and task execution. First, the agent’s sensing ability is evaluated using a Target Recognition Success Rate (TRR), which measures the correctness of object detection and spatial localization for tools, connectors, cables, and assembly ports under repeated trials, including dense connector arrays handled via a grid-matching recovery method. 
-Second, the cognitive task-planning capability is assessed independently of robot execution by providing natural-language instructions and evaluating whether the agent’s chain-of-thought reasoning produces correct and executable action sequences, quantified using the Task Planning Success Rate (TPR) and benchmarked against state-of-the-art standalone LLMs under identical tool constraints. 
-Third, full end-to-end task execution is validated by deploying the planned action sequences on the physical robot and measuring the Task Execution Success Rate (TER), requiring all subtasks to be successfully completed in real assembly scenarios. 
+The proposed HRC agent is validated experimentally using a real-world human–robot collaborative assembly setup based on a UR5 collaborative robot equipped with a depth camera and vision system.
+Validation is conducted progressively across three capability levels: perception, task planning, and task execution.
+First, the agent’s sensing ability is evaluated using a Target Recognition Success Rate (TRR), which measures the correctness of object detection and spatial localization for tools, connectors, cables, and assembly ports under repeated trials, including dense connector arrays handled via a grid-matching recovery method.
+Second, the cognitive task-planning capability is assessed independently of robot execution by providing natural-language instructions and evaluating whether the agent’s chain-of-thought reasoning produces correct and executable action sequences, quantified using the Task Planning Success Rate (TPR) and benchmarked against state-of-the-art standalone LLMs under identical tool constraints.
+Third, full end-to-end task execution is validated by deploying the planned action sequences on the physical robot and measuring the Task Execution Success Rate (TER), requiring all subtasks to be successfully completed in real assembly scenarios.
 Each task is repeated multiple times to assess robustness, and additional experiments demonstrate the agent’s generalizability to previously unseen wire assembly tasks, thereby validating perception, reasoning, and execution capabilities in an integrated industrial setting
 \\
 
 \textbf{Result}
 
-The proposed HRC agent demonstrates consistently high success rates across perception, task planning, and execution in real aerospace wire harnessing assembly experiments, with most tasks achieving 9–10 successful trials out of 10 repetitions. 
-In task planning, the agent substantially outperforms standalone state-of-the-art LLMs, which frequently fail to generate correct and executable action sequences for domain-specific assembly tasks. 
+The proposed HRC agent demonstrates consistently high success rates across perception, task planning, and execution in real aerospace wire harnessing assembly experiments, with most tasks achieving 9–10 successful trials out of 10 repetitions.
+In task planning, the agent substantially outperforms standalone state-of-the-art LLMs, which frequently fail to generate correct and executable action sequences for domain-specific assembly tasks.
 Overall, the results indicate that the agent-based LLM framework enables robust and reliable human–robot collaboration in complex industrial environments
 \\
 
 \textbf{Analysis}
 
-The paper presents a technically solid and credible system, with results that are convincing within the tested industrial context, particularly because validation is performed on a real robotic setup rather than in simulation. 
-Reported success rates (mostly 9–10 out of 10 trials) indicate robust performance, and comparisons with standalone LLMs support the claim that the agent-based architecture is the key contributor. 
+The paper presents a technically solid and credible system, with results that are convincing within the tested industrial context, particularly because validation is performed on a real robotic setup rather than in simulation.
+Reported success rates (mostly 9–10 out of 10 trials) indicate robust performance, and comparisons with standalone LLMs support the claim that the agent-based architecture is the key contributor.
 However, the evaluation is limited in scope, lacks statistical analysis and ablation studies, and does not include human-centered metrics, so the results should be viewed as a strong proof of concept rather than evidence of broad generalizability.
 
-Moreover, the system does not employ retrieval-augmented generation and instead relies on the language model’s internal memory for context understanding, which limits access to explicit domain knowledge. 
+Moreover, the system does not employ retrieval-augmented generation and instead relies on the language model’s internal memory for context understanding, which limits access to explicit domain knowledge.
 Integrating a RAG mechanism to retrieve subject-specific assembly or process information would be a natural improvement to enhance robustness and scalability.
 
 \subsection{Emergency and Environmental Response}
-Large Language Models (LLMs) offer new opportunities to support emergency and environmental response by enhancing situational awareness and decision-making under time pressure. 
+Large Language Models (LLMs) offer new opportunities to support emergency and environmental response by enhancing situational awareness and decision-making under time pressure.
 In this section, a general review of their use in this field is presented.
 
 \subsubsection{Large Language Model Applications in Disaster Management: An Interdisciplinary Review \cite{Xu2025LLMdisaster}}
-Xu et al. provide a systematic interdisciplinary review of how large language models (LLMs) are being applied across the disaster management domain, taking into account both technical foundations and practical implementations. 
+Xu et al.
+provide a systematic interdisciplinary review of how large language models (LLMs) are being applied across the disaster management domain, taking into account both technical foundations and practical implementations.
 The paper analyzes 70 research studies published between 2020 and 2024 to chart the evolving role of LLMs in disaster risk reduction, emergency response, and resilience-building efforts.
 \\
 
-The review characterizes large language models as human centered intermediaries that are capable of processing vast amounts of heterogeneous, unstructured, and time critical information. This includes data sources such as social media content, emergency situation reports, sensor streams, and remote sensing observations. Within disaster management settings, these capabilities enable LLMs to support human decision makers operating under uncertainty, high time pressure, and rapidly evolving conditions.
-The authors identify three recurring limitations in current disaster management systems. First, existing solutions tend to focus predominantly on the response phase, while offering comparatively limited support for preparedness, mitigation, and recovery activities. Second, there is insufficient integration among diverse stakeholders and heterogeneous data sources, which restricts the formation of a shared and coherent operational picture. Third, although situational awareness is often achieved, it is frequently not translated effectively into concrete and actionable intelligence that can directly inform decisions.
+The review characterizes large language models as human centered intermediaries that are capable of processing vast amounts of heterogeneous, unstructured, and time critical information.
+This includes data sources such as social media content, emergency situation reports, sensor streams, and remote sensing observations.
+Within disaster management settings, these capabilities enable LLMs to support human decision makers operating under uncertainty, high time pressure, and rapidly evolving conditions.
+The authors identify three recurring limitations in current disaster management systems.
+First, existing solutions tend to focus predominantly on the response phase, while offering comparatively limited support for preparedness, mitigation, and recovery activities.
+Second, there is insufficient integration among diverse stakeholders and heterogeneous data sources, which restricts the formation of a shared and coherent operational picture.
+Third, although situational awareness is often achieved, it is frequently not translated effectively into concrete and actionable intelligence that can directly inform decisions.
 To address these challenges, the paper introduces the \emph{3M Framework} as a conceptual foundation for next generation LLM driven disaster information management systems.
 \\
 
@@ -150,13 +171,19 @@ To address these challenges, the paper introduces the \emph{3M Framework} as a c
 
 The authors carried out a systematic literature review guided by the PRISMA\footnote{The PRISMA methodology (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) provides evidence-based guidelines for transparently reporting systematic reviews by defining a structured process for study identification, screening, and inclusion.
 \cite{page2021prisma} } methodology, drawing on major academic and preprint databases including Web of Science, IEEE Xplore, ScienceDirect, Scopus, and arXiv. Following a two stage screening process, a total of 70 studies were selected for inclusion. These studies employ large language models or contextual language models such as GPT, BERT, and T5 within disaster related applications.
-The selected works were examined along two primary dimensions. The first dimension concerns the operational phase of disaster management addressed by each study, including detection, tracking, analysis, and action. The second dimension focuses on the technical approach, covering aspects such as the underlying model architecture, the chosen adaptation strategy, whether fine tuning or prompt engineering, and the degree of integration with external tools or additional data sources.
+The selected works were examined along two primary dimensions.
+The first dimension concerns the operational phase of disaster management addressed by each study, including detection, tracking, analysis, and action.
+The second dimension focuses on the technical approach, covering aspects such as the underlying model architecture, the chosen adaptation strategy, whether fine tuning or prompt engineering, and the degree of integration with external tools or additional data sources.
 This structured synthesis allows for a comparative perspective on how LLM capabilities are applied and evolve across different disaster types and across the various phases of disaster management.
 \\
 
 \textbf{Result}
 
-Large language models show strong performance in detecting disaster-related content, including misinformation filtering, humanitarian needs classification, and severity estimation from informal and multilingual data. Multimodal models further improve early warning by jointly processing text, images, and sensor data. For tracking, LLMs enhance event monitoring through entity extraction, temporal reasoning, and spatial interpretation; zero-shot methods reduce reliance on annotated datasets, though fine-grained disambiguation across locations and entities remains challenging. In analysis, LLMs support impact assessment via sentiment modeling, topic evolution, semantic networks, and knowledge graphs, enabling evaluation of response effectiveness and stakeholder communication. In the action phase, LLMs operate as interactive planning assistants, coordinating responders and affected populations through retrieval-augmented generation, tool orchestration, and scenario analysis.
+Large language models show strong performance in detecting disaster-related content, including misinformation filtering, humanitarian needs classification, and severity estimation from informal and multilingual data.
+Multimodal models further improve early warning by jointly processing text, images, and sensor data.
+For tracking, LLMs enhance event monitoring through entity extraction, temporal reasoning, and spatial interpretation; zero-shot methods reduce reliance on annotated datasets, though fine-grained disambiguation across locations and entities remains challenging.
+In analysis, LLMs support impact assessment via sentiment modeling, topic evolution, semantic networks, and knowledge graphs, enabling evaluation of response effectiveness and stakeholder communication.
+In the action phase, LLMs operate as interactive planning assistants, coordinating responders and affected populations through retrieval-augmented generation, tool orchestration, and scenario analysis.
 
 Decoder-focused models, such as the GPT-4 family, increasingly dominate due to strong reasoning and generative capabilities, while encoder-based models remain important for low-latency and resource-constrained settings.
 
@@ -165,12 +192,16 @@ To guide future research and deployment, the authors propose the 3M Framework: m
 
 \textbf{Analysis}
 
-The authors present LLMs as agentic assistive tools that support operators in tasks such as planning, identification, and classification, which aligns with the agentic aid concept discussed in Section 2. The reviewed approaches primarily rely on text based methods, including prompt engineering and fine tuning, and do not incorporate audio or visual cues. In addition, the study does not address the use of retrieval augmented generation, which based on the arguments presented in Section 2 could provide stronger contextual grounding in domain specific knowledge and enable a more modular and extensible system architecture. Nevertheless, drawing on the literature review and the proposed 3M Framework, it can be inferred that integrating multimodal audio and visual language models together with retrieval augmented generation could further enhance operator support, even though full operator replacement is not considered.
+The authors present LLMs as agentic assistive tools that support operators in tasks such as planning, identification, and classification, which aligns with the agentic aid concept discussed in Section 2.
+The reviewed approaches primarily rely on text based methods, including prompt engineering and fine tuning, and do not incorporate audio or visual cues.
+In addition, the study does not address the use of retrieval augmented generation, which based on the arguments presented in Section 2 could provide stronger contextual grounding in domain specific knowledge and enable a more modular and extensible system architecture.
+Nevertheless, drawing on the literature review and the proposed 3M Framework, it can be inferred that integrating multimodal audio and visual language models together with retrieval augmented generation could further enhance operator support, even though full operator replacement is not considered.
 
 \subsubsection{From Promising Capability to Pervasive Bias: Assessing Large Language Models
 for Emergency Department Triage \cite{lee2025llm_triage_bias}}
 
-Lee et al. investigate the applicability of large language models (LLMs) for emergency department (ED) triage as high-level cognitive collaborators for professionals.
+Lee et al.
+investigate the applicability of large language models (LLMs) for emergency department (ED) triage as high-level cognitive collaborators for professionals.
 The study is motivated by the limitations of both human triage, which is subject to cognitive bias and variability under pressure, and traditional machine learning approaches, which rely heavily on structured inputs and often fail under distribution shifts.
 
 The authors position LLMs as decision support tools rather than autonomous decision-makers, capable of processing unstructured clinical text and generating triage predictions and rationales.
@@ -179,36 +210,41 @@ The authors position LLMs as decision support tools rather than autonomous decis
 
 \textbf{Method}
 
-The study employs a two-part experimental design. First, the authors benchmark LLMs for emergency department triage, evaluating robustness to missing data and distribution shifts across three datasets: MIMIC-IV-ED hospital records, KTAS-labeled hospital data, and curated ESI handbook cases. These datasets combine structured clinical variables with free-text chief complaints.
+The study employs a two-part experimental design.
+First, the authors benchmark LLMs for emergency department triage, evaluating robustness to missing data and distribution shifts across three datasets: MIMIC-IV-ED hospital records, KTAS-labeled hospital data, and curated ESI handbook cases.
+These datasets combine structured clinical variables with free-text chief complaints.
 LLM-based approaches, including zero-shot, chain-of-thought, few-shot prompting, retrieval-based in-context learning (KATE), and supervised fine-tuning, are compared against traditional machine learning baselines and a BioBERT-based model using accuracy, F1-score, quadratic-weighted kappa, and mean squared error.
 Second, a counterfactual analysis systematically perturbs patient sex and race to assess demographic biases in LLM triage predictions using statistical significance testing.
 \\
 
 \textbf{Result}
 
-The results show that LLM-based approaches outperform traditional machine learning baselines across most datasets, particularly when retrieval-based in-context learning is used. The KATE method achieves the strongest performance, emphasizing the importance of retrieving relevant examples, while fine-tuned smaller models remain competitive with sufficient domain data.
-However, notable limitations are identified. LLMs show calibration issues by hesitating to assign the highest acuity level, and the counterfactual analysis reveals significant demographic biases across intersections of sex and race. Although chain-of-thought prompting reduces some bias, it does not eliminate it.
+The results show that LLM-based approaches outperform traditional machine learning baselines across most datasets, particularly when retrieval-based in-context learning is used.
+The KATE method achieves the strongest performance, emphasizing the importance of retrieving relevant examples, while fine-tuned smaller models remain competitive with sufficient domain data.
+However, notable limitations are identified.
+LLMs show calibration issues by hesitating to assign the highest acuity level, and the counterfactual analysis reveals significant demographic biases across intersections of sex and race.
+Although chain-of-thought prompting reduces some bias, it does not eliminate it.
 \\
 
+\pagebreak
 \textbf{Analysis}
 
-In their evaluation, the authors compare LLM-based approaches against traditional machine learning methods and established rule-based triage schemes, highlighting the advantages of LLMs in handling unstructured clinical text. An interesting extension of this work would be an analysis that combines agentic system designs with classical machine learning approaches, as recent studies in other domains suggest that such hybrid architectures can achieve improved accuracy and robustness.
+In their evaluation, the authors compare LLM-based approaches against traditional machine learning methods and established rule-based triage schemes, highlighting the advantages of LLMs in handling unstructured clinical text.
+An interesting extension of this work would be an analysis that combines agentic system designs with classical machine learning approaches, as recent studies in other domains suggest that such hybrid architectures can achieve improved accuracy and robustness.
 
 \subsection{Industrial Operations}
 
-Industrial operations represent an early proving ground for LLM-enabled human–robot collaboration workflows, where operator intent can be translated into contextual tool use, perception, and execution. This section presents a paper that explores the potential application of LLM-based technologies in the context of human–machine interaction (HMI).
+Industrial operations represent an early proving ground for LLM-enabled human–robot collaboration workflows, where operator intent can be translated into contextual tool use, perception, and execution.
+This section presents a paper that explores the potential application of LLM-based technologies in the context of human–machine interaction (HMI).
 
 \subsubsection{Human–robot collaborative visual inspection with Large Language Models \cite{tasneem2025humanrobot}}
 
-Tasneem et al. present a human–robot collaborative (HRC) visual inspection system that integrates large language models (LLMs) to enable intuitive, speech-based interaction between human operators and industrial robots. The work is motivated by the limitations of traditional GUI- and teach-pendant-based robot programming, which can be cognitively demanding, inflexible, and costly in environments that require frequent reconfiguration.
-The system uses LLMs to translate natural language instructions into robot inspection actions via deterministic local control. It supports human inspectors by reducing cognitive load and aiding decision-making in complex Industry 5.0 inspection tasks.
+Tasneem et al.
+present a human–robot collaborative (HRC) visual inspection system that integrates large language models (LLMs) to enable intuitive, speech-based interaction between human operators and industrial robots.
+The work is motivated by the limitations of traditional GUI- and teach-pendant-based robot programming, which can be cognitively demanding, inflexible, and costly in environments that require frequent reconfiguration.
+The system uses LLMs to translate natural language instructions into robot inspection actions via deterministic local control.
+It supports human inspectors by reducing cognitive load and aiding decision-making in complex Industry 5.0 inspection tasks.
 \\
-
-\textbf{Method}
-
-As shown in Figure \ref{fig:human_robot_system}, the system adopts a hybrid control architecture that separates high-level reasoning from low-level execution. Spoken commands are transcribed using a neural speech-to-text model and processed by a locally deployed, code-generating LLM, which produces task-specific code based on structured prompts defining task constraints and robot APIs. High-level planning, including inspection path generation and task sequencing, is handled by the LLM, while low-level motion control, kinematics, and collision avoidance are executed deterministically using ROS and MoveIt. A closed-loop text-to-speech interface provides execution feedback to the user.
-
-To ensure suitability for industrial deployment, the authors benchmark multiple local LLMs using criteria including prompt adherence, code correctness, inference latency, and computational footprint, selecting a model that balances execution reliability with real-time performance under local hardware constraints.
 
 \begin{figure}[H]
     \centering
@@ -217,16 +253,35 @@ To ensure suitability for industrial deployment, the authors benchmark multiple 
     \label{fig:human_robot_system}
 \end{figure}
 
+\textbf{Method}
+
+As shown in Figure \ref{fig:human_robot_system}, the system adopts a hybrid control architecture that separates high-level reasoning from low-level execution.
+Spoken commands are transcribed using a neural speech-to-text model and processed by a locally deployed, code-generating LLM, which produces task-specific code based on structured prompts defining task constraints and robot APIs.
+High-level planning, including inspection path generation and task sequencing, is handled by the LLM, while low-level motion control, kinematics, and collision avoidance are executed deterministically using ROS and MoveIt.
+A closed-loop text-to-speech interface provides execution feedback to the user.
+
+To ensure suitability for industrial deployment, the authors benchmark multiple local LLMs using criteria including prompt adherence, code correctness, inference latency, and computational footprint, selecting a model that balances execution reliability with real-time performance under local hardware constraints.
+\\
+
+
 \textbf{Result}
 
-Experiments in simulated and real industrial settings show that the system performs complex visual inspection tasks across objects with varying sizes, geometries, and clutter. The selected lightweight, code-oriented LLM balances prompt adherence, execution reliability, and computational cost, enabling real-time operation.
+Experiments in simulated and real industrial settings show that the system performs complex visual inspection tasks across objects with varying sizes, geometries, and clutter.
+The selected lightweight, code-oriented LLM balances prompt adherence, execution reliability, and computational cost, enabling real-time operation.
 
-The hybrid architecture supports robust inspection path generation, collision avoidance, and multi-object inspection while maintaining operator control and safety. It improves interaction ergonomics and reduces reliance on expert robot programming. Limitations include speech recognition errors in noisy environments and performance trade-offs related to model size. Overall, the results demonstrate that combining agentic LLM-based planning with classical robotic control is effective for human-centered industrial automation.
+The hybrid architecture supports robust inspection path generation, collision avoidance, and multi-object inspection while maintaining operator control and safety.
+It improves interaction ergonomics and reduces reliance on expert robot programming.
+Limitations include speech recognition errors in noisy environments and performance trade-offs related to model size.
+Overall, the results demonstrate that combining agentic LLM-based planning with classical robotic control is effective for human-centered industrial automation.
+\\
 
 \textbf{Analysis}
 
-The proposed human–robot collaborative inspection system demonstrates a careful separation between high-level LLM-based reasoning and deterministic low-level robot control, which is essential for safety-critical interaction. The LLM is used for instruction interpretation and task planning, while execution is handled by ROS and MoveIt, reducing the risk of nondeterministic behavior during physical operation.
+The proposed human–robot collaborative inspection system demonstrates a careful separation between high-level LLM-based reasoning and deterministic low-level robot control, which is essential for safety-critical interaction.
+The LLM is used for instruction interpretation and task planning, while execution is handled by ROS and MoveIt, reducing the risk of nondeterministic behavior during physical operation.
 
-The system adopts a constrained, partially agentic design in which the LLM performs reasoning and planning but remains tightly bounded by predefined APIs and execution pipelines. This limits autonomy while retaining the benefits of natural language interaction and task decomposition. Although the architecture does not incorporate retrieval-augmented generation, integrating external knowledge sources could further improve robustness and scalability without compromising safety.
+The system adopts a constrained, partially agentic design in which the LLM performs reasoning and planning but remains tightly bounded by predefined APIs and execution pipelines.
+This limits autonomy while retaining the benefits of natural language interaction and task decomposition.
+Although the architecture does not incorporate retrieval-augmented generation, integrating external knowledge sources could further improve robustness and scalability without compromising safety.
 
 Overall, the system positions the LLM as a cognitive intermediary that reduces operator workload while preserving human authority and control, providing a practical example of agentic planning integrated with classical robotic control in industrial human–machine interaction.
