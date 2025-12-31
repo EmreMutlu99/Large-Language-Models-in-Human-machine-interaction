@@ -202,3 +202,31 @@ Industrial operations represent an early proving ground for LLM-enabled human–
 
 Tasneem et al. present a human–robot collaborative (HRC) visual inspection system that integrates large language models (LLMs) to enable intuitive, speech-based interaction between human operators and industrial robots. The work is motivated by the limitations of traditional GUI- and teach-pendant-based robot programming, which can be cognitively demanding, inflexible, and costly in environments that require frequent reconfiguration.
 The system uses LLMs to translate natural language instructions into robot inspection actions via deterministic local control. It supports human inspectors by reducing cognitive load and aiding decision-making in complex Industry 5.0 inspection tasks.
+\\
+
+\textbf{Method}
+
+As shown in Figure \ref{fig:human_robot_system}, the system adopts a hybrid control architecture that separates high-level reasoning from low-level execution. Spoken commands are transcribed using a neural speech-to-text model and processed by a locally deployed, code-generating LLM, which produces task-specific code based on structured prompts defining task constraints and robot APIs. High-level planning, including inspection path generation and task sequencing, is handled by the LLM, while low-level motion control, kinematics, and collision avoidance are executed deterministically using ROS and MoveIt. A closed-loop text-to-speech interface provides execution feedback to the user.
+
+To ensure suitability for industrial deployment, the authors benchmark multiple local LLMs using criteria including prompt adherence, code correctness, inference latency, and computational footprint, selecting a model that balances execution reliability with real-time performance under local hardware constraints.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{bilder/Human-Robot.png}
+    \caption{Pipeline of the human–robot collaborative inspection system: speech input is parsed by LLM-based components that interface with ROS and deterministic robot controllers for safe, repeatable execution.}
+    \label{fig:human_robot_system}
+\end{figure}
+
+\textbf{Result}
+
+Experiments in simulated and real industrial settings show that the system performs complex visual inspection tasks across objects with varying sizes, geometries, and clutter. The selected lightweight, code-oriented LLM balances prompt adherence, execution reliability, and computational cost, enabling real-time operation.
+
+The hybrid architecture supports robust inspection path generation, collision avoidance, and multi-object inspection while maintaining operator control and safety. It improves interaction ergonomics and reduces reliance on expert robot programming. Limitations include speech recognition errors in noisy environments and performance trade-offs related to model size. Overall, the results demonstrate that combining agentic LLM-based planning with classical robotic control is effective for human-centered industrial automation.
+
+\textbf{Analysis}
+
+The proposed human–robot collaborative inspection system demonstrates a careful separation between high-level LLM-based reasoning and deterministic low-level robot control, which is essential for safety-critical interaction. The LLM is used for instruction interpretation and task planning, while execution is handled by ROS and MoveIt, reducing the risk of nondeterministic behavior during physical operation.
+
+The system adopts a constrained, partially agentic design in which the LLM performs reasoning and planning but remains tightly bounded by predefined APIs and execution pipelines. This limits autonomy while retaining the benefits of natural language interaction and task decomposition. Although the architecture does not incorporate retrieval-augmented generation, integrating external knowledge sources could further improve robustness and scalability without compromising safety.
+
+Overall, the system positions the LLM as a cognitive intermediary that reduces operator workload while preserving human authority and control, providing a practical example of agentic planning integrated with classical robotic control in industrial human–machine interaction.

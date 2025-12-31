@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex frame"] 1767131442.98788 "frame.aux" "frame.bbl" "frame" 1767131445.18266 0
+["bibtex frame"] 1767131978.07269 "frame.aux" "frame.bbl" "frame" 1767173914.9437 0
   "./MyBib.bib" 1767130968.33316 16642 aec8eb5a7c4609c47467f6ff10272c9f ""
   "/home/emre/.miktex/texmfs/install/bibtex/bst/bibtex/alpha.bst" 1764231396.43478 23907 a5f93555796fb564b924339521f10a7c ""
-  "frame.aux" 1767131444.57065 8889 d004b0b88efdea767869806bb70ed438 "pdflatex"
+  "frame.aux" 1767173913.82487 9243 51e7fdde085abccb426ac59e00636784 "pdflatex"
   (generated)
   "frame.bbl"
   "frame.blg"
   (rewritten before read)
-["pdflatex"] 1767131443.23335 "/home/emre/Documents/GitHub/Large-Language-Models-in-Human-machine-interaction/paper/frame.tex" "frame.pdf" "frame" 1767131445.18292 0
+["pdflatex"] 1767173911.30978 "/home/emre/Documents/GitHub/Large-Language-Models-in-Human-machine-interaction/paper/frame.tex" "frame.pdf" "frame" 1767173914.94444 0
   "/home/emre/.miktex/texmfs/data/fonts/map/pdftex/pdftex.map" 1764231410.10882 165414 9363bc2e63231c61f423f58d61c51474 ""
   "/home/emre/.miktex/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1729284287.2872 8730806 905eab6fbd59480d546809aa440017f8 ""
   "/home/emre/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc" 1728750811.23448 4993 1194fb36dfcb11d9ae9802f2b00b60a3 ""
@@ -127,24 +127,25 @@
   "bilder/Agent.drawio.pdf" 1765378274.31208 13587 2016de1aef44ca89263d992939f5b3b5 ""
   "bilder/Cassiopei/Pegasus.png" 1765984623.51423 151529 1b0169d53311de34780e9e9aca5910bd ""
   "bilder/HUman Robot CCollab.png" 1766233077.37586 939494 35c996d80e129e77dd3d591ec2a39ea0 ""
+  "bilder/Human-Robot.png" 1767131790.1041 570126 03ca863480f7803df027619c6a69abda ""
   "bilder/RAG.pdf" 1765378274.31308 15929 3044b6dd9b91a38f726d19e059692892 ""
   "bilder/RealtimeSpeech.png" 1765637897.53086 155568 59a5086bc244e7d202a6263a5f032810 ""
   "bilder/STT-NLP-TTS.drawio.pdf" 1765378274.31308 16410 cf75353a846a9480cee3b0e01d54a72e ""
   "bilder/Tool.pdf" 1765378274.31308 18920 12d9e85b0dd1ba8ba42f5be7e571a508 ""
   "bilder/VLM.drawio.pdf" 1765900937.47629 23459 b1fc5a8984fbd652860004011c51e30b ""
   "bilder/speech-speech-diagram.drawio.pdf" 1765641479.95867 42841 ccde7c67a901abf83421ec19cfc1918c ""
-  "frame.aux" 1767131444.57065 8889 d004b0b88efdea767869806bb70ed438 "pdflatex"
-  "frame.bbl" 1767131443.17565 11478 a852bd51d1fd9125ce0e60a3bab8e56c "bibtex frame"
+  "frame.aux" 1767173913.82487 9243 51e7fdde085abccb426ac59e00636784 "pdflatex"
+  "frame.bbl" 1767131978.36049 11478 a852bd51d1fd9125ce0e60a3bab8e56c "bibtex frame"
   "frame.tex" 1766237685.12477 1107 e0e82bea4d31993315c1dea842974e52 ""
-  "frame.toc" 1767131444.57365 2111 adb1bc51cadf66435386f056fd1fe993 "pdflatex"
+  "frame.toc" 1767173913.82987 2111 15b3d1cd7720144ef163cedba96b3c46 "pdflatex"
   "mmiSeminar.sty" 1764231192.18414 15605 11476350a3869abc8fe78009572d0fe7 ""
   "scrbook.cls" 1764231192.18514 37952 054b431f8b4568f613bfe18426cf9c74 ""
   "sections/00_frontmatter/frontmatter.tex" 1764231192.18514 691 80e536865b864d8dfb99b7bf0c5e6aea ""
   "sections/00_table_of_contents/contents.tex" 1765969825.49554 274 8a4206722c39014b67aa312e4a4c2b88 ""
   "sections/01_introduction_motivation/section.tex" 1765899317.80183 1509 b694cc5cd198dc5620b0539908faf79c ""
   "sections/02_survey_method/section.tex" 1766065819.50586 16377 c9a4ad0b8422fec29872cd2e089f3824 ""
-  "sections/04_domain_case_studies/section.tex" 1767131438.47865 27717 3e1c4466d6f65f190aeded2d619520e0 ""
-  "sections/07_conclusion/section.tex" 1765378274.31908 43 06c56dd356068170bb7962e6bc2ce560 ""
+  "sections/04_domain_case_studies/section.tex" 1767173910.55087 31172 6c970f45ab3e9e2029e36bcb693044e8 ""
+  "sections/07_conclusion/section.tex" 1767173910.45687 1288 02bbc1a58101662d43ddd918d5a1818e ""
   "typearea.sty" 1764231192.18714 16083 e8d05f82b20a2b10acc3cc949490ef0c ""
   "version.sty" 1764231192.18714 1973 78915de2c7b2b322cbc491262a2e21d3 ""
   (generated)
