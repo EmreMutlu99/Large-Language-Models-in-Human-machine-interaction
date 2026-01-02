@@ -1,0 +1,63 @@
+\newcommand{\analysisAstronautCUI}{%
+\textbf{Analysis}
+
+Freitas et.al.
+propose a framework for the design and development of conversational user interfaces for space missions in this paper.
+Although the study employs a Wizard-of-Oz setup in which a human operator simulates the AI system, the results provide a convincing proof of concept demonstrating that the development of such assistants is both feasible and worthwhile.
+Building on the proposed framework, a fully autonomous implementation that integrates real-time speech-to-speech models, retrieval-augmented generation, and tool-calling mechanisms represents a promising direction for future research.
+Such an approach could combine several aspects discussed in the background section of this paper to realize an agentic conversational system capable of supporting astronauts in safety-critical and isolated mission environments.
+}
+
+\newcommand{\analysisCoreAssistant}{%
+\textbf{Analysis}
+
+Bensch et al.
+demonstrate that the development of an AI-based procedural assistant for space missions is technically feasible.
+They adopt a modular speech-to-text, language model, and text-to-speech (STT–LLM–TTS) pipeline, which enables seamless integration with a vector database through Retrieval-Augmented Generation (RAG).
+According to the authors, this architectural choice allows the system to retrieve reliable, procedure-specific information while reducing the risk of hallucinated responses.
+However, the paper lacks an in-depth evaluation of the system’s capabilities; the limited number of illustrative prompt–response examples is insufficient to establish the robustness or generalizability of the approach.
+Furthermore, no user study is conducted to assess usability, user acceptance, or cognitive workload during interaction.
+As the system relies on a pipeline-based interaction model rather than an end-to-end speech-to-speech approach, response latency may be higher, potentially reducing conversational naturalness and introducing an “uncanny valley” effect.
+Despite these limitations, the authors’ emphasis on offline-capable deployment represents a particularly important contribution, as reliance on cloud-based models is impractical in space environments due to communication delays and outages.
+This aspect highlights promising directions for future research, including the development of onboard data processing infrastructure capable of locally hosting large language models for autonomous space operations.
+}
+
+\newcommand{\analysisWireHarnessing}{%
+\textbf{Analysis}
+
+The paper presents a technically solid and credible system, with results that are convincing within the tested industrial context, particularly because validation is performed on a real robotic setup rather than in simulation.
+Reported success rates (mostly 9–10 out of 10 trials) indicate robust performance, and comparisons with standalone LLMs support the claim that the agent-based architecture is the key contributor.
+However, the evaluation is limited in scope, lacks statistical analysis and ablation studies, and does not include human-centered metrics, so the results should be viewed as a strong proof of concept rather than evidence of broad generalizability.
+
+Moreover, the system does not employ retrieval-augmented generation and instead relies on the language model’s internal memory for context understanding, which limits access to explicit domain knowledge.
+Integrating a RAG mechanism to retrieve subject-specific assembly or process information would be a natural improvement to enhance robustness and scalability.
+}
+
+\newcommand{\analysisDisasterReview}{%
+\textbf{Analysis}
+
+The authors present LLMs as agentic assistive tools that support operators in tasks such as planning, identification, and classification, which aligns with the agentic aid concept discussed in Section 2.
+The reviewed approaches primarily rely on text based methods, including prompt engineering and fine tuning, and do not incorporate audio or visual cues.
+In addition, the study does not address the use of retrieval augmented generation, which based on the arguments presented in Section 2 could provide stronger contextual grounding in domain specific knowledge and enable a more modular and extensible system architecture.
+Nevertheless, drawing on the literature review and the proposed 3M Framework, it can be inferred that integrating multimodal audio and visual language models together with retrieval augmented generation could further enhance operator support, even though full operator replacement is not considered.
+}
+
+\newcommand{\analysisEDTriage}{%
+\textbf{Analysis}
+
+In their evaluation, the authors compare LLM-based approaches against traditional machine learning methods and established rule-based triage schemes, highlighting the advantages of LLMs in handling unstructured clinical text.
+An interesting extension of this work would be an analysis that combines agentic system designs with classical machine learning approaches, as recent studies in other domains suggest that such hybrid architectures can achieve improved accuracy and robustness.
+}
+
+\newcommand{\analysisIndustrialInspection}{%
+\textbf{Analysis}
+
+The proposed human–robot collaborative inspection system demonstrates a careful separation between high-level LLM-based reasoning and deterministic low-level robot control, which is essential for safety-critical interaction.
+The LLM is used for instruction interpretation and task planning, while execution is handled by ROS and MoveIt, reducing the risk of nondeterministic behavior during physical operation.
+
+The system adopts a constrained, partially agentic design in which the LLM performs reasoning and planning but remains tightly bounded by predefined APIs and execution pipelines.
+This limits autonomy while retaining the benefits of natural language interaction and task decomposition.
+Although the architecture does not incorporate retrieval-augmented generation, integrating external knowledge sources could further improve robustness and scalability without compromising safety.
+
+Overall, the system positions the LLM as a cognitive intermediary that reduces operator workload while preserving human authority and control, providing a practical example of agentic planning integrated with classical robotic control in industrial human–machine interaction.
+}

@@ -1,10 +1,11 @@
 \section{Domain Case Studies}
 \label{sec:cases}
+\input{sections/04_domain_case_studies/analyses}
 In the previous section, the architectural foundations underlying the use of large language models (LLMs) in the context of human–machine interaction were introduced, encompassing text-based, audio-based, and vision–language modalities.
 This section builds on that foundation by reviewing selected studies from several safety-critical application domains; namely aerospace and remote sciences, emergency and environmental response, and industrial operations, with a focus on how LLM-based technologies are applied in human–machine interaction within these contexts.
 
 Each study is presented using a consistent structure, beginning with a brief overview of the application context, followed by a summary of the proposed method and key results. 
-This is then complemented by a short analysis that situates the work.
+From the selected domains, one paper is classified as a design and interaction study, four papers focus on system and architecture design, and two papers are general survey studies.
 
 \subsection{Aerospace and Remote Science}
 Aerospace and remote science missions place humans in some of the most demanding HMI settings.
@@ -48,13 +49,7 @@ Results indicate that multimodal CUIs combining voice and graphical interfaces e
 Emotionally characterized CUIs increase user excitement and engagement, and stronger emotional connection and perceived sympathy toward the system are associated with lower reported stress levels, although individual responses vary and overall task workload does not differ significantly.
 Overall, the findings suggest that well-designed CUIs can enhance operational efficiency and psychological well-being in long-duration space missions, provided that emotional interaction and interface modality are carefully adapted to user needs.
 
-\textbf{Analysis}
-
-Freitas et.al.
-propose a framework for the design and development of conversational user interfaces for space missions in this paper.
-Although the study employs a Wizard-of-Oz setup in which a human operator simulates the AI system, the results provide a convincing proof of concept demonstrating that the development of such assistants is both feasible and worthwhile.
-Building on the proposed framework, a fully autonomous implementation that integrates real-time speech-to-speech models, retrieval-augmented generation, and tool-calling mechanisms represents a promising direction for future research.
-Such an approach could combine several aspects discussed in the background section of this paper to realize an agentic conversational system capable of supporting astronauts in safety-critical and isolated mission environments.
+%\analysisAstronautCUI
 
 
 \subsubsection{AI Assistants for Spaceflight Procedures: Combining Generative
@@ -86,17 +81,13 @@ These results indicate that the proposed combination of GPT, RAG, and knowledge 
 However, the reported results are illustrative and qualitative, and no quantitative performance metrics, comparative baselines, or user-study outcomes are provided.
 \\
 
-\textbf{Analysis}
-
-Bensch et al.
-demonstrate that the development of an AI-based procedural assistant for space missions is technically feasible.
-They adopt a modular speech-to-text, language model, and text-to-speech (STT–LLM–TTS) pipeline, which enables seamless integration with a vector database through Retrieval-Augmented Generation (RAG).
-According to the authors, this architectural choice allows the system to retrieve reliable, procedure-specific information while reducing the risk of hallucinated responses.
-However, the paper lacks an in-depth evaluation of the system’s capabilities; the limited number of illustrative prompt–response examples is insufficient to establish the robustness or generalizability of the approach.
-Furthermore, no user study is conducted to assess usability, user acceptance, or cognitive workload during interaction.
-As the system relies on a pipeline-based interaction model rather than an end-to-end speech-to-speech approach, response latency may be higher, potentially reducing conversational naturalness and introducing an “uncanny valley” effect.
-Despite these limitations, the authors’ emphasis on offline-capable deployment represents a particularly important contribution, as reliance on cloud-based models is impractical in space environments due to communication delays and outages.
-This aspect highlights promising directions for future research, including the development of onboard data processing infrastructure capable of locally hosting large language models for autonomous space operations.
+%\analysisCoreAssistant
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{\detokenize{bilder/HUman Robot CCollab.png}}
+    \caption{LLM-driven human--robot collaboration workflow showing how instructions propagate through prompting, memory, tool calls, execution, and feedback loops to support industrial assembly tasks. \cite{wang2026llmharnessing}}
+    \label{fig:hrc_workflow}
+\end{figure}
 
 \subsubsection{LLM-Based Autonomous Agent for Aerospace Wire Harnessing \cite{wang2026llmharnessing}}
 In this paper, Wang et al.
@@ -112,14 +103,7 @@ The architecture consists of several interconnected modules that together enable
 The configuration module defines the agent’s role, goals, behavioral constraints, available tools, and prompt structure, ensuring that the LLM operates as a task-oriented autonomous agent rather than a conversational chatbot.
 Task planning is handled by a dedicated module that uses an unmodified LLM within a Reason–Act chain-of-thought loop to interpret human instructions, decompose complex tasks, and determine which actions and tools should be invoked at each step.
 The task execution module then carries out the planned actions by invoking encapsulated tools for perception, coordinate transformation, and robot control, and feeds the execution outcomes back to the agent as observations.
-Finally, a memory module maintains both short-term contextual memory and long-term vector-embedded summaries of past interactions, enabling continuous and context-aware reasoning across multiple tasks
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{\detokenize{bilder/HUman Robot CCollab.png}}
-    \caption{LLM-driven human--robot collaboration workflow showing how instructions propagate through prompting, memory, tool calls, execution, and feedback loops to support industrial assembly tasks. \cite{wang2026llmharnessing}}
-    \label{fig:hrc_workflow}
-\end{figure}
+Finally, a memory module maintains both short-term contextual memory and long-term vector-embedded summaries of past interactions, enabling continuous and context-aware reasoning across multiple tasks.
 
 \textbf{Method}
 
@@ -138,14 +122,7 @@ In task planning, the agent substantially outperforms standalone state-of-the-ar
 Overall, the results indicate that the agent-based LLM framework enables robust and reliable human–robot collaboration in complex industrial environments
 \\
 
-\textbf{Analysis}
-
-The paper presents a technically solid and credible system, with results that are convincing within the tested industrial context, particularly because validation is performed on a real robotic setup rather than in simulation.
-Reported success rates (mostly 9–10 out of 10 trials) indicate robust performance, and comparisons with standalone LLMs support the claim that the agent-based architecture is the key contributor.
-However, the evaluation is limited in scope, lacks statistical analysis and ablation studies, and does not include human-centered metrics, so the results should be viewed as a strong proof of concept rather than evidence of broad generalizability.
-
-Moreover, the system does not employ retrieval-augmented generation and instead relies on the language model’s internal memory for context understanding, which limits access to explicit domain knowledge.
-Integrating a RAG mechanism to retrieve subject-specific assembly or process information would be a natural improvement to enhance robustness and scalability.
+%\analysisWireHarnessing
 
 \subsection{Emergency and Environmental Response}
 Large Language Models (LLMs) offer new opportunities to support emergency and environmental response by enhancing situational awareness and decision-making under time pressure.
@@ -190,12 +167,7 @@ Decoder-focused models, such as the GPT-4 family, increasingly dominate due to s
 To guide future research and deployment, the authors propose the 3M Framework: multi-modal data fusion, integrating textual, visual, sensor, and structured data into unified situational assessments; multi-source information validation, cross-checking heterogeneous and conflicting sources to improve reliability under uncertainty; and multi-agent knowledge integration, coordinating human experts, AI agents, and physical–virtual systems to produce actionable intelligence.
 \\
 
-\textbf{Analysis}
-
-The authors present LLMs as agentic assistive tools that support operators in tasks such as planning, identification, and classification, which aligns with the agentic aid concept discussed in Section 2.
-The reviewed approaches primarily rely on text based methods, including prompt engineering and fine tuning, and do not incorporate audio or visual cues.
-In addition, the study does not address the use of retrieval augmented generation, which based on the arguments presented in Section 2 could provide stronger contextual grounding in domain specific knowledge and enable a more modular and extensible system architecture.
-Nevertheless, drawing on the literature review and the proposed 3M Framework, it can be inferred that integrating multimodal audio and visual language models together with retrieval augmented generation could further enhance operator support, even though full operator replacement is not considered.
+%\analysisDisasterReview
 
 \subsubsection{From Promising Capability to Pervasive Bias: Assessing Large Language Models
 for Emergency Department Triage \cite{lee2025llm_triage_bias}}
@@ -226,11 +198,7 @@ LLMs show calibration issues by hesitating to assign the highest acuity level, a
 Although chain-of-thought prompting reduces some bias, it does not eliminate it.
 \\
 
-\pagebreak
-\textbf{Analysis}
-
-In their evaluation, the authors compare LLM-based approaches against traditional machine learning methods and established rule-based triage schemes, highlighting the advantages of LLMs in handling unstructured clinical text.
-An interesting extension of this work would be an analysis that combines agentic system designs with classical machine learning approaches, as recent studies in other domains suggest that such hybrid architectures can achieve improved accuracy and robustness.
+%\analysisEDTriage
 
 \subsection{Industrial Operations}
 
@@ -239,19 +207,19 @@ This section presents a paper that explores the potential application of LLM-bas
 
 \subsubsection{Human–robot collaborative visual inspection with Large Language Models \cite{tasneem2025humanrobot}}
 
-Tasneem et al.
-present a human–robot collaborative (HRC) visual inspection system that integrates large language models (LLMs) to enable intuitive, speech-based interaction between human operators and industrial robots.
-The work is motivated by the limitations of traditional GUI- and teach-pendant-based robot programming, which can be cognitively demanding, inflexible, and costly in environments that require frequent reconfiguration.
-The system uses LLMs to translate natural language instructions into robot inspection actions via deterministic local control.
-It supports human inspectors by reducing cognitive load and aiding decision-making in complex Industry 5.0 inspection tasks.
-\\
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{bilder/Human-Robot.png}
     \caption{Pipeline of the human–robot collaborative inspection system: speech input is parsed by LLM-based components that interface with ROS and deterministic robot controllers for safe, repeatable execution.}
     \label{fig:human_robot_system}
 \end{figure}
+
+Tasneem et al.
+present a human–robot collaborative (HRC) visual inspection system that integrates large language models (LLMs) to enable intuitive, speech-based interaction between human operators and industrial robots.
+The work is motivated by the limitations of traditional GUI- and teach-pendant-based robot programming, which can be cognitively demanding, inflexible, and costly in environments that require frequent reconfiguration.
+The system uses LLMs to translate natural language instructions into robot inspection actions via deterministic local control.
+It supports human inspectors by reducing cognitive load and aiding decision-making in complex Industry 5.0 inspection tasks.
+\\
 
 \textbf{Method}
 
@@ -262,7 +230,6 @@ A closed-loop text-to-speech interface provides execution feedback to the user.
 
 To ensure suitability for industrial deployment, the authors benchmark multiple local LLMs using criteria including prompt adherence, code correctness, inference latency, and computational footprint, selecting a model that balances execution reliability with real-time performance under local hardware constraints.
 \\
-
 
 \textbf{Result}
 
@@ -275,13 +242,49 @@ Limitations include speech recognition errors in noisy environments and performa
 Overall, the results demonstrate that combining agentic LLM-based planning with classical robotic control is effective for human-centered industrial automation.
 \\
 
-\textbf{Analysis}
+\subsection{Discussion}
 
-The proposed human–robot collaborative inspection system demonstrates a careful separation between high-level LLM-based reasoning and deterministic low-level robot control, which is essential for safety-critical interaction.
-The LLM is used for instruction interpretation and task planning, while execution is handled by ROS and MoveIt, reducing the risk of nondeterministic behavior during physical operation.
+As discussed in Section~2, large language models are currently employed in three main interaction modalities, namely text based, audio based, and vision based models, as well as in combined multimodal configurations. 
+Across all reviewed domains, the literature indicates that these technologies are not deployed as standalone decision making systems, but rather as extensions of traditional human machine interaction mechanisms. 
+In this role, LLM based interfaces often function as alternative interaction media, effectively supplementing or partially replacing conventional graphical user interfaces and control elements such as buttons and menus. 
+In addition, several of the reviewed works employ LLMs as semi autonomous assistants that support human operators through information retrieval, interpretation, and task coordination, while remaining embedded within constrained and human supervised system architectures.
 
-The system adopts a constrained, partially agentic design in which the LLM performs reasoning and planning but remains tightly bounded by predefined APIs and execution pipelines.
-This limits autonomy while retaining the benefits of natural language interaction and task decomposition.
-Although the architecture does not incorporate retrieval-augmented generation, integrating external knowledge sources could further improve robustness and scalability without compromising safety.
+Despite these advantages, the direct use of LLMs in safety critical contexts introduces fundamental challenges, including hallucinations and limited reliability. 
+The reviewed works therefore employ a range of architectural and interaction techniques introduced in Section~2, such as retrieval augmented generation and agentic control structures, in order to enhance performance and mitigate these limitations. 
+In this context, two central research questions guide the discussion.
 
-Overall, the system positions the LLM as a cognitive intermediary that reduces operator workload while preserving human authority and control, providing a practical example of agentic planning integrated with classical robotic control in industrial human–machine interaction.
+\begin{itemize}
+    \item \emph{(RQ1)} How do these techniques strengthen the existing 
+    advantages of large language models when applied to safety critical 
+    human machine interaction?
+    \item \emph{(RQ2)} To what extent do they address challenges intrinsic
+     to large language model based interaction, particularly with respect to 
+     reliability, hallucinations, and operator trust?
+\end{itemize}
+    
+
+In aerospace applications, these questions are reflected in conversational 
+user interface designs that emphasize long term interaction, multimodal 
+communication, and psychological support under conditions of isolation and 
+high cognitive load. 
+Freitas et al.~\cite{freitas2021conversational} demonstrate that LLM driven conversational interfaces can serve both mission critical and non mission critical roles, supporting procedural tasks while also contributing to crew well being. 
+From the perspective of RQ1, this illustrates how natural language interaction and multimodal feedback can improve usability and reduce cognitive burden and help create a CUI as an alternativ for a GUI.  
+Similarly, the procedural assistant proposed by Bensch et al.~\cite{bensch2024aiassistants} shows how text based and audio based interaction pipelines can be combined with retrieval augmented generation to deliver strictly bounded, procedure specific assistance. 
+This architecture directly targets hallucination reduction and reliability, aligning with RQ2, while reinforcing the role of the LLM as a mediating layer between human intent and verified system knowledge rather than as an autonomous controller.
+
+In industrial and robotic settings, LLM based interaction mechanisms are increasingly coupled with agentic planning and tool calling architectures, while low level execution remains delegated to deterministic control programs. 
+The human robot collaboration systems presented by Wang et al.~\cite{wang2026llmharnessing} and Tasneem et al.~\cite{tasneem2025humanrobot} exemplify this approach by using LLMs for task interpretation, planning, and coordination, while relying on classical robotic control stacks such as ROS and MoveIt for safe and repeatable execution. 
+These systems highlight how agentic reasoning and natural language interfaces can be used as an interface with Robotics, addressing RQ1, while strict separation between high level reasoning and low level control mitigates safety and reliability risks, addressing RQ2. 
+Although vision based and multimodal inputs are incorporated to support perception and inspection, linguistic reasoning remains the dominant modality for decision making and coordination.
+
+In emergency and healthcare related contexts, LLMs primarily function as high level cognitive aids that process unstructured textual information to support time critical decision making. The interdisciplinary survey by Xu et al.~\cite{Xu2025LLMdisaster} shows that text based LLMs are widely applied across detection, tracking, analysis, and action phases of disaster management, where they enhance situational awareness and coordination without replacing human judgment. 
+These findings illustrate how LLMs can amplify existing human capabilities in information processing and sense making, addressing RQ1. 
+In a clinical setting, Lee et al.~\cite{lee2025llm_triage_bias} demonstrate that LLMs can outperform traditional machine learning approaches in emergency department triage by effectively handling free text inputs, while also revealing important limitations related to calibration and demographic bias. 
+These results directly address RQ2, highlighting that technical performance gains must be accompanied by careful consideration of trust, fairness, and human oversight when integrating LLM based interfaces into safety critical workflows.
+
+Taken together, the reviewed literature suggests a convergence toward hybrid interaction architectures in which LLMs operate as cognitive intermediaries that augment human capabilities across text, audio, and visual modalities. 
+While the specific interaction modality and degree of autonomy vary by domain, the underlying design principle remains consistent. 
+LLMs are most effective when used to enhance interpretability, coordination, and usability, while safety, accountability, and final authority are preserved through deterministic execution layers and human in the loop control. 
+At the same time, the psychological and social dimensions of human machine interaction, such as trust, perceived reliability, and user comfort, emerge as critical factors that shape both the effectiveness and acceptance of LLM based systems, pointing toward important limitations and directions for future research.
+%\analysisIndustrialInspection
+

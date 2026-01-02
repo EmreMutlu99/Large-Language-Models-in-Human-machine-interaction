@@ -22,15 +22,15 @@ By further training the model on a domain-specific dataset, for example technica
 However, a significant downside of this approach is the increased risk of model hallucinations. Hallucinations refer to the phenomenon in which a model generates incorrect or fabricated information in response to a given prompt.\cite{gekhman2024fine}
 Such behavior can pose a significant risk in safety-critical environments.
 
-\subsubsection{Retrieval Augmented Generation}
-Retrieval-Augmented Generation (RAG) introduces relevant external information to the language model without modifying the model’s internal parameters.
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth]{bilder/RAG.pdf}
     \caption{High-level RAG workflow that injects retrieved documents into the prompt instead of altering model weights.}
     \label{fig:rag_workflow}
 \end{figure}
+
+\subsubsection{Retrieval Augmented Generation}
+Retrieval-Augmented Generation (RAG) introduces relevant external information to the language model without modifying the model’s internal parameters.
 
 As shown in Figure \ref{fig:rag_workflow}, the RAG workflow begins with a user prompt; however, instead of passing the prompt directly to the LLM, a similarity search is first performed over context-relevant information stored as embeddings in a vector database. The retrieved context is then provided together with the prompt to the LLM for grounded response generation.\cite{brown2020language}
 Recent studies have shown this to be a more reliable method for context retrieval compared to fine-tuning.\cite{ovadia2024finetuning}
@@ -95,13 +95,6 @@ On the positive side, such a configuration allows spoken input to be converted i
 
 \subsubsection{Speech-to-Speech LLMs}
 
-
-Direct end-to-end speech-to-speech models represent a relatively recent development within the broader family of large language and multimodal models. Unlike the cascading approach discussed in the previous section, these models do not rely on an explicit intermediate text representation; instead, linguistic processing is performed within a model trained directly on speech signals \cite{sarim2025directs2s}.
-This design can reduce end-to-end latency and mitigate error propagation that may arise from multiple processing stages in traditional multi-stage pipelines, and can support more natural conversational interaction with the system .
-\\
-
-Within end-to-end speech-to-speech systems, two broad subcategories can be distinguished: direct models and real-time (streaming) models. Direct models process speech input as complete utterances, generating output only after the full input signal has been received. Their interaction pattern resembles cascading pipelines in terms of latency, as response generation is deferred until the entire input has been processed \cite{zhang2024streamspeech}.
-
 \begin{figure}[H]
     \centering
     \subfloat[Streaming wait-$k$ policy alternating between listening to additional source frames and emitting target tokens in real time \cite{tan2020simulspeech}. \label{fig:realtime_speech}]{
@@ -116,12 +109,19 @@ Within end-to-end speech-to-speech systems, two broad subcategories can be disti
         \footnotesize\textbf{Legend:} 1) Microphone interface capturing the operator’s raw speech \\ 2) Low-latency Analog to Digital Converter \\ 3) Pre-processing buffers that normalize, filter, and batch frames \\ 4) Streaming STS model performing NLP task \\ 5) Generated digital audio frames for the target utterance \\6) Vocoder/decoder producing analog waveforms \\7) Speaker/headset driver for immediate playback\\ 8 - 9) The Audio is processed in chunks that are (t) in length, usually in the order of 20-40ms \\10) End user simultaneously providing input and receiving translated speech.
     \end{minipage}
     \caption{Real-time speech-to-speech pipeline: (a) wait-$k$ listen/write policy and (b) corresponding signal path.}
-\end{figure}
+\end{figure} 
+
+Direct end-to-end speech-to-speech models represent a relatively recent development within the broader family of large language and multimodal models. Unlike the cascading approach discussed in the previous section, these models do not rely on an explicit intermediate text representation; instead, linguistic processing is performed within a model trained directly on speech signals \cite{sarim2025directs2s}.
+This design can reduce end-to-end latency and mitigate error propagation that may arise from multiple processing stages in traditional multi-stage pipelines, and can support more natural conversational interaction with the system .
+\\
+
+Within end-to-end speech-to-speech systems, two broad subcategories can be distinguished: direct models and real-time (streaming) models. Direct models process speech input as complete utterances, generating output only after the full input signal has been received. Their interaction pattern resembles cascading pipelines in terms of latency, as response generation is deferred until the entire input has been processed \cite{zhang2024streamspeech}.
 
 In contrast, more recent real-time speech-to-speech systems, such as OpenAI’s real-time speech model family adopt a streaming-based approach. 
 Incoming speech is first digitized (e.g., using pulse-code modulation formats such as PCM16) and segmented into short audio frames on the order of tens of milliseconds. 
 These segments are streamed incrementally to the model, which buffers a limited temporal context before beginning to generate spoken output \cite{openai_realtime_api}.
-\\
+
+
 
 In Figure \ref{fig:realtime_speech}, an example of such a system is illustrated using the simultaneous speech model introduced by Tan et al., showing how these models interleave listen and write operations according to a wait-$k$ policy, allowing target-language output to begin before the full source utterance is observed \cite{tan2020simulspeech}. To ground this abstract description in the physical signal chain used in safety-critical HMI deployments, Figure \ref{fig:s2s_signal_chain} annotates a representative streaming speech-to-speech path from the operator's microphone through synthesis and playback.
 \\
